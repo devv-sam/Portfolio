@@ -99,8 +99,8 @@ nav ul li a {
 }
 
 .cta-opening {
-  margin-top: 150px;
-  max-width: 60%;
+  margin-top: 100px;
+  max-width: 70%;
 }
 
 .cta-opening h3 {
@@ -113,4 +113,25 @@ nav ul li a {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   line-height: 27px;
+}
+
+video {
+  width: 100%;
+  height: 50%;
+  border-radius: 25px;
+  display: block;
+}
+
+.showcase {
+  display: flex;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.support {
+  margin-left: 50px;
+}
+
+.support .btn {
+  margin-top: 20px;
 }

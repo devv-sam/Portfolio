@@ -10,7 +10,7 @@ function Nav() {
       <ul>
         <li><a href="#">About</a></li>
        <li><a href="#">Work</a></li> 
-       <li><a href="#" class="btn">Connect</a></li>
+       <li><a href="#" className="btn">Connect</a></li>
       </ul>
      
      </nav>
