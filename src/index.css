@@ -35,6 +35,7 @@ nav {
   display: flex;
   justify-content: space-between;
   margin: 25px 0;
+  align-items: center;
 }
 
 nav ul {
@@ -190,4 +191,134 @@ video {
 
 .link:hover .link-title2 {
   transform: rotate(0);
+}
+
+/*--- Portfolio ---*/
+
+.container {
+  max-width: 500px;
+  height: 300px;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 0 !important;
+  position: relative;
+}
+
+.floating {
+  height: 100%;
+  position: relative;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  gap: 10px;
+  z-index: 2;
+}
+.floating-tags {
+  display: flex;
+}
+.name {
+  font-family: "LT Remark", sans-serif;
+  font-size: 32px;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.tag,
+.tag2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--white);
+  background: rgba(70, 67, 67, 0.25);
+  width: fit-content;
+  padding: 5px 15px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 100px;
+  margin-right: 10px;
+  border: 2px solid #ffffff2e;
+}
+
+.floating-link {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+  z-index: 3;
+}
+
+.box-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  -webkit-box-align: center;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.image {
+  position: relative;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  margin: 0;
+}
+
+.box-bg .image img {
+  width: 500px;
+  height: 100%;
+  object-fit: cover;
+}
+
+figure.image {
+  aspect-ratio: 1 !important;
+  height: 100%;
+}
+
+.floating-top {
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  grid-gap: 24px;
+  gap: 24px;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+}
+
+.floating-bottom {
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  padding: 24px;
+}
+
+.box-bg::before {
+  content: "";
+
+  background-image: -o-linear-gradient(
+    271deg,
+    rgba(0, 0, 0, 0.1) 40%,
+    rgba(0, 0, 0, 0.72) 100%
+  );
+  background-image: linear-gradient(
+    179deg,
+    rgba(0, 0, 0, 0.1) 40%,
+    rgba(0, 0, 0, 0.72)
+  );
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
+  transform: translateZ(0);
 }
