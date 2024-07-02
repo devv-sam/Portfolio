@@ -24,6 +24,7 @@ body {
   font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 code {
@@ -107,14 +108,14 @@ nav ul li a {
 
 .cta-opening h3 {
   font-family: "LT Remark", sans-serif;
-  font-size: 32px;
-  padding-bottom: 8px;
+  font-size: 4vw;
+  padding-bottom: 24px;
 }
 
 .cta-opening p {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
-  line-height: 27px;
+  line-height: 32px;
 }
 
 video {
@@ -124,10 +125,31 @@ video {
   display: block;
 }
 
+.video-section {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+}
+
+video {
+  width: 80%;
+  transition: transform 0.3s ease, width 0.3s ease;
+}
+
+video.large {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.5);
+  width: 100%;
+  z-index: 1000;
+}
+
 .showcase {
   display: flex;
   align-items: center;
   margin-top: 100px;
+  flex-direction: column;
 }
 
 .support {

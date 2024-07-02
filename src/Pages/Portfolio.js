@@ -1,15 +1,17 @@
 import React from 'react'
-import './index.css';
-import PortItem from './PortItem';
+import '../index.css';
+import PortItem from '../Components/PortItem';
+import Nav from '../Components/Nav';
 
 const Portfolio = () => {
   return (
    <>
+   
+  <Nav />
 
    <div className='desc'>
 
    </div>
-        <PortItem name="Econn Finance" tag="UI/UX" tag2="Finance" image="./img.png"/>
 
 
    </>

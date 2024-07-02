@@ -1,5 +1,5 @@
 import React from 'react'
-import './index.css';
+import '../index.css';
 
 const PortItem = ({name, tag, tag2, image, link}) => {
   return (

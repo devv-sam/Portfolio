@@ -1,11 +1,19 @@
-import './index.css';
+import '../index.css';
+import { Outlet, Link } from "react-router-dom";
+
 
 function Nav() {
   return (
-    <div className="Nav">
+    <>
+     <div className="Nav">
      <nav>
       <div className="logo">
-        <p>Samuel Yeboah-Asi</p>
+        <ul>
+          <li>
+       <Link to="/landing">Samuel Yeboah-Asi</Link>
+        </li>
+        </ul>
+      
       </div>
       <ul>
         <li>
@@ -19,7 +27,8 @@ function Nav() {
 </a>
         </li>
         <li>
-        <a href="#" class="link">
+      <Link to="/portfolio">
+      <a href="#" class="link">
   <span class="mask">
     <div class="link-container">
       <span class="link-title1 title">Work</span>
@@ -27,12 +36,17 @@ function Nav() {
     </div>
   </span>
 </a>
+      </Link>
 </li> 
        <li><a href="#" className="btn">Connect</a></li>
       </ul>
      
      </nav>
     </div>
+    
+    <Outlet />
+    </>
+   
   );
 }
 
