@@ -115,34 +115,13 @@ nav ul li a {
 .cta-opening p {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
-  line-height: 32px;
+  line-height: 26px;
 }
 
 video {
   width: 100%;
   height: 50%;
-  border-radius: 25px;
   display: block;
-}
-
-.video-section {
-  display: flex;
-  justify-content: center;
-  padding: 50px 0;
-}
-
-video {
-  width: 80%;
-  transition: transform 0.3s ease, width 0.3s ease;
-}
-
-video.large {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1.5);
-  width: 100%;
-  z-index: 1000;
 }
 
 .showcase {
@@ -152,10 +131,25 @@ video.large {
   flex-direction: column;
 }
 
-.support {
-  margin-left: 50px;
+.showcase-portfolio-intro {
+  display: flex;
+  margin-top: 100px;
+  margin-bottom: 20px;
+  align-items: center;
 }
-
+.support {
+  /* border: 1px green solid; */
+  margin-right: 50px;
+}
+.support h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 4vw;
+  /* margin-bottom: 20px; */
+  color: #282d3c;
+}
+.support p {
+  line-height: 26px;
+}
 .support .btn {
   margin-top: 20px;
 }
@@ -175,7 +169,6 @@ video.large {
   padding: 0;
   height: 20px;
 
-  /*  Remove overflow to see how it works　:) */
   overflow: hidden;
 }
 
@@ -218,14 +211,18 @@ video.large {
 /*--- Portfolio ---*/
 
 .container {
-  max-width: 500px;
-  height: 300px;
-  border-radius: 20px;
+  max-width: 70vw;
+  height: 50vh;
+  width: 100%;
+  border: 1px #bec0c4 solid;
   overflow: hidden;
   padding: 0 !important;
   position: relative;
+  transition: transform 0.2s ease-in-out;
 }
-
+.container:hover {
+  transform: scale(1.05);
+}
 .floating {
   height: 100%;
   position: relative;
@@ -238,14 +235,16 @@ video.large {
   gap: 10px;
   z-index: 2;
 }
+
 .floating-tags {
   display: flex;
 }
 .name {
-  font-family: "LT Remark", sans-serif;
-  font-size: 32px;
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
   color: var(--white);
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
 }
 
 .tag,
@@ -263,6 +262,18 @@ video.large {
   margin-right: 10px;
   border: 2px solid #ffffff2e;
 }
+.latest {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--white);
+  background-color: #282d3c;
+  width: fit-content;
+  padding: 5px 15px;
+  border-radius: 100px;
+  margin-right: 10px;
+  border: 2px solid #282d3c;
+}
 
 .floating-link {
   position: absolute;
@@ -274,6 +285,10 @@ video.large {
   z-index: 3;
 }
 
+.floating-link:hover {
+  cursor: url("cursor.png"), auto;
+}
+
 .box-bg {
   position: absolute;
   width: 100%;
@@ -282,7 +297,6 @@ video.large {
   left: 0;
   z-index: 1;
   -webkit-box-align: center;
-  border-radius: 16px;
   overflow: hidden;
 }
 
@@ -294,10 +308,14 @@ video.large {
   margin: 0;
 }
 
-.box-bg .image img {
-  width: 500px;
+.box-bg .image video {
+  width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+figure {
+  width: 100%;
 }
 
 figure.image {
@@ -307,13 +325,11 @@ figure.image {
 
 .floating-top {
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  flex-direction: row;
-  grid-gap: 24px;
-  gap: 24px;
-  -webkit-box-pack: justify;
-  justify-content: space-between;
+  flex-direction: column;
+  padding: 24px;
+  align-items: flex-end;
 }
 
 .floating-bottom {
@@ -323,20 +339,29 @@ figure.image {
   flex-direction: column;
   padding: 24px;
 }
+.name-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  /* border: 1px red solid; */
+}
 
+.dash {
+  margin: 0 10px;
+  width: 3em;
+  height: 1.3px;
+  background-color: #fff;
+}
+
+.date {
+  color: var(--white);
+  font-size: 24px;
+  font-weight: 500;
+}
 .box-bg::before {
   content: "";
-
-  background-image: -o-linear-gradient(
-    271deg,
-    rgba(0, 0, 0, 0.1) 40%,
-    rgba(0, 0, 0, 0.72) 100%
-  );
-  background-image: linear-gradient(
-    179deg,
-    rgba(0, 0, 0, 0.1) 40%,
-    rgba(0, 0, 0, 0.72)
-  );
+  background-image: -o-linear-gradient(271deg, #5d5d5d00 40%, #000);
+  background-image: linear-gradient(179deg, #97171707 40%, #000);
   position: absolute;
   width: 100%;
   height: 100%;

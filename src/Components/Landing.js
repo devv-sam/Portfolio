@@ -1,31 +1,10 @@
 import React from 'react'
-import { useState, useEffect } from 'react';
 import '../index.css';
 import Nav from './Nav';
+import PortItem from './PortItem';
 
 export const Landing = () => {
 
-    const [isVideoLarge, setIsVideoLarge] = useState(false);
-
-  const handleScroll = () => {
-    const videoElement = document.getElementById('showcase-video');
-    const videoTop = videoElement.getBoundingClientRect().top;
-    const videoBottom = videoElement.getBoundingClientRect().bottom;
-    const windowHeight = window.innerHeight;
-
-    if (videoTop < windowHeight / 2 && videoBottom > windowHeight / 2) {
-      setIsVideoLarge(true);
-    } else {
-      setIsVideoLarge(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   return (
     <>
@@ -36,17 +15,19 @@ export const Landing = () => {
         </div>
         <div className='showcase'>
     <div className='vid-box'>
-        <section className='video-section'>
-        <video id="showcase-video"  className={isVideoLarge ? 'large' : ''} src="./video.mp4"  autoPlay loop></video>          
-        </section>
-  
+        <video src="./video.mp4" autoPlay loop muted></video>          
     </div>
    
 </div>
- {/* <div className='support'>
+<div className='showcase-portfolio-intro'>
+<div className='support'>
+  <h3>Featured Work</h3>
         <p>Dive into my showcase of innovative and meticulously crafted applications that solve real-world problems and push the boundaries of technology.</p>
         <a href="/portfolio" className='btn'>Case Studies</a>
-    </div> */}
+    </div>
+
+    <PortItem video='video.mp4' name='Project Name' tag='Finance' tag2="Web Design"/>
+</div>
     </>
   )
 }

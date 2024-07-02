@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react';
 import '../index.css';
 
-const PortItem = ({name, tag, tag2, image, link}) => {
+const PortItem = ({name, tag, tag2, video, link}) => {
+  
   return (
     <>
   
@@ -9,16 +10,20 @@ const PortItem = ({name, tag, tag2, image, link}) => {
 <a href={link} className='floating-link'></a>
 <div className='box-bg'>
             <figure className='image'>
-       <img src={image}></img>
+       <video src={video} autoPlay muted loop></video>
             </figure>
         </div>
 
     <div className='floating'>
         <div className='floating-top'>
-
+        <div className='latest'>Latest</div>
         </div>
         <div className='floating-bottom'>
-              <h1 className='name'>{name}</h1>
+             <div className='name-info'>
+             <h1 className='name'>{name}</h1>
+             <div className='dash'></div>
+             <div className='date'>24'</div>
+             </div>
               <div className='floating-tags'>
             <div className='tag'>{tag}</div>
             <div className='tag'>{tag2}</div>
