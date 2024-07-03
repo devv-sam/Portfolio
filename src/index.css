@@ -47,6 +47,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  background-color: #fcfdfc;
 }
 
 code {
@@ -486,4 +487,177 @@ figure.image {
   z-index: 3;
   pointer-events: none;
   transform: translateZ(0);
+}
+
+/*--- About bento design --*/
+
+.top-row {
+  /* border: 1px red solid; */
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.title-bx {
+  width: 60%;
+  word-wrap: break-word;
+  padding: 25px;
+  background: #f2f5f4;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid #bec0c4;
+  height: 100%;
+  max-height: 120px;
+}
+
+.title-bx h3 {
+  font-family: "LT Remark", sans-serif;
+  font-size: 2vw;
+  padding-bottom: 10px;
+}
+.title-bx p {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.experience-bx {
+  background: #f2f5f4;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid #bec0c4;
+  width: 40%;
+  word-wrap: break-word;
+  padding: 25px;
+  height: 100%;
+  max-height: 120px;
+}
+.experience-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.experience-bx .experience-top h3 {
+  font-family: "LT Remark", sans-serif;
+  font-size: 2vw;
+}
+
+.experience-bx .experience-top ion-icon {
+  font-size: 32px;
+  text-decoration: none;
+  color: #000;
+  height: 32px;
+}
+
+.experience-bx .experience-top a {
+  height: 32px;
+}
+
+.job .job-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  color: var(--black);
+}
+
+.job .role,
+.duration {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: #7b7b7b;
+}
+
+.bottom-row {
+  /* border: 1px red solid; */
+  display: flex;
+  margin-top: 32px;
+  align-items: center;
+  gap: 32px;
+}
+
+.skillset-bx {
+  padding: 25px;
+  height: 100%;
+  background: #f2f5f4;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid #bec0c4;
+}
+
+.skillset-bx h3 {
+  font-family: "LT Remark", sans-serif;
+  font-size: 2vw;
+  padding-bottom: 10px;
+}
+.skillset-bx p {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  padding-bottom: 10px;
+}
+
+.skillset-bx .skills span {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.skillset-bx .skills ion-icon {
+  font-size: 32px;
+}
+
+.external-bx {
+  padding: 25px;
+  height: 323px;
+  /* height: 100%; */
+  background: #f2f5f4;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid #bec0c4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.external-bx .music .spotify-icon {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.spotify-details {
+  display: flex;
+  align-items: center;
+}
+
+.music a {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  color: #1ed760;
+  font-weight: 500;
+  text-decoration: none;
+}
+.external-bx .music .spotify-audio {
+  width: 30px;
+  margin-right: 10px;
+}
+
+.external-bx .music h3 {
+  font-family: "LT Remark", sans-serif;
+  font-size: 32px;
+  color: var(--black);
+}
+.music-top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.profile-bx {
+  padding: 25px;
+  height: 323px;
+  width: 365px;
+  background: #f2f5f4;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid #bec0c4;
 }

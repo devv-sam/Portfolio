@@ -17,7 +17,7 @@ function Nav() {
       </div>
       <ul>
         <li>
-        <a href="#" class="link">
+        <a href="/about" class="link">
   <span class="mask">
     <div class="link-container">
       <span class="link-title1 title">About</span>
