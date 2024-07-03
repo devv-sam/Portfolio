@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import '../index.css';
 
 const PortItem = ({name, tag, tag2, video, link}) => {
-  
   return (
     <>
-  
+  {/* <div className='wrapper' */}
 <div className='container'>
 <a href={link} className='floating-link'></a>
 <div className='box-bg'>
