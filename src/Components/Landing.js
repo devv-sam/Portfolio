@@ -10,7 +10,7 @@ export const Landing = () => {
   return (
     <>
         <Nav />
-        {/* <div className='cta-opening'>
+        <div className='cta-opening'>
               <div className='flex-main'>
               <div className='width-res'>
                <h3>Crafting Code with Creativity and Precision</h3>
@@ -31,8 +31,8 @@ export const Landing = () => {
                   <a href="#" className='link-icon'><ion-icon name="logo-behance"></ion-icon></a>
                   <a href="#" className='link-icon'><ion-icon name="logo-instagram"></ion-icon></a>
                 </div>
-        </div> */}
-        {/* <div className='showcase'>
+        </div>
+        <div className='showcase'>
     <div className='vid-box'>
         <video src="./video.mp4" autoPlay loop muted></video>          
     </div>
@@ -47,7 +47,7 @@ export const Landing = () => {
 
     <PortItem video='video.mp4' name='Project Name' tag='Finance' tag2="Web Design"/>
 
-</div> */}
+</div>
 
 <Bento />
     </>
