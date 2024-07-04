@@ -87,7 +87,7 @@ nav ul li a {
   font-weight: 500;
   text-transform: capitalize;
   font-family: inherit;
-  font-size: 16px;
+  font-size: 1rem;
   cursor: pointer;
   user-select: none;
   text-decoration: none;
@@ -121,7 +121,7 @@ nav ul li a {
 .logo {
   color: var(--black);
   font-family: "Poppins", sans-serif;
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 .avail {
   /* border: 1px blue solid; */
@@ -134,7 +134,7 @@ nav ul li a {
   display: flex;
   align-items: center;
   font-family: "Poppins", sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 500;
   color: var(--black);
   background: rgba(255, 252, 252, 0.25);
@@ -230,7 +230,7 @@ ion-icon {
 
 .cta-opening .width-res p {
   font-family: "Poppins", sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 26px;
 }
 
@@ -243,13 +243,13 @@ video {
 .showcase {
   display: flex;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 150px;
   flex-direction: column;
 }
 
 .showcase-portfolio-intro {
   display: flex;
-  margin-top: 100px;
+  margin-top: 150px;
   margin-bottom: 20px;
   align-items: center;
 }
@@ -295,7 +295,7 @@ video {
 .title {
   display: block;
 
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 20px;
 
   transition: transform 0.4s ease;
@@ -368,7 +368,7 @@ video {
 .tag,
 .tag2 {
   font-family: "Poppins", sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 500;
   color: var(--white);
   background: rgba(70, 67, 67, 0.25);
@@ -382,7 +382,7 @@ video {
 }
 .latest {
   font-family: "Poppins", sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 500;
   color: var(--white);
   background-color: #282d3c;
@@ -491,24 +491,20 @@ figure.image {
 
 /*--- About bento design --*/
 
-.top-row {
-  /* border: 1px red solid; */
-  display: flex;
-  align-items: center;
-  margin: 100px 0 0 0;
-  gap: 32px;
+.bento-grid {
+  margin: 150px 0 50px 0;
+  display: grid;
+  grid-template-rows: 100px 100px 100px 100px 100px 100px 100px;
+  grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px;
 }
 
 .title-bx {
-  width: 60%;
   word-wrap: break-word;
   padding: 25px;
   background: #f2f5f4;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
   border: 1px solid #bec0c4;
-  height: 100%;
-  max-height: 120px;
+  grid-row: 1 / 3;
+  grid-column: 1 / 9;
 }
 
 .title-bx h3 {
@@ -518,20 +514,17 @@ figure.image {
 }
 .title-bx p {
   font-family: "Poppins", sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 26px;
 }
 
 .experience-bx {
   background: #f2f5f4;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
   border: 1px solid #bec0c4;
-  width: 40%;
   word-wrap: break-word;
   padding: 25px;
-  height: 100%;
-  max-height: 120px;
+  grid-row: 1 / 8;
+  grid-column: 9 / 18;
 }
 .experience-top {
   display: flex;
@@ -555,36 +548,48 @@ figure.image {
 .experience-bx .experience-top a {
   height: 32px;
 }
-
+.job {
+  margin: 15px 0 15px 0;
+}
 .job .job-title {
   font-family: "Poppins", sans-serif;
-  font-size: 18px;
+  font-size: 1.125rem;
   color: var(--black);
 }
 
+.job-desc {
+  display: flex;
+  align-items: center;
+}
+.dash-dark {
+  background-color: #000;
+  margin: 0 10px;
+  width: 3em;
+  height: 1.3px;
+}
 .job .role,
-.duration {
+.duration,
+.desc {
   font-family: "Poppins", sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   color: #7b7b7b;
 }
-
-.bottom-row {
-  /* border: 1px red solid; */
-  display: flex;
-  margin-top: 32px;
-  align-items: center;
-  margin-bottom: 100px;
-  gap: 32px;
+.job-title,
+.duration,
+.role,
+.desc {
+  margin-bottom: 5px;
 }
-
 .skillset-bx {
-  padding: 25px;
-  height: 100%;
+  padding: 25px 25px 10px 25px;
+  height: fit-content;
   background: #f2f5f4;
+  /* width: 30%; */
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border: 1px solid #bec0c4;
+  grid-row: 3 / 7;
+  grid-column: 1 / 5;
 }
 
 .skillset-bx h3 {
@@ -594,7 +599,7 @@ figure.image {
 }
 .skillset-bx p {
   font-family: "Poppins", sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   padding-bottom: 10px;
 }
 
@@ -610,15 +615,14 @@ figure.image {
 
 .external-bx {
   padding: 25px;
-  height: 323px;
-  /* height: 100%; */
   background: #f2f5f4;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border: 1px solid #bec0c4;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  grid-row: 6 / 8;
+  grid-column: 1 / 9;
 }
 
 .external-bx .music .spotify-icon {
@@ -633,7 +637,7 @@ figure.image {
 
 .music a {
   font-family: "Poppins", sans-serif;
-  font-size: 18px;
+  font-size: 1.125rem;
   color: #1ed760;
   font-weight: 500;
   text-decoration: none;
@@ -648,6 +652,12 @@ figure.image {
   font-size: 32px;
   color: var(--black);
 }
+
+.external-bx .music p {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  margin-top: 5px;
+}
 .music-top {
   display: flex;
   align-items: center;
@@ -655,11 +665,12 @@ figure.image {
 }
 
 .profile-bx {
-  padding: 25px;
-  height: 323px;
-  width: 365px;
-  background: #f2f5f4;
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border: 1px solid #bec0c4;
+  width: fit-content;
+  display: flex;
+  grid-row: 3 / 6;
+  grid-column: 5 / 9;
+}
+
+.profile-bx img {
+  width: 400px;
 }
