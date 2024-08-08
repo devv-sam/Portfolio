@@ -10,28 +10,33 @@ export const Landing = () => {
   return (
     <>
         <Nav />
+ 
         <div className='cta-opening'>
-              <div className='flex-main'>
-              <div className='width-res'>
+          <div className="flex-main">
+          <div className='width-res'>
                <h3>Crafting Code with Creativity and Precision</h3>
                <p>I bring ideas to life with precision and creativity, crafting exceptional projects that stand out. My focus is on delivering high-quality, user-centric solutions that exceed expectations and drive innovation.</p>
-              
-               </div>
+               <div className="base">
+               <div className='icons'>
+                  <a href="#" className='link-icon'><ion-icon name="logo-linkedin"></ion-icon></a>
+                  <a href="#" className='link-icon'><ion-icon name="logo-behance"></ion-icon></a>
+                  <a href="#" className='link-icon'><ion-icon name="logo-instagram"></ion-icon></a>
+                </div>
                <div className='avail'>
                    <div className='wrap'>
                    <span className='dot'></span>
                    <p>Ready to collaborate </p>
                    </div>
                   </div>
-              </div>
+               </div>
+               </div>
+               <img src="awd.jpeg" alt="Profile" className="profile-img"></img>
+          </div>
+       
+              
                
-                <div className='icons'>
-                
-                  <a href="#" className='link-icon'><ion-icon name="logo-linkedin"></ion-icon></a>
-                  <a href="#" className='link-icon'><ion-icon name="logo-behance"></ion-icon></a>
-                  <a href="#" className='link-icon'><ion-icon name="logo-instagram"></ion-icon></a>
-                </div>
         </div>
+        
         <div className='showcase'>
     <div className='vid-box'>
         <video src="./video.mp4" autoPlay loop muted></video>          
