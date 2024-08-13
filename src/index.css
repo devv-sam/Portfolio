@@ -20,19 +20,17 @@
 }
 /* Animations */
 
-@keyframes blink {
-  0%,
-  50%,
-  100% {
-    opacity: 1;
+@keyframes pulseRing {
+  0% {
+    transform: scale(0.5);
   }
-  25%,
-  75% {
+  80%,
+  100% {
     opacity: 0;
   }
 }
 
-@keyframes pulse {
+@keyframes pulseDot {
   0%,
   100% {
     transform: scale(1);
@@ -58,7 +56,7 @@ code {
 nav {
   display: flex;
   justify-content: space-between;
-  margin: 25px 0;
+  margin: 40px 0 100px 0;
   align-items: center;
 }
 
@@ -144,12 +142,26 @@ nav ul li a {
   border: 1px solid #bec0c4;
 }
 .dot {
-  width: 20px;
-  height: 20px;
+  animation: pulseDot 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite;
+  background-color: var(--pulsating-dot, #10dc60);
+  border-radius: 50%;
+  box-sizing: border-box;
+  height: 10px;
+  width: 10px;
   margin-right: 10px;
-  background-color: #26d99a;
-  border-radius: 100%;
-  animation: blink 3s infinite ease-in-out, pulse 3s infinite ease-in-out;
+}
+
+.dot:before {
+  animation: pulseRing 1.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+  background-color: var(--pulsating-dot, #10dc60);
+  border-radius: 45px;
+  content: "";
+  display: block;
+  height: 300%;
+  left: -100%;
+  position: relative;
+  top: -100%;
+  width: 300%;
 }
 
 .flex-main {
@@ -203,12 +215,10 @@ ion-icon {
   width: 100%;
 }
 .base {
+  width: 100%;
   display: flex;
-  align-items: center;
-  width: 91%;
   justify-content: space-between;
-  height: 100%;
-  margin: 50px 0 0 0;
+  align-items: center;
 }
 .icons {
   display: flex;
@@ -218,29 +228,45 @@ ion-icon {
 }
 
 .icons a {
-  height: 32px;
-  width: 32px;
+  height: 24px;
+  width: 24px;
   display: flex;
   justify-content: center;
 }
 
 .cta-opening {
   width: 100%;
+  /* border: 1px red solid; */
+  /* display: flex; */
+
+  height: 70vh;
 }
 .width-res {
-  max-width: 70%;
   /* border: 1px green solid; */
-}
-.cta-opening .width-res h3 {
-  font-family: "LT Remark", sans-serif;
-  font-size: 3em;
-  margin-bottom: 10px;
+  display: flex;
+  width: 100%;
+  height: 70vh;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.cta-opening .width-res p {
+.intro {
+  /* border: 2px black dotted; */
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.cta-opening .width-res .intro h3 {
+  font-family: "LT Remark", sans-serif;
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.cta-opening .width-res .intro p {
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
   line-height: 26px;
+  margin-bottom: 20px;
 }
 
 video {
@@ -598,13 +624,13 @@ figure.image {
   -webkit-backdrop-filter: blur(4px);
   border: 1px solid #bec0c4;
   grid-row: 3 / 7;
-  grid-column: 1 / 5;
+  grid-column: 1 / 9;
 }
 
 .skillset-bx h3 {
   font-family: "LT Remark", sans-serif;
   font-size: 2vw;
-  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 .skillset-bx p {
   font-family: "Poppins", sans-serif;
@@ -634,43 +660,11 @@ figure.image {
   grid-column: 1 / 9;
 }
 
-.external-bx .music .spotify-icon {
-  width: 50px;
-  margin-right: 10px;
-}
-
-.spotify-details {
-  display: flex;
-  align-items: center;
-}
-
-.music a {
-  font-family: "Poppins", sans-serif;
-  font-size: 1.125rem;
-  color: #1ed760;
-  font-weight: 500;
-  text-decoration: none;
-}
-.external-bx .music .spotify-audio {
-  width: 30px;
-  margin-right: 10px;
-}
-
-.external-bx .music h3 {
+.external-bx h3 {
   font-family: "LT Remark", sans-serif;
   font-size: 32px;
-  color: var(--black);
-}
-
-.external-bx .music p {
-  font-family: "Poppins", sans-serif;
-  font-size: 1rem;
-  margin-top: 5px;
-}
-.music-top {
-  display: flex;
-  align-items: center;
   margin-bottom: 10px;
+  color: var(--black);
 }
 
 .profile-bx {
