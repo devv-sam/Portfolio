@@ -18,6 +18,7 @@
   margin: 0;
   padding: 0;
 }
+
 /* Animations */
 
 @keyframes pulseRing {
@@ -85,6 +86,7 @@ nav ul li a {
   font-weight: 500;
   text-transform: capitalize;
   font-family: inherit;
+
   font-size: 1rem;
   cursor: pointer;
   user-select: none;
@@ -434,7 +436,8 @@ video {
   height: 100%;
   left: 0;
   top: 0;
-  cursor: url("cursor.png"), auto;
+  cursor: pointer;
+  /* cursor: url("cursor.png"), auto; */
   z-index: 3;
 }
 

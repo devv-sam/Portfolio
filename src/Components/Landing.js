@@ -6,10 +6,9 @@ import Bento from './Bento';
 
 export const Landing = () => {
 
-
+  
   return (
     <>
-     
         <Nav />
 
         <section className='cta-opening'>
