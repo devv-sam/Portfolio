@@ -6,7 +6,7 @@ const SpotifyAuth = () => {
   const [recentTrack, setRecentTrack] = useState(null);
 
   const redirectToSpotify = () => {
-    const clientId = 'f7a158164db443559f952cdd594fc4d1';
+    const clientId = '';
     const redirectUri = 'http://localhost:3000';
     const scopes = 'user-read-recently-played'; // Categorizes type of data sent back
 
@@ -15,8 +15,8 @@ const SpotifyAuth = () => {
   };
 
   const fetchAccessToken = async (code) => {
-    const clientId = 'f7a158164db443559f952cdd594fc4d1';
-    const clientSecret = '9f4414bc50ec48fc891c9d7fc9db34a1';
+    const clientId = '';
+    const clientSecret = '';
     const redirectUri = 'http://localhost:3000';
 
     const encodedCredentials = btoa(`${clientId}:${clientSecret}`); //btoa(_) used to encode data into base64
