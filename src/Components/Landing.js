@@ -16,11 +16,11 @@ export const Landing = () => {
           <div className='width-res'>
               <div className="intro">
               <div>
-              <h3>Crafting code with creativity and precision</h3>
-              <p>Web Developer with focus on delivering high-quality, user-centric solutions that exceed expectations and drive innovation.</p>
+              <h3>Hey, I'm <span className='special-txt'>Sam!</span></h3>
+              <h4> I’m a <span className='special-txt'>web developer</span> from New York with a passion for crafting web solutions that put <span className='special-txt'>users first</span>.</h4>
               <a href="#" className='btn'>Explore my works</a>
               </div>
-          <img src="awd.jpeg" alt="Profile" className="profile-img"></img>
+          <img src="profile-image.png" alt="Profile" className="profile-img"></img>
 
               </div>
                <div className="base">
