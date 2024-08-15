@@ -1,5 +1,5 @@
 import React from 'react'
-import '../index.css';
+import '../portfolio.css';
 import PortItem from '../Components/PortItem';
 import Nav from '../Components/Nav';
 
@@ -9,9 +9,6 @@ const Portfolio = () => {
    
   <Nav />
 
-   <div className='desc'>
-
-   </div>
 
 
    </>

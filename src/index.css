@@ -46,7 +46,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
-  background-image: url("https://melon.studio/app/img/Noise.png");
+  background-image: url("./noise.png");
   background: rgb(122, 122, 122);
   background: linear-gradient(
     23deg,
@@ -83,9 +83,9 @@ nav ul li a {
   color: var(--black);
 }
 
-.special-txt {
-  color: var(--black);
-}
+/* .special-txt {
+  font-weight: 700;
+} */
 .btn {
   line-height: 1.5;
   padding: 10px 20px;
@@ -247,9 +247,6 @@ ion-icon {
 
 .cta-opening {
   width: 100%;
-  /* border: 1px red solid; */
-  /* display: flex; */
-
   height: 70vh;
 }
 .width-res {
@@ -270,14 +267,14 @@ ion-icon {
 .cta-opening .width-res .intro h3 {
   font-family: "LT Remark", sans-serif;
   font-size: 3em;
-  color: #3d3d3d;
+  color: #000;
   margin-bottom: 10px;
 }
 
 .cta-opening .width-res .intro h4 {
   font-family: "LT Remark", sans-serif;
   font-size: 2em;
-  color: #3d3d3d;
+  color: #000000;
   line-height: 1.5em;
   margin-bottom: 10px;
 }
@@ -608,6 +605,7 @@ figure.image {
 
 .job-desc {
   display: flex;
+  color: var(--black);
   align-items: center;
 }
 .dash-dark {
@@ -621,7 +619,7 @@ figure.image {
 .desc {
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
-  color: #7b7b7b;
+  color: var(--black);
 }
 .job-title,
 .duration,
