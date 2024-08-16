@@ -55,6 +55,11 @@ body {
   );
 }
 
+a {
+  text-decoration: none;
+  list-style-type: none;
+  color: var(--black);
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -89,13 +94,13 @@ nav ul li a {
 .btn {
   line-height: 1.5;
   padding: 10px 20px;
-  display: inline-block;
+  display: inline-flex;
   border: 1px solid var(--black);
+  align-items: center;
   color: #000;
+  gap: 10px;
   font-weight: 500;
-  text-transform: capitalize;
   font-family: inherit;
-
   font-size: 1rem;
   cursor: pointer;
   user-select: none;
@@ -186,6 +191,9 @@ nav ul li a {
 }
 ion-icon {
   padding: 0;
+}
+.btn ion-icon {
+  font-size: 20px;
 }
 
 .link-icon {
@@ -370,7 +378,7 @@ video {
   transform: rotate(0);
 }
 
-/*--- Portfolio ---*/
+/*--- Portfolio Cards ---*/
 
 .container {
   max-width: 70vw;
@@ -689,4 +697,81 @@ figure.image {
 
 .profile-bx img {
   width: 400px;
+}
+
+/*--- Portfolio Page --*/
+
+.wrapper {
+  border: 1px red solid;
+  background-color: red;
+  height: fit-content;
+  width: fit-content;
+}
+.prx-basic {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.prx-thumb {
+  overflow: hidden;
+  will-change: scale;
+  display: flex;
+  height: 100%;
+  border-radius: 3rem;
+  max-height: 500px;
+}
+.prx-thumb img {
+  transition: scale 0.5s ease;
+  opacity: 1;
+  object-fit: cover;
+  height: 100%;
+  /* max-width: 70%; */
+}
+
+.wrapper .row {
+  border: 1px green solid;
+  padding: 5px 15px;
+}
+
+.wrapper .row h3 {
+  font-family: "LT Remark", sans-serif;
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.wrapper .row p {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  color: #0a0808c1;
+  margin-bottom: 10px;
+}
+.prx-details {
+  border: 2px blue solid;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.prx-title h4 {
+  font-family: "LT Remark", sans-serif;
+  font-size: clamp(1.25rem, 1.1959rem + 0.2703vw, 1.5rem);
+}
+
+.star {
+  font-size: 12px;
+}
+
+.prx-title {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  line-height: 100%;
+}
+
+.prx-subtitle {
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  line-height: 100%;
 }
