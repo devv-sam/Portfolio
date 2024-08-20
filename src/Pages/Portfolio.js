@@ -6,16 +6,25 @@ import Project from '../Components/Project';
 const Portfolio = () => {
   return (
    <>
-  <Nav />
 
 
-    <section>
-      <div className='row'>
-        <h3>Take a look at what I’ve been working on lately.</h3>
-        <p>These featured projects showcase my recent endeavours in fields from frontend UI/UX to development.</p>
-      
+
+    <section className='project-canvas'>
+    <Nav />
+    <div className="project-mainframe">
+    <div className='header'>
+        <h3>Take a look at what I've been working on lately.</h3>
+        <p>These featured projects showcase my recent endeavours in fields from Frontend UI/UX to Development.</p>
       </div>
-      <Project prxname="Cirko" prxtype="Website Redesign" prxdate="2024"/>
+      <div className="row">
+        <Project prxname="Cirko" prxtype="Website Redesign" prxdate="2024"  coverImage="template.png" 
+  videoSrc="video.mp4" />
+        <Project prxname="Cirko" prxtype="Website Redesign" prxdate="2024"  coverImage="template.png" 
+  videoSrc="video.mp4" />
+
+      </div>
+    </div>
+      
     </section>
 
 

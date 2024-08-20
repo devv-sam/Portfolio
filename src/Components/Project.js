@@ -1,14 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react';
 import '../index.css';
 
 
-const Project = ({prxname, prxtype, prxdate}) => {
+const Project = ({prxname, prxtype, prxdate, coverImage, videoSrc }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
         <>
-        <a href="#" className='project'>
-        <div className="wrapper">
+    
+        <div className='project'  onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)} >
+
+        <a href="#">
                 <div className="prx-thumb">
-                    <img src="template.png" alt="Project Thumbnail"></img>
+                   {isHovered ? (
+        <video 
+          src={videoSrc} 
+          autoPlay 
+          loop 
+          muted 
+          className="portfolio-video" 
+        />
+      ) : (
+        <img 
+          src={coverImage} 
+          alt="Project Cover" 
+          className="portfolio-cover" 
+        />
+      )}
                 </div>
                 <div className='prx-details'>
                     <div className="prx-basic">
@@ -25,9 +44,11 @@ const Project = ({prxname, prxtype, prxdate}) => {
                     <a href="#" className='btn'>Learn more <ion-icon name="open-outline" className="icon-ex"></ion-icon></a>    
                     </div>
                 </div>
-            </div>
+          
 
         </a>
+        </div>
+      
             
 
 

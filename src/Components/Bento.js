@@ -4,7 +4,7 @@ import '../index.css';
 const Bento = () => {
   return (
     <>
-   <div className="bento-grid">
+   <section className="bento-grid">
    <div className='bx title-bx'>
         <h3>About Me</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor     
@@ -90,7 +90,7 @@ const Bento = () => {
         </div>
 
 
-   </div>
+   </section>
     
   
     </>

@@ -9,21 +9,16 @@ export const Landing = () => {
   
   return (
     <>
-        <Nav />
 
         <section className='cta-opening'>
-          <div className="flex-main">
-          <div className='width-res'>
-              <div className="intro">
-              <div>
-              <h3>Hey, I'm <span className='special-txt'>Sam!</span></h3>
-              <h4> I’m a <span className='special-txt'>web developer</span> from New York with a passion for crafting web solutions that put <span className='special-txt'>users first</span>.</h4>
-              <a href="#" className='btn'>Explore my works</a>
-              </div>
-          <img src="profile-image.png" alt="Profile" className="profile-img"></img>
-
-              </div>
-               <div className="base">
+          <Nav />
+            <div className="hero">
+              <img src="profile-icon.png" alt="Sam's profile"></img>
+               <h3>I'm Sam — a user interface designer & developer from New York.</h3>
+               <p> 
+               I bring ideas to life with precision and creativity, crafting exceptional projects that stand out.</p> 
+                </div>
+            <div className="base">
                <div className='avail'>
                    <div className='wrap'>
                    <span className='dot'></span>
@@ -37,20 +32,28 @@ export const Landing = () => {
                 </div>
           
                </div>
-               </div>
-          </div>
-       
-              
+         
+
+     
+
+
+
+             
+         
+ 
+                 {/* <img src="profile-image.png" alt="Profile" className="profile-img"></img> */}
+
+                            {/* <a href="#" className='btn'>Explore my works</a> */}
                
         </section>
         
-        <div className='showcase'>
+        <section className='showcase'>
     <div className='vid-box'>
         <video src="./video.mp4" autoPlay loop muted></video>          
     </div>
    
-</div>
-<div className='showcase-portfolio-intro'>
+</section>
+<section className='showcase-portfolio-intro'>
 <div className='support'>
   <h3>Featured Work</h3>
         <p>Dive into my showcase of innovative and meticulously crafted applications that solve real-world problems and push the boundaries of technology.</p>
@@ -59,7 +62,7 @@ export const Landing = () => {
 
     <PortItem video='video.mp4' name='Project Name' tag='Finance' tag2="Web Design"/>
 
-</div>
+</section>
 
 <Bento />
     </>
