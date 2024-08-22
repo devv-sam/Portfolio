@@ -286,14 +286,13 @@ video {
 .showcase {
   display: flex;
   align-items: center;
-  margin-top: 150px;
+  margin: 4rem 0 4rem 0;
   flex-direction: column;
 }
 
 .showcase-portfolio-intro {
   display: flex;
-  margin-top: 150px;
-  margin-bottom: 20px;
+  margin: 6rem 0 6rem 0;
   align-items: center;
 }
 .support {
@@ -536,7 +535,7 @@ figure.image {
 /*--- About bento design --*/
 
 .bento-grid {
-  margin: 150px 0 50px 0;
+  margin: 4rem 0 100rem 0;
   display: grid;
   grid-template-rows: 100px 100px 100px 100px 100px 100px 100px;
   grid-template-columns: 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px 100px;

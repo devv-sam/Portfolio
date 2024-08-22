@@ -3,6 +3,7 @@ import '../index.css';
 import PortItem from '../Components/PortItem';
 import Nav from '../Components/Nav';
 import Project from '../Components/Project';
+import 'lenis/dist/lenis.css'
 const Portfolio = () => {
   return (
    <>
