@@ -8,6 +8,7 @@ import Lenis from 'lenis'
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SplitType from 'split-type'
+import Footer from './Footer';
 
 
 
@@ -50,6 +51,7 @@ useEffect(() => {
       },
       opacity: 0.2,
       stagger: 0.1,
+      
     })
   })
 
@@ -77,15 +79,15 @@ useEffect(() => {
   })
   
       // Image animation
-      // const image = document.querySelector('.landing-item');
+      const image = document.querySelector('.landing-item');
 
-      // gsap.from(image, {
-      //   y: -20,             
-      //   opacity: 0,  
-      //   duration: 1.5,   
-      //   ease: 'power2.out',
-      //   delay: 0.5        
-      // });
+      gsap.from(image, {
+        y: -20,            
+        opacity: 0,        
+        stagger: 0.1,     
+        duration: 1,       
+        ease: 'power2.out',      
+      });
     
   }, []); 
 })
@@ -112,13 +114,13 @@ useEffect(() => {
         <section className='cta-opening'>
           <Nav />
             <div className="hero">
-              <img src="profile-icon.png" alt="Sam's profile" className="landing-item"></img>
+              <img src="profile-icon.png" alt="Sam's profile"></img>
                <h3 className='reveal-landing'>I'm Sam — a user interface designer & developer from New York.</h3>
                <p className='reveal-landing' > 
                I bring ideas to life with precision and creativity, crafting exceptional projects that stand out.</p> 
                 </div>
             <div className="base">
-               <div className='avail'>
+               <div className='avail '>
                    <div className='wrap'>
                    <span className='dot '></span>
                    <p>Ready to collaborate </p>
@@ -152,6 +154,7 @@ useEffect(() => {
 </section>
 
 <Bento />
+<Footer />
     </>
   )
 }
