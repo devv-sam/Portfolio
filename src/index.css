@@ -276,23 +276,15 @@ ion-icon {
   /* width: 60%; */
 }
 
-video {
-  width: 100%;
-  height: 50%;
-  /* cursor: url("cursor.png"), auto; */
-  display: block;
-}
-
 .showcase {
-  display: flex;
   align-items: center;
-  margin: 4rem 0 4rem 0;
+  margin: 8rem 0 8rem 0;
   flex-direction: column;
 }
 
 .showcase-portfolio-intro {
   display: flex;
-  margin: 6rem 0 6rem 0;
+  margin: 8rem 0 8rem 0;
   align-items: center;
 }
 .support {

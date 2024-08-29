@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect  } from 'react';
 import '../index.css';
 import Nav from './Nav';
 import PortItem from './PortItem';
@@ -9,13 +9,17 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SplitType from 'split-type'
 import Footer from './Footer';
-
+import Video from './Video';
 
 
 
 export const Landing = () => {
+
+
 // loads in landing text once and only unless reloaded
 useEffect(() => {
+  
+
   const revealTypeTwo = document.querySelectorAll('.reveal-landing')
 
   revealTypeTwo.forEach((char,i) => {
@@ -135,13 +139,7 @@ useEffect(() => {
                </div>
                         
         </section>
-        
-        <section className='showcase'>
-    <div className='vid-box'>
-        <video src="./video.mp4" autoPlay loop muted></video>          
-    </div>
-   
-</section>
+        <Video />
 <section className='showcase-portfolio-intro'>
 <div className='support'>
   <h3 className='reveal-type'>Featured Work</h3>
