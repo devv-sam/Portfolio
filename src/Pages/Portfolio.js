@@ -1,22 +1,47 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../index.css';
-import PortItem from '../Components/PortItem';
 import Nav from '../Components/Nav';
 import Project from '../Components/Project';
 import 'lenis/dist/lenis.css'
+import Preloader from '../Components/Preloader';
+import SplitType from 'split-type'
+import gsap from 'gsap';
+
 const Portfolio = () => {
+  useEffect(() => {
+    const headerReveal = document.querySelectorAll('.header-reveal')
+
+    headerReveal.forEach((char,i) => {
+
+      const word = new SplitType(char, {types: 'words'})
+
+      gsap.from(word.words, {
+        y: -20,            
+        opacity: 0,        
+        stagger: 0.1,     
+        duration: 1,       
+        delay: 3.3,
+        ease: 'power2.out', 
+      })
+    })
+ 
+      
+
+  }, []);
+
   return (
    <>
-
+<Preloader loadertext='My digital playground.'/>
 
 
     <section className='project-canvas'>
     <Nav />
     <div className="project-mainframe">
     <div className='header'>
-        <h3>Take a look at what I've been working on lately.</h3>
-        <p>These featured projects showcase my recent endeavours in fields from Frontend UI/UX to Development.</p>
+        <h3 className='header-reveal'> I've been bringing ideas to life through case studies and client projects.</h3>
+        <p className='header-reveal'>From concept to execution, each project tells a story of innovation, creativity, and collaboration</p>
       </div>
+    
       <div className="row">
         <Project prxname="Cirko" prxtype="Website Redesign" prxdate="2024"  coverImage="template.png" 
   videoSrc="video.mp4" />

@@ -21,6 +21,7 @@ function Nav() {
       opacity: 0,        
       stagger: 0.3,     
       duration: 1,       
+      delay: 4,
       ease: 'power2.out', 
     });
     

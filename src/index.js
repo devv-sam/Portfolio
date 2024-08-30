@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import Landing from './Components/Landing';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import reportWebVitals from './reportWebVitals';
@@ -10,6 +9,7 @@ import 'lenis/dist/lenis.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+
   <BrowserRouter>
 
     <Routes>

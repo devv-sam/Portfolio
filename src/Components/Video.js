@@ -18,7 +18,7 @@ const Video = () => {
         start: 'top center', 
         end: '+=750',  
         scrub: false,        
-        markers: false,      
+        markers: false,       
         toggleActions: 'play reverse play reverse', 
       },
       scale: 1.25,           

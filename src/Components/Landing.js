@@ -8,9 +8,9 @@ import Lenis from 'lenis'
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SplitType from 'split-type'
+import Preloader from './Preloader';
 import Footer from './Footer';
 import Video from './Video';
-
 
 
 export const Landing = () => {
@@ -18,8 +18,6 @@ export const Landing = () => {
 
 // loads in landing text once and only unless reloaded
 useEffect(() => {
-  
-
   const revealTypeTwo = document.querySelectorAll('.reveal-landing')
 
   revealTypeTwo.forEach((char,i) => {
@@ -32,6 +30,7 @@ useEffect(() => {
       opacity: 0,        
       stagger: 0.1,     
       duration: 1,       
+      delay: 3,
       ease: 'power2.out', 
       
     });
@@ -54,6 +53,7 @@ useEffect(() => {
         markers: false,
       },
       opacity: 0.2,
+      delay: 3,
       stagger: 0.1,
       
     })
@@ -82,16 +82,7 @@ useEffect(() => {
     })
   })
   
-      // Image animation
-      const image = document.querySelector('.landing-item');
 
-      gsap.from(image, {
-        y: -20,            
-        opacity: 0,        
-        stagger: 0.1,     
-        duration: 1,       
-        ease: 'power2.out',      
-      });
     
   }, []); 
 })
@@ -114,7 +105,7 @@ useEffect(() => {
   
   return (
 <>
-
+<Preloader loadertext='Bringing ideas to life, one pixel at a time.'/>
         <section className='cta-opening'>
           <Nav />
             <div className="hero">
