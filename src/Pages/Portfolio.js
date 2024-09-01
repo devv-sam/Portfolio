@@ -22,7 +22,9 @@ const Portfolio = () => {
         duration: 1,       
         delay: 3.3,
         ease: 'power2.out', 
-      })
+      });
+
+
     })
  
       
@@ -44,9 +46,9 @@ const Portfolio = () => {
     
       <div className="row">
         <Project prxname="Cirko" prxtype="Website Redesign" prxdate="2024"  coverImage="template.png" 
-  videoSrc="video.mp4" />
+  videoSrc="video.mp4"/>
         <Project prxname="Cirko" prxtype="Website Redesign" prxdate="2024"  coverImage="template.png" 
-  videoSrc="video.mp4" />
+  videoSrc="video.mp4"/>
 
       </div>
     </div>

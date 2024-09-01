@@ -727,6 +727,8 @@ figure.image {
   will-change: scale;
   clip-path: none;
   width: fit-content;
+  opacity: 0;
+  transform: translateY(-20px);
   grid-row: 3 / 6;
   grid-column: 5 / 9;
 }
@@ -760,7 +762,7 @@ figure.image {
   max-height: 500px;
 }
 .prx-thumb .portfolio-cover {
-  /* transition: scale 0.5s ease; */
+  transition: scale 0.5s ease;
   opacity: 1;
   object-fit: cover;
   width: 100%;
@@ -824,6 +826,7 @@ figure.image {
   display: flex;
   flex-direction: column;
 }
+
 .row {
   display: flex;
   gap: 1.5rem;
