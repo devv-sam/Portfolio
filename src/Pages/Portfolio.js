@@ -45,10 +45,8 @@ const Portfolio = () => {
       </div>
     
       <div className="row">
-        <Project prxname="Cirko" prxtype="Website Redesign" prxdate="2024"  coverImage="template.png" 
-  videoSrc="video.mp4"/>
-        <Project prxname="Cirko" prxtype="Website Redesign" prxdate="2024"  coverImage="template.png" 
-  videoSrc="video.mp4"/>
+        <Project id={1} />
+        <Project id={2}/>
 
       </div>
     </div>

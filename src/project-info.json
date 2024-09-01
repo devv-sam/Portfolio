@@ -1,0 +1,60 @@
+[
+  {
+    "id": 1,
+    "name": "Innovative Web Platform",
+    "coverImage": "./template.png",
+    "date": "Apr 2024",
+    "tags": ["Web Development", "UI/UX Design"],
+    "externalLink": "https://example.com/project1",
+    "videoShowcase": "./video.mp4",
+    "duration": {
+      "design": "2 weeks",
+      "development": "4 weeks"
+    },
+    "bannerImage": "./images/project1-banner.png",
+    "introduction": "This project began as a response to the need for a more user-friendly platform for managing complex tasks. I led the initiative from initial concept to final deployment, focusing on both user experience and performance.",
+    "role": "Lead Developer",
+    "client": "Bloomberg",
+    "tools": "Figma, React, Photoshop",
+    "showcaseOne": "./images/project1-showcase1.png",
+    "showcaseTwo": "./images/project1-showcase2.png",
+    "problem": "The existing platform was outdated and difficult to navigate, leading to user frustration and decreased productivity. The challenge was to design a more intuitive interface while maintaining the platform's robust functionality.",
+    "bannerShowcaseOne": "./images/project1-banner-showcase1.png",
+    "bannerShowcaseTwo": "./images/project1-banner-showcase2.png",
+    "bannerShowcaseThree": "./images/project1-banner-showcase3.png",
+    "solution": "I conducted user research to identify key pain points and collaborated with the design team to create a modern, responsive interface. The development phase involved integrating new features and optimizing the platform for faster load times.",
+    "showcaseThree": "./images/project1-showcase3.png",
+    "showcaseFour": "./images/project1-showcase4.png",
+    "showcaseFive": "./images/project1-showcase5.png",
+    "outcome": "The revamped platform received positive feedback from users, with a 30% increase in productivity reported within the first month of launch. The project also led to ongoing work with the client to further enhance the platform's capabilities."
+  },
+  {
+    "id": 2,
+    "name": "Mobile App Redesign",
+    "date": "Mar 2024",
+    "coverImage": "./template.png",
+    "tags": ["App Design", "User Experience"],
+    "externalLink": "https://example.com/project2",
+    "videoShowcase": "./video.mp4",
+    "duration": {
+      "design": "3 weeks",
+      "development": "5 weeks"
+    },
+    "bannerImage": "./images/project2-banner.png",
+    "introduction": "This project was focused on redesigning a mobile application to improve user engagement and streamline navigation. I was responsible for leading the design overhaul and coordinating with the development team to ensure a smooth transition.",
+    "role": "UX Designer",
+    "client": "Grubhub",
+    "tools": "Sketch, InVision, Adobe XD",
+    "showcaseOne": "./images/project2-showcase1.png",
+    "showcaseTwo": "./images/project2-showcase2.png",
+    "problem": "The original app design was cluttered and confusing, leading to a high drop-off rate among users. The goal was to simplify the interface and make key features more accessible.",
+    "bannerShowcaseOne": "./images/project2-banner-showcase1.png",
+    "bannerShowcaseTwo": "./images/project2-banner-showcase2.png",
+    "bannerShowcaseThree": "./images/project2-banner-showcase3.png",
+    "solution": "Through user testing and iterative design, I developed a cleaner, more intuitive layout that significantly reduced the number of steps required to complete key tasks. Collaboration with the development team ensured that the new design was implemented effectively.",
+    "showcaseThree": "./images/project2-showcase3.png",
+    "showcaseFour": "./images/project2-showcase4.png",
+    "showcaseFive": "./images/project2-showcase5.png",
+    "outcome": "The redesign led to a 40% increase in user retention and received praise from both users and stakeholders for its improved usability and aesthetic appeal."
+  }
+]

@@ -751,7 +751,7 @@ figure.image {
   display: flex;
   flex-direction: column;
   padding: 20px 8px;
-  gap: 6px;
+  gap: 1rem;
 }
 .prx-thumb {
   overflow: hidden;
