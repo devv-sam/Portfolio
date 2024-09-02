@@ -109,7 +109,7 @@ useEffect(() => {
         <section className='cta-opening'>
           <Nav />
             <div className="hero">
-              <img src="profile-icon.png" alt="Sam's profile"></img>
+              <img src="/assets/profile-icon.png" alt="Sam's profile"></img>
                <h3 className='reveal-landing'>I'm Sam — a user interface designer & developer from New York.</h3>
                <p className='reveal-landing' > 
                I bring ideas to life with precision and creativity, crafting exceptional projects that stand out.</p> 
@@ -138,7 +138,7 @@ useEffect(() => {
         <a href="/portfolio" className='btn'>Case Studies</a>
     </div>
 
-    <PortItem video='video.mp4' name='Project Name' tag='Finance' tag2="Web Design"/>
+    <PortItem video='/assets/video.mp4' name='Project Name' tag='Finance' tag2="Web Design"/>
 
 </section>
 

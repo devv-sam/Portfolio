@@ -31,7 +31,7 @@ const Video = () => {
       <div className='vid-box' ref={containerRef} style={{ height: '100vh', overflow: 'hidden'}}>
         <video  
           ref={videoRef} 
-          src="./video.mp4" 
+          src="/assets/video.mp4" 
           style={{ width: '100%', height: 'auto', transition: 'scale 0.5s ease' }} 
           muted 
           autoPlay 
