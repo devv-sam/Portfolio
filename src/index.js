@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import Portfolio from './Pages/Portfolio';
 import About from './Components/About';
 import 'lenis/dist/lenis.css'
+import ProjectPage from './Pages/ProjectPage'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,6 +18,7 @@ root.render(
       <Route path='/portfolio' element={<Portfolio />} />
       <Route path='/landing' element={<Landing />} />
       <Route path='/about' element={<About />} />
+      <Route path="/projects/:id" element={<ProjectPage />} />
 
 
     </Routes>

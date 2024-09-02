@@ -2,11 +2,13 @@
   {
     "id": 1,
     "name": "Innovative Web Platform",
+    "link": "innovative-web",
     "coverImage": "./template.png",
     "date": "Apr 2024",
     "tags": ["Web Development", "UI/UX Design"],
     "externalLink": "https://example.com/project1",
     "videoShowcase": "./video.mp4",
+    "description": "This project began as a response to the need for a more user-friendly platform for managing complex tasks. I led the initiative from initial concept to final deployment, focusing on both user experience and performance.",
     "duration": {
       "design": "2 weeks",
       "development": "4 weeks"
@@ -31,11 +33,13 @@
   {
     "id": 2,
     "name": "Mobile App Redesign",
+    "link": "mobile-app",
     "date": "Mar 2024",
     "coverImage": "./template.png",
     "tags": ["App Design", "User Experience"],
     "externalLink": "https://example.com/project2",
     "videoShowcase": "./video.mp4",
+    "description": "This project began as a response to the need for a more user-friendly platform for managing complex tasks. I led the initiative from initial concept to final deployment, focusing on both user experience and performance.",
     "duration": {
       "design": "3 weeks",
       "development": "5 weeks"

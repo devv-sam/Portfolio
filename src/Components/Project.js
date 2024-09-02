@@ -48,7 +48,7 @@ useEffect(() => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <a href="#">
+      <a href={`/projects/${id}`}>
         <div className="prx-thumb">
           {isHovered ? (
             <video 

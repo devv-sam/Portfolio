@@ -142,6 +142,7 @@ nav ul li a {
   text-decoration: none;
   position: relative;
   border-radius: 100px;
+  width: fit-content;
   overflow: hidden;
   vertical-align: middle;
   transition: color 0.3s ease;
@@ -440,7 +441,7 @@ ion-icon {
   font-size: 1rem;
   font-weight: 500;
   color: var(--white);
-  background: rgba(70, 67, 67, 0.25);
+  background: rgba(70, 67, 67, 0);
   width: fit-content;
   padding: 5px 15px;
   backdrop-filter: blur(4px);
@@ -833,3 +834,97 @@ figure.image {
 }
 
 /*-- Footer --*/
+
+/*-- Project Page --*/
+.project-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+.project-stats h2 {
+  font-family: "LT Remark", sans-serif;
+  font-size: 3rem;
+}
+.project-stats h4 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5em;
+}
+.project-info {
+  display: flex;
+  /* align-items: center; */
+  gap: 2rem;
+  border: 1px red solid;
+  width: fit-content;
+  flex-direction: column;
+}
+.project-duration {
+  display: flex;
+  /* border: 1px green solid; */
+  /* justify-content: space-between; */
+  width: fit-content;
+  gap: 2rem;
+}
+.duration-design,
+.duration-development {
+  display: flex;
+  flex-direction: column;
+  gap: rem;
+  /* border: 1px red solid; */
+}
+.duration-design h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+.duration-development h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+.duration-development p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+}
+.duration-design p {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+}
+.project-description {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 633px;
+  align-items: flex-end;
+  border: 1px red solid;
+  height: fit-content;
+  width: fit-content;
+}
+.project-description p {
+  line-height: 32px;
+}
+.tags {
+  display: flex;
+  gap: 1rem;
+}
+
+.tag-div {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--black);
+  background: rgba(232, 232, 232, 0.536);
+  width: fit-content;
+  padding: 5px 15px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 100px;
+  margin-right: 10px;
+  border: 2px solid #ffffff2e;
+}
+
+.gapped {
+  align-items: center;
+  justify-content: space-between;
+}
