@@ -98,34 +98,43 @@ const ProjectPage = () => {
             <img src={project.showcaseOne}></img>
             <img src={project.showcaseTwo}></img>
           </div>
-        <section className='problem-section content-wrap'>
+       <div className='main-wrap'>
+       <section className='problem-section content-wrap'>
         <div className='problem'>
             <h4 className='h4-lt'>THE PROBLEM</h4>
             <p classname="p-lt">{project.problem}</p>
           </div>
         </section>
+       </div>
     <div className="banners">
     <div className='banner-image'>
               <img src={project.bannerShowcaseOne} alt="Showcase Image" ></img>
              </div>
     </div>
+    <div className="main-wrap">
     <section className='solution-section content-wrap'>
         <div className='solution'>
             <h4 className='h4-lt'>THE SOLUTION</h4>
             <p classname="p-lt">{project.solution}</p>
           </div>
         </section>
+    </div>
+    
 
       <div className='duo-banner'>
                 <img src={project.showcaseThree}></img>
                 <img src={project.showcaseFour}></img>
               </div>
+              <div className='main-wrap'>
               <section className='outcome-section content-wrap'>
         <div className='outcome'>
             <h4 className='h4-lt'>THE OUTCOME</h4>
             <p classname="p-lt">{project.outcome}</p>
           </div>
         </section>
+    
+              </div>
+             
           </section>
       
 

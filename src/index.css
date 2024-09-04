@@ -1030,13 +1030,20 @@ figure.image {
   width: 100%;
 }
 
-.problem,
+.main-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+}
+
+/* .problem,
 .solution {
   display: flex;
   width: max-content;
   flex-direction: column;
   gap: 1rem;
-}
+} */
 
 .problem p {
   font-size: 16px;
