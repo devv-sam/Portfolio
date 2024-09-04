@@ -14,80 +14,47 @@ import Video from './Video';
 
 
 export const Landing = () => {
-
-
-// loads in landing text once and only unless reloaded
-useEffect(() => {
-  const revealTypeTwo = document.querySelectorAll('.reveal-landing')
-
-  revealTypeTwo.forEach((char,i) => {
-  
-    const letter = new SplitType(char, { types: 'words'})
-  
-  
-    gsap.from(letter.words, {
-      y: -20,            
-      opacity: 0,        
-      stagger: 0.1,     
-      duration: 1,       
-      delay: 3,
-      ease: 'power2.out', 
-      
-    });
-
-
-  gsap.registerPlugin(ScrollTrigger)
-
-  const splitTypes = document.querySelectorAll('.reveal-type')
-
-  splitTypes.forEach((char,i) => {
-
-      const text = new SplitType(char, { types: 'chars'})
-
-    gsap.from(text.chars, {
-      scrollTrigger:{ 
-        trigger: char,
-        start: 'top 80%',
-        end: 'top 20%',
-        scrub: true,
-        markers: false,
-      },
-      opacity: 0.2,
-      delay: 3,
-      stagger: 0.1,
-      
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const hdReveal = new SplitType(".rvl-hd", { types: 'words' })
+    const pgReveal = new SplitType(".rvl-pg",  { types: 'lines' })
+    // const ltReveal = new SplitType(".lt-rvl",  { types: 'lines' })
+    const scReveal = new SplitType(".sc-rvl", { types: 'words' })
+    gsap.to(hdReveal.words, {
+      y: 0,
+      stagger: 0.05,
+      delay: 3.9,
+      duration: .1
     })
-  })
+    gsap.from(pgReveal.lines, {
+      y: 110,
+      stagger: 0.05,
+      delay: 3.9,
+      duration: 1
+    } )
+    // gsap.from(ltReveal.words, {
+    //   y: 20,
+    //   stagger: 0.05,
+    //   delay: 0.2,
+    //   opacity: 0,
+    //   duration: 1
+    // } )
 
-  const revealTypeTwo = document.querySelectorAll('.reveal-type-two')
-
-  revealTypeTwo.forEach((char,i) => {
-  
-    const letter = new SplitType(char, { types: 'words'})
-  
-  
-    gsap.from(letter.words, {
-      scrollTrigger:{
-        trigger: char,
-        start: 'top 80%',
-        end: 'top 20%',
-        scrub: false,
-        markers: false,
-        toggleActions: 'play play reverse reverse'
-  
-      },
-      y:-20,
-      opacity: 0,
-      stagger: 0.1
+    gsap.from(scReveal, {
+      // scrollTrigger:{ 
+      //   trigger: scReveal,
+      //   start: 'top 80%',
+      //   end: 'top 20%',
+      //   scrub: false,
+      //   markers: true,
+      // },
+      y: 20,
+      stagger: 0.05,
+      delay: 3.9,
+      duration: .1
     })
-  })
+    }, []);
   
-
-    
-  }, []); 
-})
-
-
 
   const lenis = new Lenis()
 
@@ -110,9 +77,10 @@ useEffect(() => {
           <Nav />
             <div className="hero">
               <img src="/assets/profile-icon.png" alt="Sam's profile"></img>
-               <h3 className='reveal-landing'>I'm Sam — a user interface designer & developer from New York.</h3>
-               <p className='reveal-landing' > 
-               I bring ideas to life with precision and creativity, crafting exceptional projects that stand out.</p> 
+               <h3 className='rvl-hd'>I'm Sam — a user interface designer & developer from New York.</h3>
+               <p className='rvl-pg' > 
+               I bring ideas to life with precision and creativity, crafting exceptional projects that stand out.
+               </p> 
                 </div>
             <div className="base">
                <div className='avail '>
@@ -133,8 +101,8 @@ useEffect(() => {
         <Video />
 <section className='showcase-portfolio-intro'>
 <div className='support'>
-  <h3 className='reveal-type'>Featured Work</h3>
-        <p className='reveal-landing'>Dive into my showcase of innovative and meticulously crafted applications that solve real-world problems and push the boundaries of technology.</p>
+        <h3 className='sc-rvl'>Featured Work</h3>
+        <p className='lt-rvl'>Dive into my showcase of innovative and meticulously crafted applications that solve real-world problems and push the boundaries of technology.</p>
         <a href="/portfolio" className='btn'>Case Studies</a>
     </div>
 

@@ -38,9 +38,7 @@ useEffect(() => {
     clearTimeout(hoverTimeoutRef.current); 
     setIsHovered(false);
   };
-  if (!project) {
-    return <div>Project not found</div>;
-  }
+
   return (
     <>
     <div 

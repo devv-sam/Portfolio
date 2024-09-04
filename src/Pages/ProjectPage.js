@@ -63,10 +63,13 @@ const ProjectPage = () => {
              </div>
 
           <section className='project-introduction'>
-          <div className='introduction'>
+         <div className='content-wrap'>
+         <div className='center-intro'>
+              <div className='introduction'>
               <h4>INTRODUCTION</h4>
               <p>{project.introduction}</p>
              </div>
+              </div>
              <div className='row gap-jc'>
               <div className='role-tools'>
                 <div className='role'>
@@ -89,12 +92,13 @@ const ProjectPage = () => {
                 </div>
               </div>
              </div>
+         </div>
           </section>
           <div className='duo-banner'>
             <img src={project.showcaseOne}></img>
             <img src={project.showcaseTwo}></img>
           </div>
-        <section className='problem-section'>
+        <section className='problem-section content-wrap'>
         <div className='problem'>
             <h4 className='h4-lt'>THE PROBLEM</h4>
             <p classname="p-lt">{project.problem}</p>
@@ -105,7 +109,7 @@ const ProjectPage = () => {
               <img src={project.bannerShowcaseOne} alt="Showcase Image" ></img>
              </div>
     </div>
-    <section className='solution-section'>
+    <section className='solution-section content-wrap'>
         <div className='solution'>
             <h4 className='h4-lt'>THE SOLUTION</h4>
             <p classname="p-lt">{project.solution}</p>
@@ -116,7 +120,7 @@ const ProjectPage = () => {
                 <img src={project.showcaseThree}></img>
                 <img src={project.showcaseFour}></img>
               </div>
-              <section className='outcome-section'>
+              <section className='outcome-section content-wrap'>
         <div className='outcome'>
             <h4 className='h4-lt'>THE OUTCOME</h4>
             <p classname="p-lt">{project.outcome}</p>
