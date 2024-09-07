@@ -1,4 +1,4 @@
-import React, { useEffect  } from 'react';
+import React, { useEffect, useRef  } from 'react';
 import '../index.css';
 import Nav from './Nav';
 import PortItem from './PortItem';
@@ -8,18 +8,22 @@ import Lenis from 'lenis'
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SplitType from 'split-type'
-import Preloader from './Preloader';
 import Footer from './Footer';
-import Video from './Video';
+import Preloader from './Preloader';
 
 
-export const Landing = () => {
+export const Landing = ({loadertext}) => {
+        // video animation settings 
+        const videoRef = useRef(null);
+        const containerRef = useRef(null);
+
   useEffect(() => {
+
     gsap.registerPlugin(ScrollTrigger);
     const hdReveal = new SplitType(".rvl-hd", { types: 'words' })
     const pgReveal = new SplitType(".rvl-pg",  { types: 'lines' })
     // const ltReveal = new SplitType(".lt-rvl",  { types: 'lines' })
-    const scReveal = new SplitType(".sc-rvl", { types: 'words' })
+    // const scReveal = new SplitType(".sc-rvl", { types: 'words' })
     gsap.to(hdReveal.words, {
       y: 0,
       stagger: 0.05,
@@ -32,27 +36,22 @@ export const Landing = () => {
       delay: 3.9,
       duration: 1
     } )
-    // gsap.from(ltReveal.words, {
-    //   y: 20,
-    //   stagger: 0.05,
-    //   delay: 0.2,
-    //   opacity: 0,
-    //   duration: 1
-    // } )
-
-    gsap.from(scReveal, {
-      // scrollTrigger:{ 
-      //   trigger: scReveal,
-      //   start: 'top 80%',
-      //   end: 'top 20%',
-      //   scrub: false,
-      //   markers: true,
-      // },
-      y: 20,
-      stagger: 0.05,
-      delay: 3.9,
-      duration: .1
-    })
+    gsap.to(videoRef.current, {
+      scrollTrigger: {
+        trigger: videoRef.current,
+        start: 'top center',
+        end: '+=270',
+        scrub: true,
+        markers: false,
+        // toggleActions: 'play reverse play reverse',
+      },
+      // y: 470, 
+      scale: 1.2,
+    //  width: '100%', 
+      // transformOrigin: "bottom center",
+      borderRadius: '1.5rem',
+      ease: 'none',
+    });
     }, []);
   
 
@@ -72,7 +71,9 @@ export const Landing = () => {
   
   return (
 <>
-<Preloader loadertext='Bringing ideas to life, one pixel at a time.'/>
+<Preloader loadertext={loadertext} />
+<div className="hero-image-start"></div>
+      
         <section className='cta-opening'>
           <Nav />
             <div className="hero">
@@ -98,17 +99,22 @@ export const Landing = () => {
                </div>
                         
         </section>
-        <Video />
-<section className='showcase-portfolio-intro'>
-<div className='support'>
-        <h3 className='sc-rvl'>Featured Work</h3>
-        <p className='lt-rvl'>Dive into my showcase of innovative and meticulously crafted applications that solve real-world problems and push the boundaries of technology.</p>
-        <a href="/portfolio" className='btn'>Case Studies</a>
-    </div>
+      
+          <div className='vid-box' ref={containerRef}>
+                  <video   ref={videoRef}  src="/assets/video.mp4"  muted  autoPlay  playsInline loop  />
+          </div>
+   
 
-    <PortItem video='/assets/video.mp4' name='Project Name' tag='Finance' tag2="Web Design"/>
+          <section className='showcase-portfolio-intro'>
+          <div className='support'>
+                  <h3 className='sc-rvl'>Featured Work</h3>
+                  <p className='lt-rvl'>Dive into my showcase of innovative and meticulously crafted applications that solve real-world problems and push the boundaries of technology.</p>
+                  <a href="/portfolio" className='btn'>Case Studies</a>
+              </div>
 
-</section>
+              <PortItem video='/assets/video.mp4' name='Project Name' tag='Finance' tag2="Web Design"/>
+
+          </section>
 
 <Bento />
 <Footer />

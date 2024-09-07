@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../index.css';
 
 const PortItem = ({name, tag, tag2, video, link}) => {

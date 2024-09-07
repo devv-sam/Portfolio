@@ -320,10 +320,30 @@ ion-icon {
   transition: transform 0.5s;
 }
 
-.showcase {
+/* .showcase {
   align-items: center;
+  display: flex;
   margin: 8rem 0 8rem 0;
   flex-direction: column;
+} */
+.vid-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px red solid;
+  width: 100%;
+  margin: 8rem 0 8rem 0;
+  /* margin: auto; */
+}
+
+.vid-box video {
+  width: 100%;
+  translate: none;
+  rotate: none;
+  scale: none;
+  transform: translate(0px, -470px) scale(0.14, 0.14);
+  border-radius: 100rem;
+  height: 100%;
 }
 
 .showcase-portfolio-intro {
@@ -434,7 +454,7 @@ ion-icon {
   -webkit-box-pack: justify;
   justify-content: space-between;
   gap: 10px;
-  z-index: 2;
+  z-index: 1;
 }
 
 .floating-tags {
