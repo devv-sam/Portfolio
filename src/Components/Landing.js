@@ -36,21 +36,18 @@ export const Landing = ({loadertext}) => {
       delay: 3.9,
       duration: 1
     } )
-    gsap.to(videoRef.current, {
+    gsap.from(videoRef.current, {
       scrollTrigger: {
-        trigger: videoRef.current,
-        start: 'top center',
-        end: '+=270',
+        trigger: containerRef.current,
+        start: '+=-400 center',
+        end: '+=300',
         scrub: true,
         markers: false,
-        // toggleActions: 'play reverse play reverse',
+        toggleActions: 'play reverse play reverse',
       },
-      // y: 470, 
-      scale: 1.2,
-    //  width: '100%', 
-      // transformOrigin: "bottom center",
-      borderRadius: '1.5rem',
-      ease: 'none',
+      duration: 2.3,
+      transform: "translate(0px, -220px) scale(0.14, 0.14)",
+      borderRadius: "100rem",
     });
     }, []);
   
@@ -100,9 +97,20 @@ export const Landing = ({loadertext}) => {
                         
         </section>
       
+          <section className='video-section'>
           <div className='vid-box' ref={containerRef}>
-                  <video   ref={videoRef}  src="/assets/video.mp4"  muted  autoPlay  playsInline loop  />
+                  <video
+                    ref={videoRef}
+                    src="/assets/video.mp4"
+                    width="100%"
+                    height="100%"
+                    loop
+                    playsInline
+                    autoPlay
+                    muted
+                  />
           </div>
+          </section>
    
 
           <section className='showcase-portfolio-intro'>

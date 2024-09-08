@@ -87,14 +87,17 @@
 
 body {
   font-family: "Poppins", sans-serif;
-  background-image: url("satin.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-color: var(--white);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
 body section {
   padding: 2rem 4rem;
 }
@@ -326,26 +329,23 @@ ion-icon {
   margin: 8rem 0 8rem 0;
   flex-direction: column;
 } */
+.video-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .vid-box {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px red solid;
+  padding: 4rem 6rem 4rem 6rem;
   width: 100%;
-  margin: 8rem 0 8rem 0;
-  /* margin: auto; */
 }
-
 .vid-box video {
-  width: 100%;
-  translate: none;
-  rotate: none;
-  scale: none;
-  transform: translate(0px, -470px) scale(0.14, 0.14);
-  border-radius: 100rem;
-  height: 100%;
+  border-radius: 1.5rem;
+  transform-origin: top;
 }
-
 .showcase-portfolio-intro {
   display: flex;
   margin: 8rem 0 8rem 0;
@@ -353,13 +353,15 @@ ion-icon {
 }
 .support {
   /* border: 1px green solid; */
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
   margin-right: 50px;
 }
 .support h3 {
   font-family: "LT Remark", sans-serif;
   font-size: 4vw;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  margin-bottom: 10px;
   color: #000;
 }
 .sc-rvl {
@@ -368,9 +370,6 @@ ion-icon {
 }
 .support p {
   line-height: 26px;
-}
-.support .btn {
-  margin-top: 20px;
 }
 
 /*-- Link Hover Animations --*/
