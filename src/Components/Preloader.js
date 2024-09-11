@@ -53,7 +53,7 @@ const Preloader = ({loadertext}) => {
               gsap.set(body, {
                 overflow: '',
                 position: '',
-                delay: 3.9
+                delay: 3.5
             })
             }
             

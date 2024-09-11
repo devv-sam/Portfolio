@@ -18,8 +18,30 @@ const ProjectPage = () => {
      };
   })
 
-  
+  useEffect(() => {
+    const hdReveal = new SplitType(".rvl-hd", { types: 'words' })
+    const pgReveal = new SplitType(".rvl-pg",  { types: 'lines' })
+    const objReveal = document.querySelectorAll('.obj-rvl');
+    gsap.to(hdReveal.words, {
+      y: 0,
+      stagger: 0.05,
+      delay: 3.9,
+      duration: .1
+    })
+    gsap.from(pgReveal.lines, {
+      y: 110,
+      stagger: 0.05,
+      delay: 3.9,
+      duration: 1
+    } )
+    gsap.from(objReveal, {
+      y: 50,
+      delay: 3.9,
+      duration: 1,
+      opacity: 0
+    })
 
+  }, []);
   return (
     <>
     <Preloader loadertext={project.name}/>
@@ -29,36 +51,36 @@ const ProjectPage = () => {
              <div className='row gapped'>
              <div className='project-info'>
                 <div className='project-stats'>
-                    <h2>{project.name}</h2>
-                    <h4>Project Summary</h4>
+                    <h2 className='rvl-hd'>{project.name}</h2>
+                    <h4 className='rvl-pg'>Project Summary</h4>
                  
                 </div>
                 <div className='project-duration'>
                    <div className="duration-design">
-                      <h3>{project.duration.design}</h3>
-                      <p>Design</p>
+                      <h3 className='rvl-hd'>{project.duration.design}</h3>
+                      <p className='rvl-pg'>Design</p>
                     </div>
                     <div className="duration-development">
-                      <h3>{project.duration.development}</h3>
-                      <p>Development</p>
+                      <h3 className='rvl-hd'>{project.duration.development}</h3>
+                      <p className='rvl-pg'>Development</p>
                     </div>
                    </div>
-                   <a href={project.externalLink} className='btn'>Visit Site <ion-icon name="open-outline" className="icon-ex"></ion-icon></a>
+                   <a href={project.externalLink} className='btn obj-rvl'>Visit Site <ion-icon name="open-outline" className="icon-ex"></ion-icon></a>
               </div>
               <div className='project-description'>
-                  <p>{project.description}</p>
+                  <p className='rvl-pg'>{project.description}</p>
                   <div className='tags'>
-                    <div className='tag-div'>
+                    <div className='tag-div obj-rvl'>
                       {project.tags[0]}
                       </div>
-                      <div className='tag-div'>
+                      <div className='tag-div obj-rvl'>
                       {project.tags[1]}
                       </div>
                   </div>
 
               </div>
              </div>
-             <div className='banner-image'>
+             <div className='banner-image obj-rvl'>
               <img src={project.bannerImage} alt="Banner Image" ></img>
              </div>
 

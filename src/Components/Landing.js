@@ -22,8 +22,6 @@ export const Landing = ({loadertext}) => {
     gsap.registerPlugin(ScrollTrigger);
     const hdReveal = new SplitType(".rvl-hd", { types: 'words' })
     const pgReveal = new SplitType(".rvl-pg",  { types: 'lines' })
-    // const ltReveal = new SplitType(".lt-rvl",  { types: 'lines' })
-    // const scReveal = new SplitType(".sc-rvl", { types: 'words' })
     gsap.to(hdReveal.words, {
       y: 0,
       stagger: 0.05,

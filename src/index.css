@@ -873,6 +873,7 @@ figure.image {
   flex-direction: column;
   gap: 10rem;
 }
+
 .project-stats {
   display: flex;
   flex-direction: column;
@@ -880,10 +881,12 @@ figure.image {
 }
 .project-stats h2 {
   font-family: "LT Remark", sans-serif;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   font-size: 3rem;
 }
 .project-stats h4 {
   font-family: "Poppins", sans-serif;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   font-size: 1.5em;
 }
 .project-info {
@@ -907,14 +910,17 @@ figure.image {
 .duration-design h3 {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   font-size: 1.5rem;
 }
 .duration-development h3 {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-size: 1.5rem;
 }
 .duration-development p {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 18px;
@@ -922,6 +928,7 @@ figure.image {
 .duration-design p {
   font-family: "Poppins", sans-serif;
   font-weight: 500;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   font-size: 18px;
 }
 .project-description {
@@ -936,6 +943,7 @@ figure.image {
 }
 .project-description p {
   line-height: 32px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
 .tags {
   display: flex;

@@ -10,11 +10,8 @@ import gsap from 'gsap';
 const Portfolio = () => {
   useEffect(() => {
     const headerReveal = document.querySelectorAll('.header-reveal')
-
     headerReveal.forEach((char,i) => {
-
       const word = new SplitType(char, {types: 'words'})
-
       gsap.from(word.words, {
         y: -20,            
         opacity: 0,        
