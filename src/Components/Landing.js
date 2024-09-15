@@ -113,7 +113,7 @@ export const Landing = ({loadertext}) => {
 
           <section className='showcase-portfolio-intro'>
           <div className='support'>
-                  <h3 className='sc-rvl'>Featured Work</h3>
+                  <h3>Featured Work</h3>
                   <p className='lt-rvl'>Dive into my showcase of innovative and meticulously crafted applications that solve real-world problems and push the boundaries of technology.</p>
                   <a href="/portfolio" className='btn'>Case Studies</a>
               </div>

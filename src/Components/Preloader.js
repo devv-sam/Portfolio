@@ -54,7 +54,7 @@ const Preloader = ({loadertext}) => {
                 overflow: '',
                 position: '',
                 delay: 3.5
-            })
+             })
             }
             
         

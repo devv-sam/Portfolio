@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 import projects from '../project-info.json'
 import '../index.css'
 import Nav from '../Components/Nav';
 import Preloader from '../Components/Preloader';
 import SplitType from 'split-type'
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
+import Lenis from 'lenis'
+
 
 const ProjectPage = () => {
   const { id } = useParams();
@@ -19,9 +22,23 @@ const ProjectPage = () => {
   })
 
   useEffect(() => {
+    
+    gsap.registerPlugin(ScrollTrigger);
+
     const hdReveal = new SplitType(".rvl-hd", { types: 'words' })
     const pgReveal = new SplitType(".rvl-pg",  { types: 'lines' })
     const objReveal = document.querySelectorAll('.obj-rvl');
+    const scrReveal = new SplitType(".scr-rvl",  { types: 'lines' })
+    const scrTrigger = document.querySelectorAll('.project-introduction');
+    const problemReveal = new SplitType(".prb-rvl",  { types: 'lines' })
+    const outcomeReveal = new SplitType(".out-rvl",  { types: 'lines' })
+    const solutionReveal = new SplitType(".sol-rvl",  { types: 'lines' })
+    const scrBannerReveal = document.querySelectorAll('.scr-rvl-banner');
+    const scrBannerTrigger = document.querySelectorAll('.duo-banner');
+    const problemTrigger = document.querySelector('.problem-section');
+    const solutionTrigger = document.querySelector('.solution-section');
+    const outcomeTrigger = document.querySelector('.outcome-section');
+
     gsap.to(hdReveal.words, {
       y: 0,
       stagger: 0.05,
@@ -40,8 +57,85 @@ const ProjectPage = () => {
       duration: 1,
       opacity: 0
     })
+    gsap.from(scrReveal.lines, {
+      scrollTrigger: {
+        trigger: scrTrigger,
+        start: 'top +=500',
+        end: 'bottom +=50',
+        scrub: false,
+        markers: false,
+      },
+      y: 110,
+      stagger: 0.05,
+      duration: 1
+    })
+    gsap.from(scrBannerReveal, {
+      scrollTrigger: {
+        trigger: scrBannerTrigger,
+        start: 'top +=700',
+        end: ' +=550',
+        scrub: false,
+        markers: false,
+      },
+      y: 100,
+      stagger: 1,
+      duration: 1,
+      opacity: 0
+    })
+
+    gsap.from(problemReveal.lines, {
+      scrollTrigger: {
+        trigger: problemTrigger,
+        start: 'top +=600',
+        end: 'bottom center',
+        scrub: false,
+        markers: false,
+      },
+      y: 110,
+      stagger: 0.05,
+      duration: 1
+    })
+
+    gsap.from(solutionReveal.lines, {
+      scrollTrigger: {
+        trigger: solutionTrigger,
+        start: 'top +=600',
+        end: 'bottom center',
+        scrub: false,
+        markers: false,
+      },
+      y: 110,
+      stagger: 0.05,
+      duration: 1
+    })
+
+    gsap.from(outcomeReveal.lines, {
+      scrollTrigger: {
+        trigger: outcomeTrigger,
+        start: 'top +=600',
+        end: 'bottom center',
+        scrub: false,
+        markers: false,
+      },
+      y: 110,
+      stagger: 0.05,
+      duration: 1
+    })
+  
 
   }, []);
+  const lenis = new Lenis()
+
+  lenis.on('scroll', (e) => {
+    console.log(e)
+  })
+  
+  function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+  }
+  
+  requestAnimationFrame(raf)
   return (
     <>
     <Preloader loadertext={project.name}/>
@@ -81,77 +175,77 @@ const ProjectPage = () => {
               </div>
              </div>
              <div className='banner-image obj-rvl'>
-              <img src={project.bannerImage} alt="Banner Image" ></img>
+              <img src={project.bannerImage} alt="Banner" ></img>
              </div>
 
           <section className='project-introduction'>
          <div className='content-wrap'>
          <div className='center-intro'>
               <div className='introduction'>
-              <h4>INTRODUCTION</h4>
-              <p>{project.introduction}</p>
+              <h4 className='h4-lt scr-rvl'>INTRODUCTION</h4>
+              <p className='p-lt scr-rvl'>{project.introduction}</p>
              </div>
               </div>
              <div className='row gap-jc'>
               <div className='role-tools'>
                 <div className='role'>
-                  <h4 className='h4-lt'>MY ROLE</h4>
-                  <p className='p-lt'>{project.role}</p>
+                  <h4 className='h4-lt scr-rvl'>MY ROLE</h4>
+                  <p className='p-lt scr-rvl'>{project.role}</p>
                 </div>
                 <div className="tools">
-                  <h4 className='h4-lt'>TOOLS</h4>
-                  <p className='p-lt'>{project.tools}</p>
+                  <h4 className='h4-lt scr-rvl'>TOOLS</h4>
+                  <p className='p-lt scr-rvl'>{project.tools}</p>
                 </div>
               </div>
               <div className="client-duration">
                 <div className='client'>
-                  <h4 className='h4-lt'>CLIENT</h4>
-                  <p className='p-lt'>{project.client}</p>
+                  <h4 className='h4-lt scr-rvl'>CLIENT</h4>
+                  <p className='p-lt scr-rvl'>{project.client}</p>
                 </div>
                 <div className="duration">
-                  <h4 className='h4-lt'>DURATION</h4>
-                  <p className='p-lt'>{project.totalDuration}</p>
+                  <h4 className='h4-lt scr-rvl'>DURATION</h4>
+                  <p className='p-lt scr-rvl'>{project.totalDuration}</p>
                 </div>
               </div>
              </div>
          </div>
           </section>
-          <div className='duo-banner'>
-            <img src={project.showcaseOne}></img>
-            <img src={project.showcaseTwo}></img>
+          <div className='duo-banner scr-rvl-banner'>
+            <img src={project.showcaseOne} alt='Showcase Banner'></img>
+            <img src={project.showcaseTwo} alt='Showcase Banner'></img>
           </div>
        <div className='main-wrap'>
        <section className='problem-section content-wrap'>
         <div className='problem'>
-            <h4 className='h4-lt'>THE PROBLEM</h4>
-            <p classname="p-lt">{project.problem}</p>
+            <h4 className='h4-lt prb-rvl'>THE PROBLEM</h4>
+            <p className="p-lt prb-rvl">{project.problem}</p>
           </div>
         </section>
        </div>
     <div className="banners">
-    <div className='banner-image'>
-              <img src={project.bannerShowcaseOne} alt="Showcase Image" ></img>
+    <div className='banner-image scr-rvl-banner'>
+              <img src={project.bannerShowcaseOne} alt='Showcase Banner'></img>
              </div>
     </div>
     <div className="main-wrap">
     <section className='solution-section content-wrap'>
         <div className='solution'>
-            <h4 className='h4-lt'>THE SOLUTION</h4>
-            <p classname="p-lt">{project.solution}</p>
+            <h4 className='h4-lt sol-rvl'>THE SOLUTION</h4>
+            <p className="p-lt sol-rvl">{project.solution}</p>
           </div>
         </section>
     </div>
     
 
-      <div className='duo-banner'>
-                <img src={project.showcaseThree}></img>
-                <img src={project.showcaseFour}></img>
+      <div className='duo-banner scr-rvl-banner'>
+                <img src={project.showcaseThree} alt='Showcase Banner'></img>
+                <img src={project.showcaseFour} alt='Showcase Banner'></img>
               </div>
               <div className='main-wrap'>
               <section className='outcome-section content-wrap'>
         <div className='outcome'>
-            <h4 className='h4-lt'>THE OUTCOME</h4>
-            <p classname="p-lt">{project.outcome}</p>
+            <h4 className='h4-lt out-rvl'>THE OUTCOME</h4>
+            <p className="p-lt out-rvl">{project.outcome}</p>
           </div>
         </section>
     
