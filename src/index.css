@@ -29,6 +29,7 @@
 .shrink-0 {
   flex-shrink: 0;
 }
+
 @keyframes marquee-left {
   from {
     transform: translateX(0);
@@ -68,7 +69,23 @@
   animation-play-state: paused;
 }
 /* Animations */
-
+@keyframes spotifyAnim {
+  10% {
+    transform: scaleY(0.3);
+  }
+  30% {
+    transform: scaleY(1);
+  }
+  60% {
+    transform: scaleY(0.5);
+  }
+  80% {
+    transform: scaleY(0.75);
+  }
+  100% {
+    transform: scaleY(0.5);
+  }
+}
 @keyframes pulseRing {
   0% {
     transform: scale(0.5);
@@ -1169,4 +1186,40 @@ figure.image {
   max-width: 983px;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   font-family: "Poppins", sans-serif;
+}
+
+/*-- Spotify API --*/
+.playing-animation {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 13px;
+  height: 13px;
+}
+
+.playing-animation span {
+  width: 3px;
+  height: 100%;
+  background-color: #1ed760;
+  border-radius: 3px;
+  animation: spotifyAnim 2.2s ease infinite alternate;
+  content: "";
+  transform-origin: bottom;
+}
+
+.playing-animation span:nth-of-type(2) {
+  animation-delay: -2.2s;
+}
+
+.playing-animation span:nth-of-type(3) {
+  animation-delay: -3.7s;
+}
+
+/*-- SpotifyNowPlaying --*/
+.box {
+  width: fit-content;
+}
+.flex-gap-10 {
+  display: flex;
+  gap: 10px;
 }
