@@ -1,40 +1,45 @@
 import React from "react";
+import { useRef, useEffect } from "react";
+import { useState } from "react";
 import "../index.css";
-
 import { Marquee } from "@devnomic/marquee";
-// import "@devnomic/marquee/dist/index.css";
 import SpotifyNowPlaying from "./spotify/SpotifyNowPlaying.js";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Bento = () => {
-  // useEffect(() => {
+  useEffect(() => {
+    const animatedElements = document.querySelectorAll(".gsap-animate");
 
-  //   gsap.registerPlugin(ScrollTrigger)
+    gsap.set(animatedElements, { y: 50, opacity: 0 });
 
-  //   const lift = document.querySelectorAll('.lift')
+    animatedElements.forEach((element, index) => {
+      gsap.to(element, {
+        y: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: element,
+          start: "top bottom-=100",
+          toggleActions: "play none none reverse",
+        },
+        delay: index * 0.1, // This creates the stagger effect
+      });
+    });
 
-  //   gsap.from(lift, {
-  //     scrollTrigger:{
-  //       trigger: lift,
-  //       start: 'top 80%',
-  //       end: 'top 20%',
-  //       scrub: false,
-  //       markers: false,
-  //     },
-  //     y: 20,
-  //     opacity: 0,
-  //     stagger: 0.1,
-  //     duration: 1.8,
-  //     ease: 'power2.out',
-
-  //   });
-  // })
-
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
   return (
     <>
       <div className="bx">
         <section className="bento-grid">
           <div className="title-txt-stack">
-            <div className="title-bx lift">
+            <div className="title-bx gsap-animate">
               <div className="title-stack">
                 <h3>About Me</h3>
                 <p>
@@ -45,7 +50,7 @@ const Bento = () => {
                 </p>
               </div>
             </div>
-            <div className="skillset-bx lift">
+            <div className="skillset-bx gsap-animate">
               <div className="skillset-stack">
                 <h3>Stack</h3>
                 <Marquee fade={true} pauseOnHover={true}>
@@ -72,7 +77,7 @@ const Bento = () => {
             </div>
           </div>
 
-          <div className="experience-bx lift">
+          <div className="experience-bx gsap-animate">
             <div className="experience-top">
               <h3>Experience</h3>
               <a href="#">
@@ -123,10 +128,10 @@ const Bento = () => {
           </div>
 
           <div className="image-extra-stack">
-            <div className="image-bx lift">
+            <div className="image-bx ">
               <img src="./assets/profile-image.png" alt="Sam's Profile" />
             </div>
-            <div className="external-bx lift">
+            <div className="external-bx gsap-animate">
               <SpotifyNowPlaying />
             </div>
           </div>

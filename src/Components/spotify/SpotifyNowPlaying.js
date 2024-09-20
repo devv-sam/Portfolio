@@ -1,50 +1,85 @@
 import React, { useEffect, useState } from "react";
-import getNowPlayingItem from "./SpotifyAPI";
+import getLastPlayedItem from "./SpotifyAPI";
 import SpotifyLogo from "./SpotifyLogo";
-import PlayingAnimation from "./SpotifyPlayingAnimation";
 
-const SpotifyNowPlaying = (props) => {
+const truncateString = (str, num) => {
+  if (str.length <= num) {
+    return str;
+  }
+  return str.slice(0, num) + "...";
+};
+
+const SpotifyLastPlayed = ({
+  client_id,
+  client_secret,
+  refresh_token,
+  updateInterval = 60000,
+}) => {
   const [loading, setLoading] = useState(true);
   const [result, setResult] = useState({});
 
   useEffect(() => {
-    Promise.all([
-      getNowPlayingItem(
-        props.client_id,
-        props.client_secret,
-        props.refresh_token
-      ),
-    ]).then((results) => {
-      setResult(results[0]);
-      setLoading(false);
-    });
-  });
+    const fetchData = async () => {
+      try {
+        const data = await getLastPlayedItem(
+          client_id,
+          client_secret,
+          refresh_token
+        );
+        if (data && data.title !== result.title) {
+          setResult(data);
+        }
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching last played song:", error);
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+    const intervalId = setInterval(fetchData, updateInterval);
+    return () => clearInterval(intervalId);
+  }, [client_id, client_secret, refresh_token, updateInterval, result.title]);
 
   return (
     <div className="box">
       {loading ? (
         <div>
-          <div></div>
+          <div>Loading...</div>
         </div>
       ) : (
-        <div>
-          <div className="flex-gap-10">
+        <div className="result-box">
+          <div className="head-gap">
             <SpotifyLogo />
-            <p>{result.isPlaying ? "Now playing" : "Currently offline"}</p>
-            {result.isPlaying && <PlayingAnimation />}
+            <p className="song-title">Last Played</p>
           </div>
-          {result.isPlaying && (
+          {result && (
             <div>
-              <div>
-                <img
-                  alt={`${result.title} album art`}
-                  src={result.albumImageUrl}
-                />
+              <div className="head-gap">
+                <a
+                  href={result.songUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img
+                    alt={`${result.title} album art`}
+                    src={result.albumImageUrl}
+                    className="album-art"
+                  />
+                </a>
                 <div>
-                  <a href={result.songUrl} target="_blank">
-                    <p>{result.title}</p>
-                  </a>
-                  <p>{result.artist}</p>
+                  <div className="flex flex-col">
+                    <a
+                      href={result.songUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <p className="song-title">
+                        {truncateString(result.title, 20)}
+                      </p>
+                    </a>
+                    <p>{truncateString(result.artist, 30)}</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -55,11 +90,4 @@ const SpotifyNowPlaying = (props) => {
   );
 };
 
-export default SpotifyNowPlaying;
-
-// const Center = styled.div`
-//   position: fixed;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%);
-// `;
+export default SpotifyLastPlayed;
