@@ -1,15 +1,18 @@
-import React from 'react'
-import '../index.css';
-import Nav from './Nav';
-
-const About = () => {
+import React from "react";
+import "../index.css";
+import Nav from "./Nav";
+import Preloader from "./Preloader";
+import AbBento from "./AboutBento";
+const About = ({ loadertext }) => {
   return (
-   <>
-   <Nav />
-   
-   
-   </>
-  )
-}
+    <>
+      <Preloader loadertext={loadertext} />
+      <section className="about-section">
+        <Nav />
+        <AbBento />
+      </section>
+    </>
+  );
+};
 
-export default About
+export default About;

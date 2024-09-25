@@ -29,7 +29,12 @@ root.render(
             <Landing loadertext="Bringing ideas to life, one pixel at a time." />
           }
         />
-        <Route path="/about" element={<About />} />
+        <Route
+          path="/about"
+          element={
+            <About loadertext="Discover the story that drives my craft." />
+          }
+        />
         <Route path="/projects/:id" element={<ProjectPage />} />
       </Routes>
     </BrowserRouter>

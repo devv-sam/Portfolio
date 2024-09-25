@@ -3,6 +3,11 @@ import getLastPlayedItem from "./SpotifyAPI";
 import SpotifyLogo from "./SpotifyLogo";
 
 const truncateString = (str, num) => {
+  // Check if str is undefined or not a string
+  if (typeof str !== "string") {
+    return "";
+  }
+
   if (str.length <= num) {
     return str;
   }

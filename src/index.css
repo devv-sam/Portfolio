@@ -410,21 +410,21 @@ ion-icon {
 }
 .showcase-portfolio-intro {
   display: flex;
-  gap: 5rem;
+  gap: 1rem;
+  justify-content: space-between;
   align-items: center;
 }
 .support {
-  /* border: 1px green solid; */
   gap: 1rem;
   display: flex;
   flex-direction: column;
-  margin-right: 50px;
 }
 .support h3 {
   font-family: "LT Remark", sans-serif;
   font-size: 4vw;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   color: #000;
+  line-height: 40px;
 }
 
 .support p {
@@ -843,15 +843,21 @@ figure.image {
   gap: 8rem;
 }
 
+.cl-wrap {
+  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
 .project {
   position: relative;
   overflow: visible;
   height: auto;
   will-change: scale;
-  clip-path: none;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  transform: translateY(40px);
   width: fit-content;
   opacity: 0;
-  transform: translateY(-20px);
 }
 .project::after {
   opacity: 0;
@@ -879,7 +885,7 @@ figure.image {
   will-change: scale;
   display: flex;
   height: 100%;
-  /* border-radius: 3rem; */
+  border-radius: 1.5rem;
   max-height: 500px;
 }
 .prx-thumb .portfolio-cover {
@@ -905,10 +911,28 @@ figure.image {
 .header h3 {
   font-family: "LT Remark", sans-serif;
   font-size: 3em;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+.project-grid-header {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+}
+.project-grid-header h3 {
+  font-family: "LT Remark", sans-serif;
+  font-size: 3em;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+.project-grid-header span {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .header p {
   font-family: "Poppins", sans-serif;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   font-size: 20px;
   font-weight: 500;
   color: #0a0808c1;

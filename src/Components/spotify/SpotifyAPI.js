@@ -55,6 +55,7 @@ export default async function getLastPlayedItem() {
 
     const albumImageUrl = lastPlayedTrack.album.images[0].url;
     const artist = lastPlayedTrack.artists
+      // try .reduce()
       .map((artist) => artist.name)
       .join(", ");
     const songUrl = lastPlayedTrack.external_urls.spotify;
