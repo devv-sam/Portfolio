@@ -43,10 +43,12 @@ const Bento = () => {
               <div className="title-stack">
                 <h3>About Me</h3>
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat.
+                  Frontend developer with <strong>2+ years</strong> of
+                  experience in <strong>HTML</strong>, <strong>CSS</strong>,{" "}
+                  <strong>JavaScript</strong>, <strong>React</strong>, and{" "}
+                  <strong>GSAP</strong>. I also design intuitive interfaces with
+                  <strong> Figma</strong>. Outside of coding, I enjoy soccer and
+                  classical music.
                 </p>
               </div>
             </div>

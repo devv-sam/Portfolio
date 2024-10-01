@@ -5,7 +5,7 @@
 :root {
   /* Colors */
   --glass: #f5f4fc;
-  --ash: #959cad;
+  --ash: #808080;
   --white: #fff;
   --charcoal: #111111;
   --black: #000;
@@ -161,7 +161,7 @@ video {
   height: auto;
 }
 body section {
-  padding: 2rem 4rem;
+  padding: 2rem 8rem;
 }
 
 a {
@@ -272,7 +272,10 @@ nav ul li a {
   width: 10px;
   margin-right: 10px;
 }
-
+.round {
+  border-radius: 100%;
+  padding: 10px;
+}
 .dot:before {
   animation: pulseRing 1.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
   background-color: var(--pulsating-dot, #10dc60);
@@ -295,6 +298,7 @@ nav ul li a {
   border-radius: 50%;
   width: 30%;
 }
+
 ion-icon {
   padding: 0;
 }
@@ -384,13 +388,6 @@ ion-icon {
   transform: translateY(0);
   transition: transform 0.5s;
 }
-
-/* .showcase {
-  align-items: center;
-  display: flex;
-  margin: 8rem 0 8rem 0;
-  flex-direction: column;
-} */
 .video-section {
   display: flex;
   flex-direction: column;
@@ -687,7 +684,6 @@ figure.image {
 .title-bx {
   word-wrap: break-word;
   padding: 25px;
-  background: #dddcdc05;
   height: 300px;
   display: flex;
   border-radius: 1.5rem;
@@ -1263,3 +1259,63 @@ figure.image {
   font-weight: 500;
   font-family: "Poppins", sans-serif;
 }
+
+/*-- About Page --*/
+.about-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.about-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  gap: 10rem;
+}
+.about-image {
+  width: 100%;
+  text-align: center;
+}
+.about-image img {
+  border-radius: 50%;
+  width: 360px;
+}
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+.about-content h3 {
+  font-family: "LT Remark", sans-serif;
+  font-size: 3rem;
+}
+.about-content h4 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.about-content p {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: var(--ash);
+}
+
+/*-- Bio --*/
+.bio-section {
+  border-radius: 1.5rem;
+  background-color: var(--glass);
+  padding: 6rem 5rem;
+}
+
+.bio-section h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  line-height: 1.2em;
+  font-weight: 500;
+}
+/*-- Experience --*/
