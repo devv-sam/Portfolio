@@ -1,8 +1,54 @@
 import React from "react";
+import { useRef, useEffect } from "react";
 import "../index.css";
 import Nav from "./Nav";
 import Preloader from "./Preloader";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 const About = ({ loadertext }) => {
+  gsap.registerPlugin(ScrollTrigger);
+  const containerRef = useRef(null);
+  const titleRef = useRef(null);
+  const cardsRef = useRef([]);
+
+  useEffect(() => {
+    const container = containerRef.current;
+    const title = titleRef.current;
+    const cards = cardsRef.current;
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: container,
+        start: "top 80%",
+        end: "bottom 20%",
+        toggleActions: "play none none none",
+        once: true,
+      },
+    });
+
+    tl.from(title, {
+      y: 30,
+      duration: 0.6,
+      opacity: 0,
+      ease: "power2.out",
+    }).from(cards, {
+      y: 50,
+      scale: 0.9,
+      duration: 0.9,
+      opacity: 0,
+      ease: "power2.out",
+      stagger: 0.2,
+    });
+
+    // Cleanup function
+    return () => {
+      if (tl.scrollTrigger) {
+        tl.scrollTrigger.kill();
+      }
+      tl.kill();
+    };
+  }, []);
   return (
     <>
       <Preloader loadertext={loadertext} />
@@ -53,6 +99,75 @@ const About = ({ loadertext }) => {
           </h3>
         </section>
         <section className="stats-section"></section>
+        <section className="experience-section">
+          <div className="experience-wrapper">
+            <div className="title-cv">
+              <div className="title-container">
+                <h3>Experience</h3>
+                <p>
+                  I have broad experience across various projects and
+                  industries, offering adaptability and a strong skill set to
+                  tackle any challenge
+                </p>
+              </div>
+              <div className="cv-btn">
+                <a href="#" className="btn">
+                  <ion-icon name="download-outline"></ion-icon> Download CV
+                </a>
+              </div>
+            </div>
+            <div className="experience-container" ref={containerRef}>
+              <h3 ref={titleRef}>Working Experience</h3>
+              <div className="experience-content">
+                <div
+                  className="experience-card"
+                  ref={(el) => (cardsRef.current[0] = el)}
+                >
+                  <div className="experience-icon">
+                    <img src="./assets/pempower.svg" alt="project: empower" />
+                  </div>
+                  <div className="experience-info">
+                    <h4>
+                      Frontend Developer Intern at{" "}
+                      <strong>Project: Empower</strong>
+                    </h4>
+                    <p>August 2024 - Present</p>
+                  </div>
+                </div>
+                <div className="exp-card-seperator"></div>
+                <div
+                  className="experience-card"
+                  ref={(el) => (cardsRef.current[1] = el)}
+                >
+                  <div className="experience-icon">
+                    <img src="./assets/bloomberg.svg" alt="bloomberg" />
+                  </div>
+                  <div className="experience-info">
+                    <h4>
+                      Frontend Developer Intern at <strong>Bloomberg</strong>
+                    </h4>
+                    <p>December 2023 - May 2024</p>
+                  </div>
+                </div>
+                <div className="exp-card-seperator"></div>
+                <div
+                  className="experience-card"
+                  ref={(el) => (cardsRef.current[2] = el)}
+                >
+                  <div className="experience-icon">
+                    <img src="./assets/dwc.svg" alt="dwc hs" />
+                  </div>
+                  <div className="experience-info">
+                    <h4>
+                      Frontend Developer Intern at <strong>DWC HS</strong>
+                    </h4>
+                    <p>December 2023 - May 2024</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       </section>
     </>
   );
