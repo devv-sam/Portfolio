@@ -5,7 +5,7 @@ import Nav from "./Nav";
 import Preloader from "./Preloader";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import Footer from "./Footer";
 const About = ({ loadertext }) => {
   gsap.registerPlugin(ScrollTrigger);
   const containerRef = useRef(null);
@@ -61,7 +61,7 @@ const About = ({ loadertext }) => {
             </div>
             <div className="about-content">
               <h3>Samuel Yeboah-Asi</h3>
-              <h4>Frontend Developer based in New York.</h4>
+              <h4>Frontend Developer from New York.</h4>
               <p>Building cutting edge tools for humans.</p>
               <div className="icons">
                 <a
@@ -98,7 +98,6 @@ const About = ({ loadertext }) => {
             you’ll find me on the soccer field or unwinding to classical music.
           </h3>
         </section>
-        <section className="stats-section"></section>
         <section className="experience-section">
           <div className="experience-wrapper">
             <div className="title-cv">
@@ -168,6 +167,7 @@ const About = ({ loadertext }) => {
             </div>
           </div>
         </section>
+        <Footer />
       </section>
     </>
   );

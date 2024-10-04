@@ -123,7 +123,7 @@ export const Landing = ({ loadertext }) => {
       </section>
 
       <div className="column-wrap">
-        <section className="showcase-portfolio-intro">
+        {/* <section className="showcase-portfolio-intro">
           <div className="support">
             <h3>Latest Work</h3>
             <p className="lt-rvl">
@@ -136,10 +136,12 @@ export const Landing = ({ loadertext }) => {
           </div>
 
           <Project id={1} />
-        </section>
+        </section> */}
         <Bento />
       </div>
-      <Footer />
+      <section>
+        <Footer />
+      </section>
     </>
   );
 };

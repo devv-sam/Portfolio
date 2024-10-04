@@ -1,11 +1,11 @@
 import React from "react";
-import { useRef, useEffect } from "react";
-import { useState } from "react";
+import { useEffect } from "react";
 import "../index.css";
 import { Marquee } from "@devnomic/marquee";
 import SpotifyNowPlaying from "./spotify/SpotifyNowPlaying.js";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Outlet, Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -39,19 +39,23 @@ const Bento = () => {
       <div className="bx">
         <section className="bento-grid">
           <div className="title-txt-stack">
-            <div className="title-bx gsap-animate">
-              <div className="title-stack">
-                <h3>About Me</h3>
-                <p>
-                  Frontend developer with <strong>2+ years</strong> of
-                  experience in <strong>HTML</strong>, <strong>CSS</strong>,{" "}
-                  <strong>JavaScript</strong>, <strong>React</strong>, and{" "}
-                  <strong>GSAP</strong>. I also design intuitive interfaces with
-                  <strong> Figma</strong>. Outside of coding, I enjoy soccer and
-                  classical music.
-                </p>
+            <Link to="/about">
+              <div className="title-bx gsap-animate">
+                <div className="title-stack">
+                  <h3>About Me</h3>
+
+                  <p>
+                    Frontend developer with <strong>2+ years</strong> of
+                    experience in <strong>HTML</strong>, <strong>CSS</strong>,{" "}
+                    <strong>JavaScript</strong>, <strong>React</strong>, and{" "}
+                    <strong>GSAP</strong>. I also design intuitive interfaces
+                    with
+                    <strong> Figma</strong>. Outside of coding, I enjoy soccer
+                    and classical music.
+                  </p>
+                </div>
               </div>
-            </div>
+            </Link>
             <div className="skillset-bx gsap-animate">
               <div className="skillset-stack">
                 <h3>Stack</h3>
@@ -89,7 +93,7 @@ const Bento = () => {
             <div className="exp-stack">
               <div className="job">
                 <div className="job-desc">
-                  <h4 className="job-title">Project Empower</h4>{" "}
+                  <h4 className="job-title">Project: Empower</h4>{" "}
                   <div className="dash-dark"></div>{" "}
                   <p className="role">Frontend Developer</p>
                 </div>
@@ -97,6 +101,19 @@ const Bento = () => {
                 <p className="duration">AUG 2024 - PRESENT</p>
                 <p className="desc">
                   Managed modern frontend projects with peers.
+                </p>
+              </div>
+              <div className="job">
+                <div className="job-desc">
+                  <h4 className="job-title">Bloomberg</h4>{" "}
+                  <div className="dash-dark"></div>{" "}
+                  <p className="role">CN Fellowship 1 Intern</p>
+                </div>
+
+                <p className="duration">NOV 2023 - MAY 2024</p>
+                <p className="desc">
+                  Completed coursework focused on career readiness and
+                  professional skills.
                 </p>
               </div>
               <div className="job">
@@ -111,19 +128,6 @@ const Bento = () => {
                   {" "}
                   Enhanced school websites with web development skills to
                   improve user experience.
-                </p>
-              </div>
-              <div className="job">
-                <div className="job-desc">
-                  <h4 className="job-title">Bloomberg</h4>{" "}
-                  <div className="dash-dark"></div>{" "}
-                  <p className="role">CN Fellowship 1 Intern</p>
-                </div>
-
-                <p className="duration">NOV 2023 - MAY 2024</p>
-                <p className="desc">
-                  Completed coursework focused on career readiness and
-                  professional skills.
                 </p>
               </div>
             </div>
