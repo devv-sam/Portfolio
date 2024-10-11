@@ -100,7 +100,8 @@ const Bento = () => {
 
                 <p className="duration">AUG 2024 - PRESENT</p>
                 <p className="desc">
-                  Managed modern frontend projects with peers.
+                  Building web applications with a team to support low-income,
+                  first-generation students.
                 </p>
               </div>
               <div className="job">

@@ -83,7 +83,7 @@ const SpotifyLastPlayed = ({
                         {truncateString(result.title, 20)}
                       </p>
                     </a>
-                    <p>{truncateString(result.artist, 30)}</p>
+                    <p>{truncateString(result.artist, 20)}</p>
                   </div>
                 </div>
               </div>
