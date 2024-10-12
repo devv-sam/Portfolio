@@ -143,7 +143,7 @@ const About = ({ loadertext }) => {
                   </div>
                   <div className="experience-info">
                     <h4>
-                      Frontend Developer Intern at <strong>Bloomberg</strong>
+                      CodeNation Fellowship 1 at <strong>Bloomberg</strong>
                     </h4>
                     <p>December 2023 - May 2024</p>
                   </div>
