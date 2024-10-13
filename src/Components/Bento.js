@@ -5,7 +5,7 @@ import { Marquee } from "@devnomic/marquee";
 import SpotifyNowPlaying from "./spotify/SpotifyNowPlaying.js";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Outlet, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 

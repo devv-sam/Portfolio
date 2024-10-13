@@ -80,7 +80,7 @@ const SpotifyLastPlayed = ({
                       rel="noopener noreferrer"
                     >
                       <p className="song-title">
-                        {truncateString(result.title, 20)}
+                        {truncateString(result.title, 15)}
                       </p>
                     </a>
                     <p>{truncateString(result.artist, 20)}</p>

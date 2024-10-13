@@ -8,11 +8,9 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 import Footer from "./Footer";
-import Project from "../Components/Project";
 import Preloader from "./Preloader";
 
 export const Landing = ({ loadertext }) => {
-  // video animation settings
   const videoRef = useRef(null);
   const containerRef = useRef(null);
 
@@ -20,31 +18,38 @@ export const Landing = ({ loadertext }) => {
     gsap.registerPlugin(ScrollTrigger);
     const hdReveal = new SplitType(".rvl-hd", { types: "words" });
     const pgReveal = new SplitType(".rvl-pg", { types: "lines" });
+
     gsap.to(hdReveal.words, {
       y: 0,
       stagger: 0.05,
       delay: 3.9,
       duration: 0.1,
     });
+
     gsap.from(pgReveal.lines, {
       y: 110,
       stagger: 0.05,
       delay: 3.9,
       duration: 1,
     });
-    gsap.from(videoRef.current, {
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "+=-400 center",
-        end: "+=300",
-        scrub: true,
-        markers: false,
-        toggleActions: "play reverse play reverse",
-      },
-      duration: 2.3,
-      transform: "translate(0px, -220px) scale(0.14, 0.14)",
-      borderRadius: "100rem",
-    });
+
+    // Only apply video animation for screens larger than 1024px
+    const mediaQuery = window.matchMedia("(min-width: 1025px)");
+    if (mediaQuery.matches) {
+      gsap.from(videoRef.current, {
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "+=-400 center",
+          end: "+=300",
+          scrub: true,
+          markers: false,
+          toggleActions: "play reverse play reverse",
+        },
+        duration: 2.3,
+        transform: "translate(0px, -220px) scale(0.14, 0.14)",
+        borderRadius: "100rem",
+      });
+    }
   }, []);
 
   const lenis = new Lenis();
@@ -66,7 +71,7 @@ export const Landing = ({ loadertext }) => {
       <section className="cta-opening">
         <Nav />
         <div className="hero">
-          <img src="/assets/profile-icon.png" alt="Sam's profile"></img>
+          <img src="/assets/profile-icon.png" alt="Sam's profile" />
           <h3 className="rvl-hd">
             I'm Sam — a user interface designer & developer from New York.
           </h3>
@@ -76,10 +81,10 @@ export const Landing = ({ loadertext }) => {
           </p>
         </div>
         <div className="base">
-          <div className="avail ">
+          <div className="avail">
             <div className="wrap">
-              <span className="dot "></span>
-              <p>Ready to collaborate </p>
+              <span className="dot"></span>
+              <p>Ready to collaborate</p>
             </div>
           </div>
           <div className="icons">
@@ -123,20 +128,6 @@ export const Landing = ({ loadertext }) => {
       </section>
 
       <div className="column-wrap">
-        {/* <section className="showcase-portfolio-intro">
-          <div className="support">
-            <h3>Latest Work</h3>
-            <p className="lt-rvl">
-              Handcrafted projects developed from the ground with precision in
-              every detail.
-            </p>
-            <a href="/portfolio" className="btn">
-              Case Studies
-            </a>
-          </div>
-
-          <Project id={1} />
-        </section> */}
         <Bento />
       </div>
       <section>
@@ -145,4 +136,5 @@ export const Landing = ({ loadertext }) => {
     </>
   );
 };
+
 export default Landing;
