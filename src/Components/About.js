@@ -6,26 +6,58 @@ import Preloader from "./Preloader";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Footer from "./Footer";
+import SplitType from "split-type";
+
 const About = ({ loadertext }) => {
   gsap.registerPlugin(ScrollTrigger);
   const containerRef = useRef(null);
   const titleRef = useRef(null);
   const cardsRef = useRef([]);
+  const aboutWrapperRef = useRef(null);
+  const aboutImageRef = useRef(null);
+  const aboutContentRef = useRef(null);
 
   useEffect(() => {
+    const aboutWrapper = aboutWrapperRef.current;
+    const aboutImage = aboutImageRef.current;
+    const aboutContent = aboutContentRef.current;
     const container = containerRef.current;
     const title = titleRef.current;
     const cards = cardsRef.current;
+    const scrReveal = new SplitType(".scr-rvl", { types: "lines" });
+    const scrTrigger = document.querySelectorAll(".bio-section");
 
     const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: container,
-        start: "top 80%",
-        end: "bottom 20%",
-        toggleActions: "play none none none",
-        once: true,
-      },
+      defaults: { ease: "power2.out" },
     });
+
+    // About wrapper animation
+    tl.from(aboutWrapper, {
+      autoAlpha: 0,
+      duration: 1,
+      ease: "power3.out",
+      delay: 3.9,
+    })
+      .from(
+        aboutImage,
+        {
+          y: -50,
+          autoAlpha: 0,
+          duration: 1,
+          ease: "power3.out",
+        },
+        "-=0.5"
+      )
+      .from(
+        aboutContent,
+        {
+          y: 50,
+          autoAlpha: 0,
+          duration: 1,
+          ease: "power3.out",
+        },
+        "-=0.7"
+      );
 
     tl.from(title, {
       y: 30,
@@ -41,6 +73,19 @@ const About = ({ loadertext }) => {
       stagger: 0.2,
     });
 
+    gsap.from(scrReveal.lines, {
+      scrollTrigger: {
+        trigger: scrTrigger,
+        start: "top +=500",
+        end: "bottom +=50",
+        scrub: false,
+        markers: false,
+      },
+      y: 110,
+      stagger: 0.05,
+      duration: 0.6,
+    });
+
     // Cleanup function
     return () => {
       if (tl.scrollTrigger) {
@@ -49,17 +94,18 @@ const About = ({ loadertext }) => {
       tl.kill();
     };
   }, []);
+
   return (
     <>
       <Preloader loadertext={loadertext} />
       <section className="about-section">
         <Nav />
-        <div className="about-wrapper">
+        <div className="about-wrapper" ref={aboutWrapperRef}>
           <div className="about-container">
-            <div className="about-image">
+            <div className="about-image" ref={aboutImageRef}>
               <img src="./assets/profile-image.png" alt="me" />
             </div>
-            <div className="about-content">
+            <div className="about-content" ref={aboutContentRef}>
               <h3>Samuel Yeboah-Asi</h3>
               <h4>Frontend Developer from New York.</h4>
               <p>Building cutting edge tools for humans.</p>
@@ -90,12 +136,14 @@ const About = ({ loadertext }) => {
           </div>
         </div>
         <section className="bio-section">
-          <h3>
-            I'm a frontend developer with over 2 years of experience in crafting
-            responsive and dynamic web interfaces using HTML, CSS, JavaScript,
-            and libraries like React and GSAP. I also bring ideas to life with
-            thoughtful UI/UX design in Figma. When I'm not immersed in code,
-            you’ll find me on the soccer field or unwinding to classical music.
+          <h3 className="scr-rvl">
+            I'm a frontend developer with over{" "}
+            <strong>2 years of experience</strong> in crafting responsive and
+            dynamic web interfaces using <strong>HTML, CSS, JavaScript</strong>,
+            and libraries like <strong>React and GSAP</strong>. I also bring
+            ideas to life with thoughtful UI/UX design in <strong>Figma</strong>
+            . When I'm not immersed in code, you'll find me on the soccer field
+            or unwinding to classical music.
           </h3>
         </section>
         <section className="experience-section">

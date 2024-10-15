@@ -11,10 +11,11 @@ import Footer from "./Footer";
 import Preloader from "./Preloader";
 
 export const Landing = ({ loadertext }) => {
-  const videoRef = useRef(null);
   const containerRef = useRef(null);
-
+  const videoRef = useRef(null);
   useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 1024px)");
+    let animation;
     gsap.registerPlugin(ScrollTrigger);
     const hdReveal = new SplitType(".rvl-hd", { types: "words" });
     const pgReveal = new SplitType(".rvl-pg", { types: "lines" });
@@ -33,23 +34,48 @@ export const Landing = ({ loadertext }) => {
       duration: 1,
     });
 
-    // Only apply video animation for screens larger than 1024px
-    const mediaQuery = window.matchMedia("(min-width: 1025px)");
-    if (mediaQuery.matches) {
-      gsap.from(videoRef.current, {
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "+=-400 center",
-          end: "+=300",
-          scrub: true,
-          markers: false,
-          toggleActions: "play reverse play reverse",
-        },
-        duration: 2.3,
-        transform: "translate(0px, -220px) scale(0.14, 0.14)",
-        borderRadius: "100rem",
-      });
-    }
+    const setupAnimation = () => {
+      if (mediaQuery.matches) {
+        // Apply GSAP animation for laptop screens and above (1024px and wider)
+        animation = gsap.from(videoRef.current, {
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "+=-400 center",
+            end: "+=300",
+            scrub: true,
+            markers: false,
+            toggleActions: "play reverse play reverse",
+          },
+          duration: 2.3,
+          transform: "translate(0px, -220px) scale(0.14, 0.14)",
+          borderRadius: "100rem",
+        });
+      } else {
+        // Remove GSAP animation for smaller screens
+        if (animation) {
+          animation.kill();
+        }
+        gsap.set(videoRef.current, {
+          clearProps: "all",
+        });
+      }
+    };
+
+    setupAnimation();
+
+    const handleResize = () => {
+      setupAnimation();
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      if (animation) {
+        animation.kill();
+      }
+      window.removeEventListener("resize", handleResize);
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
   }, []);
 
   const lenis = new Lenis();
@@ -73,7 +99,7 @@ export const Landing = ({ loadertext }) => {
         <div className="hero">
           <img src="/assets/profile-icon.png" alt="Sam's profile" />
           <h3 className="rvl-hd">
-            I'm Sam — a user interface designer & developer from New York.
+            I'm Sam — a Frontend Developer from New York.
           </h3>
           <p className="rvl-pg">
             I bring ideas to life with precision and creativity, crafting
@@ -126,7 +152,6 @@ export const Landing = ({ loadertext }) => {
           />
         </div>
       </section>
-
       <div className="column-wrap">
         <Bento />
       </div>

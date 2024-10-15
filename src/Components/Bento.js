@@ -6,7 +6,6 @@ import SpotifyNowPlaying from "./spotify/SpotifyNowPlaying.js";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
-
 gsap.registerPlugin(ScrollTrigger);
 
 const Bento = () => {
@@ -26,7 +25,7 @@ const Bento = () => {
           start: "top bottom-=100",
           toggleActions: "play none none reverse",
         },
-        delay: index * 0.1, // This creates the stagger effect
+        delay: index * 0.1,
       });
     });
 

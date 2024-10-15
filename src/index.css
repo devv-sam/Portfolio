@@ -534,12 +534,28 @@ ion-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4rem 6rem 4rem 6rem;
   width: 100%;
 }
+
 .vid-box video {
   border-radius: 1.5rem;
   transform-origin: top;
+  width: 100%;
+  height: auto;
+}
+
+/* Mobile and Tablet styles */
+@media (max-width: 1023px) {
+  .vid-box {
+    padding: 2rem;
+  }
+}
+
+/* Laptop and above styles */
+@media (min-width: 1024px) {
+  .vid-box {
+    padding: 4rem 6rem;
+  }
 }
 .showcase-portfolio-intro {
   display: flex;
@@ -1493,51 +1509,64 @@ figure.image {
 }
 
 /*-- About Page --*/
+/* Base styles */
 .about-section {
   display: flex;
   flex-direction: column;
   gap: 4rem;
 }
+
 .about-wrapper {
   display: flex;
   justify-content: center;
+  padding: 0 2rem; /* Add some padding on the sides */
 }
 
 .about-container {
   display: flex;
   align-items: center;
   gap: 10rem;
+  max-width: 1200px; /* Limit the maximum width */
+  width: 100%;
 }
+
 .about-image {
   width: 100%;
   text-align: center;
 }
+
 .about-image img {
   border-radius: 50%;
   width: 360px;
+  max-width: 100%;
+  height: auto;
 }
+
 .about-content {
   display: flex;
   flex-direction: column;
   gap: 1rem;
   width: 100%;
 }
+
 .about-content h3 {
   font-family: "LT Remark", sans-serif;
   font-size: 3rem;
 }
+
 .about-content h4 {
   font-family: "Poppins", sans-serif;
   font-size: 1.5rem;
   font-weight: 400;
 }
+
 .about-content p {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   color: var(--ash);
 }
 
-/*-- Bio --*/
+/* Bio */
 .bio-section {
   border-radius: 1.5rem;
   background-color: var(--glass);
@@ -1548,20 +1577,27 @@ figure.image {
   font-family: "Poppins", sans-serif;
   font-size: 2rem;
   line-height: 1.5em;
-  font-weight: 500;
+  font-weight: 400;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
-/*-- Experience --*/
+
+.bio-section strong {
+  font-weight: 600;
+}
+/* Experience */
 .experience-wrapper {
   display: flex;
   justify-content: space-around;
   gap: 4rem;
 }
+
 .experience-container {
   width: 100%;
   display: flex;
   gap: 1rem;
   flex-direction: column;
 }
+
 .title-cv {
   display: flex;
   width: 100%;
@@ -1569,39 +1605,45 @@ figure.image {
   flex-direction: column;
   gap: 1rem;
 }
+
 .title-container {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
+
 .title-container h3 {
   font-family: "LT Remark", sans-serif;
   line-height: normal;
   font-size: 3rem;
 }
+
 .title-container p {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   line-height: 1.5em;
   color: var(--ash);
 }
+
 .experience-content {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-/*-- Experience Content --*/
+/* Experience Content */
 .experience-container h3 {
   font-family: "Poppins", sans-serif;
   font-size: 1.5rem;
   font-weight: 400;
 }
+
 .experience-card {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
+
 .exp-card-seperator {
   width: 100%;
   height: 1px;
@@ -1618,12 +1660,132 @@ figure.image {
   font-size: 18px;
   font-weight: 500;
 }
+
 .experience-info p {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
   color: var(--ash);
 }
 
+/* Responsive styles */
+@media screen and (max-width: 1200px) {
+  .about-container {
+    gap: 5rem;
+  }
+
+  .about-image img {
+    width: 300px;
+  }
+
+  .about-content h3 {
+    font-size: 2.5rem;
+  }
+
+  .bio-section {
+    padding: 4rem 3rem;
+  }
+
+  .bio-section h3 {
+    font-size: 1.8rem;
+  }
+
+  .title-container h3 {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .about-wrapper {
+    justify-content: flex-start; /* Align content to the left */
+  }
+
+  .about-container {
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the left */
+    gap: 3rem;
+  }
+
+  .about-image {
+    text-align: left; /* Align image to the left */
+  }
+
+  .experience-wrapper {
+    flex-direction: column;
+  }
+
+  .bio-section {
+    padding: 3rem 2rem;
+  }
+
+  .bio-section h3 {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-image img {
+    width: 250px;
+  }
+
+  .about-content h3 {
+    font-size: 2rem;
+  }
+
+  .about-content h4 {
+    font-size: 1.2rem;
+  }
+
+  .bio-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .bio-section h3 {
+    font-size: 1.4rem;
+  }
+
+  .title-container h3 {
+    font-size: 2rem;
+  }
+
+  .experience-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .about-wrapper {
+    padding: 0 1rem; /* Reduce side padding for very small screens */
+  }
+
+  .about-image img {
+    width: 200px;
+  }
+
+  .about-content h3 {
+    font-size: 1.8rem;
+  }
+
+  .about-content h4 {
+    font-size: 1rem;
+  }
+
+  .bio-section h3 {
+    font-size: 1.2rem;
+  }
+
+  .title-container h3 {
+    font-size: 1.8rem;
+  }
+
+  .experience-info h4 {
+    font-size: 16px;
+  }
+
+  .experience-info p {
+    font-size: 14px;
+  }
+}
 /*-- Footer --*/
 .footer-section {
   border: 1px solid #bec0c4;
@@ -1680,6 +1842,20 @@ figure.image {
   .hero img {
     width: 12rem;
   }
+  /* .video-section {
+    display: none;
+  } */
+  .footer-section {
+    padding: 3rem 5rem;
+    gap: 3rem;
+  }
+  .footer-cta h3 {
+    font-size: 3rem;
+  }
+
+  .footer-links ul {
+    gap: 3rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1708,6 +1884,22 @@ figure.image {
   .base .icons {
     display: none;
   }
+  .footer-section {
+    padding: 2.5rem 2rem;
+    gap: 2.5rem;
+  }
+
+  .footer-cta h3 {
+    font-size: 2.5rem;
+  }
+
+  .footer-cta p {
+    font-size: 18px;
+  }
+
+  .footer-links ul {
+    gap: 2rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1723,12 +1915,5 @@ figure.image {
   }
   .hero img {
     width: 10rem;
-  }
-}
-
-/* Hide video animation for screens smaller than 1025px */
-@media (max-width: 1024px) {
-  .video-section {
-    display: none;
   }
 }
