@@ -48,7 +48,7 @@ const Portfolio = () => {
             </h3>
             <p className="rvl-pg">
               From concept to execution, each project tells a story of
-              innovation, creativity, and collaboration
+              innovation, creativity, and collaboration.
             </p>
           </div>
           <div className="cl-wrap">

@@ -48,7 +48,7 @@ const Project = ({ id }) => {
               </div>
             </div>
             <div className="btn-external">
-              <Link to={`/projects/${id}`} className="btn">
+              <Link to={`/projects/${id}`} className="btn btn-external">
                 View Details{" "}
                 <ion-icon name="open-outline" className="icon-ex"></ion-icon>
               </Link>
