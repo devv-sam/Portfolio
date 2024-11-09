@@ -57,51 +57,53 @@ const Footer = () => {
   }, []);
 
   return (
-    <section className="footer-section" ref={footerRef}>
-      <div className="footer-cta" ref={ctaRef}>
-        <h3>Ready to spark your next big idea?</h3>
-        <p>Let's dive in and make it happen!</p>
-        <a href="#" className="btn">
-          Let's get started
-        </a>
-      </div>
-      <div className="footer-links" ref={linksRef}>
-        <ul>
-          <li>
-            <a href="/landing" className="link">
-              <span className="mask">
-                <div className="link-container">
-                  <span className="link-title1 title">Home</span>
-                  <span className="link-title2 title">Home</span>
-                </div>
-              </span>
-            </a>
-          </li>
-          <li>
-            <a href="/about" className="link">
-              <span className="mask">
-                <div className="link-container">
-                  <span className="link-title1 title">About</span>
-                  <span className="link-title2 title">About</span>
-                </div>
-              </span>
-            </a>
-          </li>
-          <li>
-            <Link to="/portfolio" className="link">
-              <span className="mask">
-                <div className="link-container">
-                  <span className="link-title1 title">Craft</span>
-                  <span className="link-title2 title">Craft</span>
-                </div>
-              </span>
-            </Link>
-          </li>
-        </ul>
-      </div>
-      <div className="footer-copyright" ref={copyrightRef}>
-        <p>© 2024 Samuel Yeboah-Asi.</p>
-      </div>
+    <section>
+      <section className="footer-section" ref={footerRef}>
+        <div className="footer-cta" ref={ctaRef}>
+          <h3>Ready to spark your next big idea?</h3>
+          <p>Let's dive in and make it happen!</p>
+          <a href="#" className="btn">
+            Let's get started
+          </a>
+        </div>
+        <div className="footer-links" ref={linksRef}>
+          <ul>
+            <li>
+              <a href="/landing" className="link">
+                <span className="mask">
+                  <div className="link-container">
+                    <span className="link-title1 title">Home</span>
+                    <span className="link-title2 title">Home</span>
+                  </div>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="/about" className="link">
+                <span className="mask">
+                  <div className="link-container">
+                    <span className="link-title1 title">About</span>
+                    <span className="link-title2 title">About</span>
+                  </div>
+                </span>
+              </a>
+            </li>
+            <li>
+              <Link to="/portfolio" className="link">
+                <span className="mask">
+                  <div className="link-container">
+                    <span className="link-title1 title">Craft</span>
+                    <span className="link-title2 title">Craft</span>
+                  </div>
+                </span>
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <div className="footer-copyright" ref={copyrightRef}>
+          <p>© 2024 Samuel Yeboah-Asi.</p>
+        </div>
+      </section>
     </section>
   );
 };

@@ -32,32 +32,32 @@ const About = ({ loadertext }) => {
     });
 
     // About wrapper animation
-    tl.from(aboutWrapper, {
-      autoAlpha: 0,
-      duration: 1,
-      ease: "power3.out",
-      delay: 3.9,
-    })
-      .from(
-        aboutImage,
-        {
-          y: -50,
-          autoAlpha: 0,
-          duration: 1,
-          ease: "power3.out",
-        },
-        "-=0.5"
-      )
-      .from(
-        aboutContent,
-        {
-          y: 50,
-          autoAlpha: 0,
-          duration: 1,
-          ease: "power3.out",
-        },
-        "-=0.7"
-      );
+    // tl.from(aboutWrapper, {
+    //   autoAlpha: 0,
+    //   duration: 1,
+    //   ease: "power3.out",
+    //   delay: 3.9,
+    // })
+    //   .from(
+    //     aboutImage,
+    //     {
+    //       y: -50,
+    //       autoAlpha: 0,
+    //       duration: 1,
+    //       ease: "power3.out",
+    //     },
+    //     "-=0.5"
+    //   )
+    //   .from(
+    //     aboutContent,
+    //     {
+    //       y: 50,
+    //       autoAlpha: 0,
+    //       duration: 1,
+    //       ease: "power3.out",
+    //     },
+    //     "-=0.7"
+    //   );
 
     tl.from(title, {
       y: 30,
@@ -102,49 +102,58 @@ const About = ({ loadertext }) => {
         <Nav />
         <div className="about-wrapper" ref={aboutWrapperRef}>
           <div className="about-container">
-            <div className="about-image" ref={aboutImageRef}>
-              <img src="./assets/profile-image.png" alt="me" />
-            </div>
-            <div className="about-content" ref={aboutContentRef}>
-              <h3>Samuel Yeboah-Asi</h3>
-              <h4>Frontend Developer from New York.</h4>
-              <p>Building cutting edge tools for humans.</p>
-              <div className="icons">
-                <a
-                  target="_blank"
-                  href="https://www.linkedin.com/in/samuel-yeboah-asi-82b28a2b9/"
-                  className="link-icon"
-                >
-                  <ion-icon name="logo-linkedin"></ion-icon>
-                </a>
-                <a
-                  target="_blank"
-                  href="mailto:samuelydev@gmail.com?subject=Collaboration%20Inquiry"
-                  className="link-icon"
-                >
-                  <ion-icon name="mail-outline"></ion-icon>
-                </a>
-                <a
-                  target="_blank"
-                  href="https://github.com/devv-sam?tab=overview&from=2024-08-01&to=2024-08-12"
-                  className="link-icon"
-                >
-                  <ion-icon name="logo-github"></ion-icon>
-                </a>
-              </div>
-            </div>
+            <h3>
+              <strong>S</strong>occerphile, <strong>A</strong>udacious and{" "}
+              <storng>M</storng>elomaniac...
+            </h3>
+            <p>
+              Three words that describe me outside my work. Get to know a few
+              things that drive my craft. My experiences, skills and interests.
+            </p>
           </div>
         </div>
         <section className="bio-section">
           <h3 className="scr-rvl">
-            I'm a frontend developer with over{" "}
-            <strong>2 years of experience</strong> in crafting responsive and
-            dynamic web interfaces using <strong>HTML, CSS, JavaScript</strong>,
-            and libraries like <strong>React and GSAP</strong>. I also bring
-            ideas to life with thoughtful UI/UX design in <strong>Figma</strong>
-            . When I'm not immersed in code, you'll find me on the soccer field
-            or unwinding to classical music.
+            Hi! 👋 I'm Sam, a Frontend Developer from New York. I design with{" "}
+            <strong>Figma</strong> and develop with <strong>React</strong> along
+            with other developer tools.
           </h3>
+        </section>
+        <section className="story-section">
+          <h3>Paths I've taken on my developer journey...</h3>
+          <div className="story-content">
+            <div className="story-item">
+              <h3>
+                01. — Computers and tech have captivated me since I was a kid,
+                shaping my academic interests and hobbies.
+              </h3>
+            </div>
+            <div className="story-item">
+              <h3>
+                02. — Started formal CS education in 10th grade, though my real
+                learning happened beyond the classroom.
+              </h3>
+            </div>
+            <div className="story-item">
+              <h3>
+                03. — Built websites for local businesses and my school using
+                platforms like Framer and GoDaddy.
+              </h3>
+            </div>
+            <div className="story-item">
+              <h3>
+                04. — Now pursuing CS in college as a Questbridge National
+                College Match finalist.
+              </h3>
+            </div>
+            {/* <div className="story-item">
+              <h3>Accolades and Accomplishments. </h3>
+              <p>01. — Questbridge National College Match Finalist</p>
+              <p>02. — Questbridge College Prep Scholar</p>
+              <p>03. — 2024 Palazzo Strozzi Essay Award Recipient</p>
+              <p>04. — CodeNation-Bloomberg Hackathon Winner</p>
+            </div> */}
+          </div>
         </section>
         <section className="experience-section">
           <div className="experience-wrapper">
@@ -164,7 +173,7 @@ const About = ({ loadertext }) => {
               </div>
             </div>
             <div className="experience-container" ref={containerRef}>
-              <h3 ref={titleRef}>Working Experience</h3>
+              <h3 ref={titleRef}>Recent Work Experience</h3>
               <div className="experience-content">
                 <div
                   className="experience-card"

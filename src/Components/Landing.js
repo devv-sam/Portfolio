@@ -3,6 +3,7 @@ import "../index.css";
 import Nav from "./Nav";
 import Bento from "./Bento";
 import "lenis/dist/lenis.css";
+import { Marquee } from "@devnomic/marquee";
 import Lenis from "lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -99,7 +100,7 @@ export const Landing = ({ loadertext }) => {
         <div className="hero">
           <img src="/assets/profile-icon.png" alt="Sam's profile" />
           <h3 className="rvl-hd">
-            I'm Sam — a Frontend Developer from New York.
+            Hi! 👋 I'm Sam, a Frontend Developer from New York.
           </h3>
           <p className="rvl-pg">
             I bring ideas to life with precision and creativity, crafting
@@ -155,8 +156,10 @@ export const Landing = ({ loadertext }) => {
       <div className="column-wrap">
         <Bento />
       </div>
+
+      <Footer />
       <section>
-        <Footer />
+        <Marquee></Marquee>
       </section>
     </>
   );

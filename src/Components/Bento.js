@@ -135,7 +135,7 @@ const Bento = () => {
 
           <div className="image-extra-stack">
             <div className="image-bx ">
-              <img src="./assets/profile-image.png" alt="Sam's Profile" />
+              <img src="./assets/profile-img-2.jpg" alt="Sam's Profile" />
             </div>
             <div className="external-bx gsap-animate">
               <SpotifyNowPlaying />
