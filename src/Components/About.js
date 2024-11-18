@@ -2,12 +2,11 @@ import React from "react";
 import { useRef, useEffect } from "react";
 import "../index.css";
 import Nav from "./Nav";
-import Preloader from "./Preloader";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Footer from "./Footer";
 import SplitType from "split-type";
-
+import Preloader from "./Preloader";
 const About = ({ loadertext }) => {
   gsap.registerPlugin(ScrollTrigger);
   const containerRef = useRef(null);
@@ -97,15 +96,12 @@ const About = ({ loadertext }) => {
 
   return (
     <>
-      <Preloader loadertext={loadertext} />
+      <Preloader loadertext={"Discover the story that drives my craft."} />
       <section className="about-section">
         <Nav />
         <div className="about-wrapper" ref={aboutWrapperRef}>
           <div className="about-container">
-            <h3>
-              <strong>S</strong>occerphile, <strong>A</strong>udacious and{" "}
-              <storng>M</storng>elomaniac...
-            </h3>
+            <h3>Soccerphile, Audacious and Melomaniac...</h3>
             <p>
               Three words that describe me outside my work. Get to know a few
               things that drive my craft. My experiences, skills and interests.

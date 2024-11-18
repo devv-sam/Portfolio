@@ -1,8 +1,7 @@
 import React, { useEffect, useRef } from "react";
-import "../index.css";
+import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Outlet, Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -57,17 +56,34 @@ const Footer = () => {
   }, []);
 
   return (
-    <section>
-      <section className="footer-section" ref={footerRef}>
-        <div className="footer-cta" ref={ctaRef}>
-          <h3>Ready to spark your next big idea?</h3>
-          <p>Let's dive in and make it happen!</p>
-          <a href="#" className="btn">
+    <section className="mx-4 md:mx-8 lg:mx-16 xl:mx-24">
+      <div
+        ref={footerRef}
+        className="rounded-3xl border border-gray-300 flex flex-col gap-12 justify-between p-6 md:p-12 lg:p-20"
+      >
+        {/* CTA Section */}
+        <div
+          ref={ctaRef}
+          className="flex flex-col items-center gap-6 text-center"
+        >
+          <h3 className="text-[clamp(2rem,4vw,3rem)] font-bold tracking-[0.5px] w-full text-black [clip-path:polygon(0_0,100%_0,100%_100%,0%_100%)]">
+            Ready to spark your next big idea?
+          </h3>
+          <p className="font-['Poppins'] text-base md:text-lg text-gray-600 max-w-2xl">
+            Let's dive in and make it happen! Together, we can turn your vision
+            into reality.
+          </p>
+          <a
+            href="#"
+            className="btn hover:shadow-lg transition-shadow duration-300"
+          >
             Let's get started
           </a>
         </div>
-        <div className="footer-links" ref={linksRef}>
-          <ul>
+
+        {/* Navigation Links */}
+        <div ref={linksRef} className="flex flex-col gap-6">
+          <ul className="flex flex-wrap justify-center gap-8 md:gap-12">
             <li>
               <a href="/landing" className="link">
                 <span className="mask">
@@ -100,10 +116,17 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="footer-copyright" ref={copyrightRef}>
-          <p>© 2024 Samuel Yeboah-Asi.</p>
+
+        {/* Copyright Section */}
+        <div
+          ref={copyrightRef}
+          className="flex flex-col md:flex-row justify-center items-center gap-4 text-center"
+        >
+          <p className="font-['Poppins'] text-sm md:text-base text-gray-600">
+            © {new Date().getFullYear()} Samuel Yeboah-Asi. All rights reserved.
+          </p>
         </div>
-      </section>
+      </div>
     </section>
   );
 };

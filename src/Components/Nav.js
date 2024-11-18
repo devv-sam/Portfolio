@@ -2,8 +2,6 @@ import "../index.css";
 import React, { useState, useEffect, useRef } from "react";
 import { Outlet, Link } from "react-router-dom";
 import gsap from "gsap";
-import SplitType from "split-type";
-
 function Nav() {
   const [isOpen, setIsOpen] = useState(false);
   const mobileNavRef = useRef(null);
@@ -19,21 +17,6 @@ function Nav() {
     return () => {
       body.classList.remove("no-scroll");
     };
-
-    const navAnim = document.querySelectorAll(".nav-anim");
-
-    navAnim.forEach((char) => {
-      const letter = new SplitType(char, { types: "lines" });
-
-      gsap.from(letter.lines, {
-        y: -20,
-        opacity: 0,
-        stagger: 0.3,
-        duration: 1,
-        delay: 4,
-        ease: "power2.out",
-      });
-    });
   }, [isOpen]);
 
   useEffect(() => {
@@ -70,13 +53,13 @@ function Nav() {
 
   return (
     <>
-      <div className="Nav">
+      <section className="Nav mx-4 md:mx-8 lg:mx-16 xl:mx-24">
         <nav>
-          <div className={`logo ${isOpen ? "hidden" : ""}`}>
+          <div>
             <ul>
               <li>
                 <Link to="/landing" className="nav-anim">
-                  Samuel Yeboah-Asi
+                  <span className="title">Samuel Yeboah-Asi</span>
                 </Link>
               </li>
             </ul>
@@ -119,7 +102,7 @@ function Nav() {
             <span></span>
           </div>
         </nav>
-      </div>
+      </section>
 
       <section
         ref={mobileNavRef}

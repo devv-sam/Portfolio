@@ -1,42 +1,43 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Landing from "./Components/Landing";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import AppRoutes from "./Routes/AppRoutes";
+import { BrowserRouter } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
-import Portfolio from "./Pages/Portfolio";
-import About from "./Components/About";
 import "lenis/dist/lenis.css";
-import ProjectPage from "./Pages/ProjectPage";
-
+import AnimatedCursor from "react-animated-cursor";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <>
+    <AnimatedCursor
+      innerSize={8}
+      outerSize={35}
+      innerScale={1}
+      outerScale={2}
+      outerAlpha={0}
+      hasBlendMode={true}
+      innerStyle={{
+        backgroundColor: "#000",
+      }}
+      outerStyle={{
+        border: "2px solid #000",
+      }}
+      clickables={[
+        "a",
+        'input[type="text"]',
+        'input[type="email"]',
+        'input[type="number"]',
+        'input[type="submit"]',
+        'input[type="image"]',
+        "label[for]",
+        "select",
+        ".hover-text-container",
+        "textarea",
+        "button",
+        ".link",
+      ]}
+    />{" "}
     <BrowserRouter>
-      <Routes>
-        <Route
-          index
-          element={
-            <Landing loadertext="Bringing ideas to life, one pixel at a time." />
-          }
-        />
-        <Route
-          path="/portfolio"
-          element={<Portfolio loadertext="My digital playground." />}
-        />
-        <Route
-          path="/landing"
-          element={
-            <Landing loadertext="Bringing ideas to life, one pixel at a time." />
-          }
-        />
-        <Route
-          path="/about"
-          element={
-            <About loadertext="Discover the story that drives my craft." />
-          }
-        />
-        <Route path="/projects/:id" element={<ProjectPage />} />
-      </Routes>
+      <AppRoutes />
     </BrowserRouter>
   </>
 );

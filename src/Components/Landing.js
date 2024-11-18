@@ -1,14 +1,15 @@
 import React, { useEffect, useRef } from "react";
 import "../index.css";
-import Nav from "./Nav";
-import Bento from "./Bento";
 import "lenis/dist/lenis.css";
-import { Marquee } from "@devnomic/marquee";
+import Nav from "./Nav";
 import Lenis from "lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 import Footer from "./Footer";
+import Hero from "./Hero";
+import Reel from "./Reel";
+import HomeIntro from "./HomeIntro";
 import Preloader from "./Preloader";
 
 export const Landing = ({ loadertext }) => {
@@ -94,73 +95,12 @@ export const Landing = ({ loadertext }) => {
 
   return (
     <>
-      <Preloader loadertext={loadertext} />
-      <section className="cta-opening">
-        <Nav />
-        <div className="hero">
-          <img src="/assets/profile-icon.png" alt="Sam's profile" />
-          <h3 className="rvl-hd">
-            Hi! 👋 I'm Sam, a Frontend Developer from New York.
-          </h3>
-          <p className="rvl-pg">
-            I bring ideas to life with precision and creativity, crafting
-            exceptional projects that stand out.
-          </p>
-        </div>
-        <div className="base">
-          <div className="avail">
-            <div className="wrap">
-              <span className="dot"></span>
-              <p>Ready to collaborate</p>
-            </div>
-          </div>
-          <div className="icons">
-            <a
-              target="_blank"
-              href="https://www.linkedin.com/in/samuel-yeboah-asi-82b28a2b9/"
-              className="link-icon"
-            >
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-            <a
-              target="_blank"
-              href="mailto:samuelydev@gmail.com?subject=Collaboration%20Inquiry"
-              className="link-icon"
-            >
-              <ion-icon name="mail-outline"></ion-icon>
-            </a>
-            <a
-              target="_blank"
-              href="https://github.com/devv-sam?tab=overview&from=2024-08-01&to=2024-08-12"
-              className="link-icon"
-            >
-              <ion-icon name="logo-github"></ion-icon>
-            </a>
-          </div>
-        </div>
-      </section>
-      <section className="video-section">
-        <div className="vid-box" ref={containerRef}>
-          <video
-            ref={videoRef}
-            src="/assets/video.mp4"
-            width="100%"
-            height="100%"
-            loop
-            playsInline
-            autoPlay
-            muted
-          />
-        </div>
-      </section>
-      <div className="column-wrap">
-        <Bento />
-      </div>
-
+      <Preloader loadertext={"Bringing ideas to life, one pixel at a time."} />
+      <Nav />
+      <Hero />
+      <Reel />
+      <HomeIntro />
       <Footer />
-      <section>
-        <Marquee></Marquee>
-      </section>
     </>
   );
 };

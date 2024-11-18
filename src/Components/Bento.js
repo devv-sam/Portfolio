@@ -1,7 +1,6 @@
 import React from "react";
 import { useEffect } from "react";
 import "../index.css";
-import { Marquee } from "@devnomic/marquee";
 import SpotifyNowPlaying from "./spotify/SpotifyNowPlaying.js";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -58,26 +57,6 @@ const Bento = () => {
             <div className="skillset-bx gsap-animate">
               <div className="skillset-stack">
                 <h3>Stack</h3>
-                <Marquee fade={true} pauseOnHover={true}>
-                  <div>
-                    <img src="./assets/react.svg" alt="stack logo"></img>
-                  </div>
-                  <div>
-                    <img src="./assets/js.svg" alt="stack logo"></img>
-                  </div>
-                  <div>
-                    <img src="./assets/html.svg" alt="stack logo"></img>
-                  </div>
-                  <div>
-                    <img src="./assets/css.svg" alt="stack logo"></img>
-                  </div>
-                  <div>
-                    <img src="./assets/figma.svg" alt="stack logo"></img>
-                  </div>
-                  <div>
-                    <img src="./assets/framer.svg" alt="stack logo"></img>
-                  </div>
-                </Marquee>
               </div>
             </div>
           </div>

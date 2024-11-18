@@ -11,7 +11,6 @@ const refresh_token = process.env.REACT_APP_SPOTIFY_REFRESH_TOKEN;
 const getAccessToken = async () => {
   const basic = Buffer.from(`${client_id}:${client_secret}`).toString("base64");
 
-  console.log("Requesting access token...");
   const response = await fetch(TOKEN_ENDPOINT, {
     method: "POST",
     headers: {
@@ -25,14 +24,12 @@ const getAccessToken = async () => {
   });
 
   const data = await response.json();
-  console.log("Token response:", data);
   return data;
 };
 
 export const getLastPlayed = async () => {
   const { access_token } = await getAccessToken();
 
-  console.log("Fetching last played song...");
   return fetch(LAST_PLAYED_ENDPOINT, {
     headers: {
       Authorization: `Bearer ${access_token}`,
@@ -43,10 +40,8 @@ export const getLastPlayed = async () => {
 export default async function getLastPlayedItem() {
   try {
     const response = await getLastPlayed();
-    console.log("API Response status:", response.status);
 
     if (response.status === 204 || response.status > 400) {
-      console.log("Error response:", await response.text());
       return false;
     }
 

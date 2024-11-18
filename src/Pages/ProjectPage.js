@@ -3,12 +3,12 @@ import { useParams } from "react-router-dom";
 import projects from "../project-info.json";
 import "../index.css";
 import Nav from "../Components/Nav";
-import Preloader from "../Components/Preloader";
 import SplitType from "split-type";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import Lenis from "lenis";
 import Footer from "../Components/Footer";
+import Preloader from "../Components/Preloader";
 const ProjectPage = () => {
   const { id } = useParams();
   // Find the project by ID
@@ -136,7 +136,7 @@ const ProjectPage = () => {
     <>
       <Preloader loadertext={project.name} />
 
-      <section className="project-page">
+      <section className="mx-4 md:mx-8 lg:mx-16 xl:mx-24  project-page">
         <Nav />
         <div className="row gapped">
           <div className="project-info">
@@ -171,7 +171,7 @@ const ProjectPage = () => {
           <img src={project.bannerImage} alt="Banner"></img>
         </div>
 
-        <section className="project-introduction">
+        <section className=" mx-4 md:mx-8 lg:mx-16 xl:mx-24 project-introduction">
           <div className="content-wrap">
             <div className="center-intro">
               <div className="introduction">
@@ -208,7 +208,7 @@ const ProjectPage = () => {
           <img src={project.showcaseTwo} alt="Showcase Banner"></img>
         </div>
         <div className="main-wrap">
-          <section className="problem-section content-wrap">
+          <section className="problem-section content-wrap mx-4 md:mx-8 lg:mx-16 xl:mx-24">
             <div className="problem">
               <h4 className="h4-lt prb-rvl">THE PROBLEM</h4>
               <p className="p-lt prb-rvl">{project.problem}</p>
@@ -221,7 +221,7 @@ const ProjectPage = () => {
           </div>
         </div>
         <div className="main-wrap">
-          <section className="solution-section content-wrap">
+          <section className="solution-section content-wrap mx-4 md:mx-8 lg:mx-16 xl:mx-24">
             <div className="solution">
               <h4 className="h4-lt sol-rvl">THE SOLUTION</h4>
               <p className="p-lt sol-rvl">{project.solution}</p>
@@ -234,7 +234,7 @@ const ProjectPage = () => {
           <img src={project.showcaseFour} alt="Showcase Banner"></img>
         </div>
         <div className="main-wrap">
-          <section className="outcome-section content-wrap">
+          <section className="outcome-section content-wrap mx-4 md:mx-8 lg:mx-16 xl:mx-24">
             <div className="outcome">
               <h4 className="h4-lt out-rvl">THE OUTCOME</h4>
               <p className="p-lt out-rvl">{project.outcome}</p>

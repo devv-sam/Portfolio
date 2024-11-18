@@ -3,10 +3,9 @@ import "../index.css";
 import Nav from "../Components/Nav";
 import Project from "../Components/Project";
 import "lenis/dist/lenis.css";
-import Preloader from "../Components/Preloader";
 import SplitType from "split-type";
 import gsap from "gsap";
-
+import Preloader from "../Components/Preloader";
 const Portfolio = () => {
   const headerRef = useRef(null);
 
@@ -36,10 +35,9 @@ const Portfolio = () => {
 
   return (
     <>
-      <Preloader loadertext="My digital playground." />
-
-      <section className="project-canvas">
-        <Nav />
+      <Preloader loadertext={"My digital playground."} />
+      <Nav />
+      <section className="project-canvas mx-4 md:mx-8 lg:mx-16 xl:mx-24">
         <div className="project-mainframe">
           <div className="header" ref={headerRef}>
             <h3 className="rvl-hd">
