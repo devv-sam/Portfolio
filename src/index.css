@@ -735,7 +735,7 @@ figure.image {
 
 /*--- About bento design --*/
 
-.bento-grid {
+/* .bento-grid {
   display: grid;
   grid-template-rows: repeat(1, 600px);
   grid-template-columns: repeat(12, 1fr);
@@ -912,7 +912,7 @@ figure.image {
 }
 
 /* Responsive styles */
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
   .bento-grid {
     grid-template-rows: auto;
     grid-template-columns: repeat(8, 1fr);
@@ -1015,7 +1015,7 @@ figure.image {
   .skillset-bx img {
     height: 32px;
   }
-}
+}  */
 /*--- Portfolio Page --*/
 /* Base styles */
 .project-canvas {

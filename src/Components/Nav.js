@@ -66,7 +66,7 @@ function Nav() {
           </div>
           <ul className="desktop-nav">
             <li>
-              <a href="/about" className="link">
+              <a href="/bento" className="link">
                 <span className="mask">
                   <div className="link-container">
                     <span className="link-title1 title nav-anim">About</span>

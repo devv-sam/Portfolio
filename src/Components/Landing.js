@@ -11,6 +11,8 @@ import Hero from "./Hero";
 import Reel from "./Reel";
 import HomeIntro from "./HomeIntro";
 import Preloader from "./Preloader";
+import HoverMenu from "./HoverMenu";
+import projectsData from "../project-info.json";
 
 export const Landing = ({ loadertext }) => {
   const containerRef = useRef(null);
@@ -100,6 +102,7 @@ export const Landing = ({ loadertext }) => {
       <Hero />
       <Reel />
       <HomeIntro />
+      <HoverMenu projects={projectsData} />
       <Footer />
     </>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 import HoverText from "./HoverText";
-
+import { Link } from "react-router-dom";
 const HomeIntro = () => {
   return (
     <section className="mx-4 md:mx-8 lg:mx-16 xl:mx-24">
@@ -25,7 +25,7 @@ const HomeIntro = () => {
             />
           </h3>
         </div>
-        <div className="lg:w-1/4">
+        <div className="lg:w-1/4 flex flex-col gap-2">
           <p className="font-['Poppins'] text-sm md:text-base text-gray-600 leading-[1.45]">
             <HoverText
               casual={
@@ -42,6 +42,9 @@ const HomeIntro = () => {
               }
             />
           </p>
+          <Link to="/bento">
+            <button className="btn">About me</button>
+          </Link>
         </div>
       </div>
     </section>

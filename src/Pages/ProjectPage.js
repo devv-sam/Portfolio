@@ -135,9 +135,8 @@ const ProjectPage = () => {
   return (
     <>
       <Preloader loadertext={project.name} />
-
+      <Nav />
       <section className="mx-4 md:mx-8 lg:mx-16 xl:mx-24  project-page">
-        <Nav />
         <div className="row gapped">
           <div className="project-info">
             <div className="project-stats">
@@ -242,9 +241,7 @@ const ProjectPage = () => {
           </section>
         </div>
       </section>
-      <section>
-        <Footer />
-      </section>
+      <Footer />
     </>
   );
 };
