@@ -1,6 +1,5 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useEffect } from "react";
 import "../index.css";
-import gsap from "gsap";
 import projects from "../project-info.json";
 import { Link } from "react-router-dom";
 
@@ -13,15 +12,6 @@ const Project = ({ id }) => {
     if (!project) {
       console.log("Project not found");
     }
-
-    const prxReveal = document.querySelectorAll(".project");
-    gsap.to(prxReveal, {
-      opacity: 1,
-      y: 0,
-      duration: 1,
-      delay: 3.9,
-      ease: "power2.out",
-    });
   }, [project, id]);
 
   return (
@@ -37,10 +27,9 @@ const Project = ({ id }) => {
           </div>
           <div className="prx-details">
             <div className="prx-basic">
-              <div className="prx-title">
-                <div className="star">✦</div>
-                <h4>{project.name}</h4>
-              </div>
+              <h4 className="text-[clamp(1.25rem,1.1959rem,1.5rem)] font-medium">
+                {project.name}
+              </h4>
               <div className="prx-subtitle">
                 <p>
                   {project.tags[0]} — {project.date}

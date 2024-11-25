@@ -13,7 +13,7 @@ const Hero = () => {
             alt="Sam's profile"
             className="w-40 md:w-48 lg:w-52"
           />
-          <h3 className="text-[clamp(2rem,4vw,3rem)] font-bold tracking-[0.5px] w-full text-black [clip-path:polygon(0_0,100%_0,100%_100%,0%_100%)]">
+          <h3 className="text-[clamp(2rem,4vw,3rem)] font-semibold tracking-[0.5px] w-full text-black [clip-path:polygon(0_0,100%_0,100%_100%,0%_100%)]">
             <HoverText formal={"Hey, I'm Sam,"} />
           </h3>
           <p className="font-poppins text-[clamp(1rem,2.5vw,1.4rem)] leading-[1.8] font-medium text-black/80 [clip-path:polygon(0_0,100%_0,100%_100%,0%_100%)] transform transition-transform duration-500">

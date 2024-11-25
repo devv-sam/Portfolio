@@ -53,56 +53,55 @@ function Nav() {
 
   return (
     <>
-      <section className="Nav mx-4 md:mx-8 lg:mx-16 xl:mx-24">
-        <nav>
-          <div>
-            <ul>
-              <li>
-                <Link to="/landing" className="nav-anim">
-                  <span className="title">Samuel Yeboah-Asi</span>
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <ul className="desktop-nav">
+      <nav className="mx-4 pt-6 md:mx-8 lg:mx-16 xl:mx-24">
+        <div>
+          <ul>
             <li>
-              <a href="/bento" className="link">
+              <Link to="/landing" className="nav-anim">
+                <span className="title">Samuel Yeboah-Asi</span>
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <ul className="desktop-nav">
+          <li>
+            <Link to="/portfolio">
+              <a href="#" className="link">
                 <span className="mask">
                   <div className="link-container">
-                    <span className="link-title1 title nav-anim">About</span>
-                    <span className="link-title2 title">About</span>
+                    <span className="link-title1 title nav-anim">Work</span>
+                    <span className="link-title2 title">Work</span>
                   </div>
                 </span>
               </a>
-            </li>
-            <li>
-              <Link to="/portfolio">
-                <a href="#" className="link">
-                  <span className="mask">
-                    <div className="link-container">
-                      <span className="link-title1 title nav-anim">Craft</span>
-                      <span className="link-title2 title">Craft</span>
-                    </div>
-                  </span>
-                </a>
-              </Link>
-            </li>
-            <li className="nav-anim">
-              <a href="#" className="btn">
-                Connect
-              </a>
-            </li>
-          </ul>
-          <div
-            className={`hamburger ${isOpen ? "active" : ""}`}
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </nav>
-      </section>
+            </Link>
+          </li>
+          <li>
+            <a href="/bento" className="link">
+              <span className="mask">
+                <div className="link-container">
+                  <span className="link-title1 title nav-anim">About</span>
+                  <span className="link-title2 title">About</span>
+                </div>
+              </span>
+            </a>
+          </li>
+
+          <li className="nav-anim">
+            <a href="#" className="btn">
+              Connect
+            </a>
+          </li>
+        </ul>
+        <div
+          className={`hamburger ${isOpen ? "active" : ""}`}
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
 
       <section
         ref={mobileNavRef}
@@ -111,13 +110,13 @@ function Nav() {
         <div>
           <ul>
             <li className="mobile-nav-item">
-              <Link to="/about" onClick={() => setIsOpen(false)}>
-                <h3>About</h3>
+              <Link to="/portfolio" onClick={() => setIsOpen(false)}>
+                <h3>Work</h3>
               </Link>
             </li>
             <li className="mobile-nav-item">
-              <Link to="/portfolio" onClick={() => setIsOpen(false)}>
-                <h3>Craft</h3>
+              <Link to="/about" onClick={() => setIsOpen(false)}>
+                <h3>About</h3>
               </Link>
             </li>
           </ul>

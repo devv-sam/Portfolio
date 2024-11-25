@@ -8,7 +8,7 @@ import AnimatedCursor from "react-animated-cursor";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <>
-    {/* <AnimatedCursor
+    <AnimatedCursor
       innerSize={8}
       outerSize={35}
       innerScale={1}
@@ -35,7 +35,7 @@ root.render(
         "button",
         ".link",
       ]}
-    />{" "} */}
+    />{" "}
     <BrowserRouter>
       <AppRoutes />
     </BrowserRouter>

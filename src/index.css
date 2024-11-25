@@ -297,8 +297,8 @@ nav ul li a {
 }
 
 .mobile-nav a {
-  font-family: "LT Remark", sans-serif;
-  font-size: 3.5rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
   color: var(--black);
   text-decoration: none;
 }
@@ -733,439 +733,20 @@ figure.image {
   transform: translateZ(0);
 }
 
-/*--- About bento design --*/
-
-/* .bento-grid {
-  display: grid;
-  grid-template-rows: repeat(1, 600px);
-  grid-template-columns: repeat(12, 1fr);
-  gap: 25px;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.bx {
-  display: flex;
-  justify-content: center;
-}
-
-.title-txt-stack {
-  display: flex;
-  flex-direction: column;
-  grid-row: 1 / 1;
-  grid-column: 1 / 6;
-  gap: 25px;
-}
-
-.title-bx {
-  word-wrap: break-word;
-  padding: 25px;
-  height: 300px;
-  display: flex;
-  border-radius: 1.5rem;
-  border: 1px solid #bec0c4;
-}
-
-.title-stack {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.title-bx h3 {
-  font-family: "LT Remark", sans-serif;
-  font-size: 3rem;
-  line-height: 32px;
-}
-
-.title-bx p {
-  font-family: "Poppins", sans-serif;
-  font-size: 1rem;
-  line-height: 26px;
-}
-
-.image-extra-stack {
-  display: flex;
-  grid-row: 1 / 1;
-  grid-column: 6 / 9;
-  flex-direction: column;
-  gap: 25px;
-}
-
-.image-bx {
-  flex-grow: 1;
-  overflow: hidden;
-}
-
-.image-bx img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 1.5rem;
-}
-
-.experience-bx {
-  background: #dddcdc05;
-  border: 1px solid #bec0c4;
-  word-wrap: break-word;
-  padding: 25px;
-  border-radius: 1.5rem;
-  grid-row: 1 / 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  grid-column: 9 / 14;
-}
-
-.experience-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-
-.experience-bx .experience-top h3 {
-  font-family: "LT Remark", sans-serif;
-  font-size: 3rem;
-}
-
-.job {
-  margin: 15px 0 15px 0;
-}
-
-.job .job-title {
-  font-family: "Poppins", sans-serif;
-  font-size: 1.125rem;
-  font-weight: 500;
-  color: var(--black);
-}
-
-.job-desc {
-  display: flex;
-  color: var(--black);
-  align-items: center;
-}
-
-.dash-dark {
-  background-color: #000;
-  margin: 0 10px;
-  width: 3em;
-  height: 1.3px;
-}
-
-.job .role,
-.duration,
-.desc {
-  font-family: "Poppins", sans-serif;
-  font-size: 1rem;
-  color: var(--black);
-}
-
-.job-title,
-.duration,
-.role,
-.desc {
-  margin-bottom: 5px;
-}
-
-.skillset-bx {
-  padding: 25px;
-  height: calc(300px - 25px);
-  background: #dddcdc05;
-  border-radius: 1.5rem;
-  border: 1px solid #bec0c4;
-}
-
-.skillset-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-.skillset-bx h3 {
-  font-family: "LT Remark", sans-serif;
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
-
-.skillset-bx img {
-  height: 64px;
-}
-
-.external-bx {
-  padding: 25px;
-  max-height: 110px;
-  border-radius: 1.5rem;
-  border: 1px solid #bec0c4;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.external-bx h3 {
-  font-family: "LT Remark", sans-serif;
-  font-size: 2vw;
-  margin-bottom: 10px;
-  color: var(--black);
-}
-
-/* Responsive styles */
-/* @media (max-width: 1024px) {
-  .bento-grid {
-    grid-template-rows: auto;
-    grid-template-columns: repeat(8, 1fr);
-    gap: 20px;
-  }
-
-  .title-txt-stack {
-    grid-column: 1 / 5;
-  }
-
-  .image-extra-stack {
-    grid-column: 5 / 9;
-  }
-
-  .experience-bx {
-    grid-column: 1 / 9;
-    grid-row: 2 / 2;
-  }
-
-  .title-bx,
-  .skillset-bx,
-  .experience-bx {
-    height: auto;
-  }
-
-  .title-bx h3,
-  .experience-bx .experience-top h3,
-  .skillset-bx h3 {
-    font-size: 2.5rem;
-  }
-
-  .skillset-bx img {
-    height: 48px;
-  }
-}
-
-@media (max-width: 768px) {
-  .bento-grid {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-
-  .title-txt-stack,
-  .image-extra-stack,
-  .experience-bx {
-    grid-column: 1 / -1;
-    grid-row: auto;
-  }
-
-  .title-bx h3,
-  .experience-bx .experience-top h3,
-  .skillset-bx h3 {
-    font-size: 2rem;
-  }
-
-  .skillset-bx img {
-    height: 40px;
-  }
-
-  .job-desc {
-    flex-wrap: wrap;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .dash-dark {
-    display: none;
-  }
-
-  .image-bx {
-    height: 300px;
-  }
-}
-
-@media (max-width: 480px) {
-  .bento-grid {
-    padding: 10px;
-  }
-
-  .title-bx,
-  .skillset-bx,
-  .experience-bx,
-  .external-bx {
-    padding: 15px;
-  }
-
-  .title-bx h3,
-  .experience-bx .experience-top h3,
-  .skillset-bx h3 {
-    font-size: 1.75rem;
-  }
-
-  .title-bx p,
-  .job .role,
-  .duration,
-  .desc {
-    font-size: 0.9rem;
-  }
-
-  .skillset-bx img {
-    height: 32px;
-  }
-}  */
-/*--- Portfolio Page --*/
 /* Base styles */
-.project-canvas {
-  display: flex;
-  flex-direction: column;
-  gap: 8rem;
-}
-
-.project-mainframe {
-  gap: 8rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.header {
-  max-width: 970px;
-  gap: 1rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.header h3 {
-  font-family: "LT Remark", sans-serif;
-  font-size: 3em;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  line-height: 1.2;
-}
-
-.header p {
-  font-size: 1.2em;
-  line-height: 1.5;
-}
-
-.cl-wrap {
-  gap: 2rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.project-grid-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 2rem;
-}
-
-.project-grid-header h3 {
-  font-size: 2em;
-}
 
 .row {
   display: flex;
   gap: 1.5rem;
 }
 
-/* Responsive styles project page*/
-@media screen and (max-width: 1200px) {
-  .project-canvas {
-    gap: 6rem;
-  }
-
-  .project-mainframe {
-    gap: 6rem;
-  }
-
-  .header h3 {
-    font-size: 2.5em;
-  }
+.project-grid-header {
+  margin-bottom: 1.5rem;
+}
+.btn-external {
+  display: none;
 }
 
-@media screen and (max-width: 992px) {
-  .project-canvas {
-    gap: 4rem;
-    padding: 0 1.5rem;
-  }
-
-  .project-mainframe {
-    gap: 4rem;
-  }
-
-  .header h3 {
-    font-size: 2em;
-  }
-
-  .header p {
-    font-size: 1.1em;
-  }
-
-  .project-grid-header h3 {
-    font-size: 1.75em;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .project-canvas {
-    gap: 3rem;
-    padding: 0 1rem;
-  }
-
-  .project-mainframe {
-    gap: 3rem;
-  }
-
-  .header {
-    gap: 0.75rem;
-  }
-
-  .row {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .header h3 {
-    font-size: 1.75em;
-  }
-
-  .header p {
-    font-size: 1em;
-  }
-
-  .project-grid-header h3 {
-    font-size: 1.5em;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .project-canvas {
-    gap: 2rem;
-    padding: 0 1rem;
-  }
-
-  .project-mainframe {
-    gap: 2rem;
-  }
-
-  .header h3 {
-    font-size: 1.5em;
-  }
-
-  .cl-wrap {
-    gap: 1.5rem;
-  }
-
-  .project-grid-header {
-    margin-bottom: 1.5rem;
-  }
-  .btn-external {
-    display: none;
-  }
-}
 .project-marquee .prx-basic {
   display: none;
 }
@@ -1181,7 +762,7 @@ figure.image {
 
 .project-selection h3 {
   font-size: 2em;
-  font-family: "LT Remark", sans-serif;
+  font-family: "Poppins", sans-serif;
   line-height: 1.2;
 }
 .project {
@@ -1192,7 +773,6 @@ figure.image {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   transform: translateY(40px);
   width: fit-content;
-  opacity: 0;
 }
 .project::after {
   opacity: 0;
@@ -1220,7 +800,6 @@ figure.image {
   will-change: scale;
   display: flex;
   height: 100%;
-  border-radius: 1.5rem;
   max-height: 500px;
 }
 .prx-thumb .portfolio-cover {
@@ -1236,25 +815,14 @@ figure.image {
   width: 100%;
   height: 100%;
 }
-/* .header {
-  max-width: 970px;
-  gap: 1rem;
-  display: flex;
-  flex-direction: column;
-}
 
-.header h3 {
-  font-family: "LT Remark", sans-serif;
-  font-size: 3em;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-} */
 .project-grid-header {
   display: flex;
   gap: 1rem;
   align-items: flex-end;
 }
 .project-grid-header h3 {
-  font-family: "LT Remark", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 3em;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 }
@@ -1278,39 +846,12 @@ figure.image {
   justify-content: space-between;
 }
 
-.prx-title h4 {
-  font-family: "LT Remark", sans-serif;
-  font-size: clamp(1.25rem, 1.1959rem + 0.2703vw, 1.5rem);
-}
-
-.star {
-  font-size: 12px;
-}
-
-.prx-title {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-  line-height: 100%;
-}
-
 .prx-subtitle {
   font-size: 1rem;
   font-weight: 400;
   font-family: "Poppins", sans-serif;
   line-height: 100%;
 }
-
-.project-mainframe {
-  gap: 8rem;
-  display: flex;
-  flex-direction: column;
-}
-
-/* .row {
-  display: flex;
-  gap: 1.5rem;
-} */
 
 /*-- Project Page --*/
 .project-page {
@@ -1325,7 +866,7 @@ figure.image {
   gap: 1.3rem;
 }
 .project-stats h2 {
-  font-family: "LT Remark", sans-serif;
+  font-family: "Poppins", sans-serif;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   font-size: 3rem;
 }
@@ -1734,7 +1275,7 @@ figure.image {
   justify-content: space-between;
 }
 .about-container h3 {
-  font-family: "LT Remark", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 3em;
   line-height: 1.5em;
   font-weight: 600;

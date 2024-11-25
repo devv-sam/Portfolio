@@ -9,6 +9,7 @@ import SplitType from "split-type";
 import Footer from "./Footer";
 import Hero from "./Hero";
 import Reel from "./Reel";
+// import ShowcaseMenu from "./ShowcaseMenu";
 import HomeIntro from "./HomeIntro";
 import Preloader from "./Preloader";
 import HoverMenu from "./HoverMenu";
@@ -98,12 +99,15 @@ export const Landing = ({ loadertext }) => {
   return (
     <>
       <Preloader loadertext={"Bringing ideas to life, one pixel at a time."} />
-      <Nav />
-      <Hero />
-      <Reel />
-      <HomeIntro />
-      <HoverMenu projects={projectsData} />
-      <Footer />
+      <section className="flex flex-col gap-12">
+        <Nav />
+        <Hero />
+        <Reel />
+        <HomeIntro />
+        {/* <ShowcaseMenu id={1} /> */}
+        <HoverMenu projects={projectsData} />
+        <Footer />
+      </section>
     </>
   );
 };
