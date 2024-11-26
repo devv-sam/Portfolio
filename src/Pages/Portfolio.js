@@ -19,9 +19,13 @@ const Portfolio = () => {
 
   function gridView() {
     return (
-      <div className="flex gap-4 mx-4 md:mx-8 lg:mx-16 xl:mx-24">
-        {projectsData.map((project, index) => (
-          <Project key={project.id} id={project.id} />
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mx-4 md:mx-8 lg:mx-16 xl:mx-24">
+        {projectsData.map((project) => (
+          <Project
+            key={project.id}
+            id={project.id}
+            className="p-4 bg-white/5 rounded-lg"
+          />
         ))}
       </div>
     );
