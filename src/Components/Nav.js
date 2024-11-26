@@ -111,12 +111,16 @@ function Nav() {
           <ul>
             <li className="mobile-nav-item">
               <Link to="/portfolio" onClick={() => setIsOpen(false)}>
-                <h3>Work</h3>
+                <h3 className="text-[clamp(3.25rem,7vw,5rem)] font-semibold">
+                  Work
+                </h3>
               </Link>
             </li>
             <li className="mobile-nav-item">
               <Link to="/about" onClick={() => setIsOpen(false)}>
-                <h3>About</h3>
+                <h3 className="text-[clamp(3.25rem,7vw,5rem)] font-semibold">
+                  About
+                </h3>
               </Link>
             </li>
           </ul>
@@ -124,11 +128,15 @@ function Nav() {
 
         <div className="mobile-nav-footer">
           <div className="mobile-nav-item">
-            <h3>EMAIL</h3>
+            <h3 className="text-[clamp(0.875rem,4vw,1.125rem)] uppercase tracking-widest opacity-70">
+              EMAIL
+            </h3>
             <a href="mailto:samuelydev@gmail.com">samuelydev@gmail.com</a>
           </div>
           <div className="mobile-nav-item">
-            <h3>CONNECT</h3>
+            <h3 className="text-[clamp(0.875rem,4vw,1.125rem)] uppercase tracking-widest opacity-70">
+              CONNECT
+            </h3>
             <div className="social-links">
               <a
                 href="http://www.linkedin.com/in/samuel-yeboah-asi-82b28a2b9"

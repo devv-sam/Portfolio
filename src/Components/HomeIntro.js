@@ -25,7 +25,7 @@ const HomeIntro = () => {
             />
           </h3>
         </div>
-        <div className="lg:w-1/4 flex flex-col gap-2">
+        <div className="lg:w-1/4 flex flex-col gap-2 ">
           <p className="font-['Poppins'] text-sm md:text-base text-gray-600 leading-[1.45]">
             <HoverText
               casual={

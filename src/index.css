@@ -310,18 +310,6 @@ nav ul li a {
   flex-direction: column;
 }
 
-/* .mobile-nav-footer h3 {
-  font-family: "Poppins", sans-serif;
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.mobile-nav-footer a {
-  font-family: "Poppins", sans-serif;
-  font-size: 18px;
-} */
-
 .social-links {
   display: flex;
   gap: 1rem;

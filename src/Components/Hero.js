@@ -5,9 +5,9 @@ import "../index.css";
 
 const Hero = () => {
   return (
-    <section className="flex flex-col justify-between h-90vh p-8 lg:px-24 ">
-      <div className="flex justify-between items-end md:flex-row flex-col">
-        <div className="w-full gap-1">
+    <section className="flex flex-col justify-between h-90vh p-8 lg:px-24 gap-3">
+      <div className="flex justify-between items-end md:flex-row flex-col gap-3">
+        <div className="w-full">
           <img
             src="/assets/profile-icon.png"
             alt="Sam's profile"
@@ -21,7 +21,7 @@ const Hero = () => {
           </p>
         </div>
 
-        <p className="font-poppins text-[clamp(0.875rem,2vw,1.1rem)] w-full cursor-default text-black/70 [clip-path:polygon(0_0,100%_0,100%_100%,0%_100%)] transform transition-transform duration-500">
+        <p className="font-poppins text-[clamp(0.875rem,2vw,1.1rem)] w-full cursor-default text-black/70 [clip-path:polygon(0_0,100%_0,100%_100%,0%_100%)]  leading-[1.8] transform transition-transform duration-500">
           <HoverText
             formal={
               "Working with frontend technologies to craft cutting-edge tools for humans."
