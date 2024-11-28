@@ -15,7 +15,7 @@ import Preloader from "./Preloader";
 import HoverMenu from "./HoverMenu";
 import projectsData from "../project-info.json";
 
-export const Landing = ({ loadertext }) => {
+export const Home = ({ loadertext }) => {
   const containerRef = useRef(null);
   const videoRef = useRef(null);
   useEffect(() => {
@@ -98,7 +98,7 @@ export const Landing = ({ loadertext }) => {
 
   return (
     <>
-      <Preloader loadertext={"Bringing ideas to life, one pixel at a time."} />
+      <Preloader loadertext={"• Home"} />
       <section className="flex flex-col gap-12">
         <Nav />
         <Hero />
@@ -112,4 +112,4 @@ export const Landing = ({ loadertext }) => {
   );
 };
 
-export default Landing;
+export default Home;

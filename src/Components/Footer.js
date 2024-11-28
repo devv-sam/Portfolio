@@ -66,7 +66,7 @@ const Footer = () => {
           ref={ctaRef}
           className="flex flex-col items-center gap-6 text-center"
         >
-          <h3 className="text-[clamp(2rem,4vw,3rem)] font-bold tracking-[0.5px] w-full text-black [clip-path:polygon(0_0,100%_0,100%_100%,0%_100%)]">
+          <h3 className="text-[clamp(2rem,4vw,3rem)] font-medium tracking-[0.5px] w-full text-black [clip-path:polygon(0_0,100%_0,100%_100%,0%_100%)]">
             Ready to spark your next big idea?
           </h3>
           <p className="font-['Poppins'] text-base md:text-lg text-gray-600 max-w-2xl">
@@ -85,7 +85,7 @@ const Footer = () => {
         <div ref={linksRef} className="flex flex-col gap-6">
           <ul className="flex flex-wrap justify-center gap-8 md:gap-12">
             <li>
-              <a href="/landing" className="link">
+              <a href="/home" className="link">
                 <span className="mask">
                   <div className="link-container">
                     <span className="link-title1 title">Home</span>
@@ -108,8 +108,8 @@ const Footer = () => {
               <Link to="/portfolio" className="link">
                 <span className="mask">
                   <div className="link-container">
-                    <span className="link-title1 title">Craft</span>
-                    <span className="link-title2 title">Craft</span>
+                    <span className="link-title1 title">Work</span>
+                    <span className="link-title2 title">Work</span>
                   </div>
                 </span>
               </Link>

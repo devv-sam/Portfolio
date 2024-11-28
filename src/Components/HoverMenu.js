@@ -92,7 +92,7 @@ const HoverMenu = ({ projects }) => {
           <img
             src={projects[hoveredIndex].coverImage}
             alt={projects[hoveredIndex].name}
-            className="w-[500px] h-[300px] object-cover rounded-lg shadow-lg"
+            className="w-[500px] h-[300px] object-cover  shadow-lg"
           />
         </div>
       )}

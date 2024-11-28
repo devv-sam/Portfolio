@@ -25,19 +25,13 @@ const HomeIntro = () => {
             />
           </h3>
         </div>
-        <div className="lg:w-1/4 flex flex-col gap-2 ">
+        <div className="lg:w-1/4 flex flex-col gap-4 ">
           <p className="font-['Poppins'] text-sm md:text-base text-gray-600 leading-[1.45]">
             <HoverText
-              casual={
-                <>
-                  Code, soccer, symphonies—repeat. It's all about finding
-                  balance, right?
-                </>
-              }
               formal={
                 <>
-                  If I'm not developing something wild I'm either playing soccer
-                  or listening to classical music.
+                  Proud Ghanaian, Real Madrid superfan, passionate Classical
+                  music enthusiast.
                 </>
               }
             />

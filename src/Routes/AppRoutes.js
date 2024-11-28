@@ -1,18 +1,18 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Landing from "../Components/Landing";
+import Home from "../Components/Home";
 import Portfolio from "../Pages/Portfolio";
-import Bento from "../Pages/Bento";
+import About from "../Pages/About";
 import ProjectPage from "../Pages/ProjectPage";
 function AppRoutes() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/landing" element={<Landing />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/projects/:id" element={<ProjectPage />} />
-        <Route path="/bento" element={<Bento />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </>
   );

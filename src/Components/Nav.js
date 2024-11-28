@@ -57,7 +57,7 @@ function Nav() {
         <div>
           <ul>
             <li>
-              <Link to="/landing" className="nav-anim">
+              <Link to="/home" className="nav-anim">
                 <span className="title">Samuel Yeboah-Asi</span>
               </Link>
             </li>
@@ -77,7 +77,7 @@ function Nav() {
             </Link>
           </li>
           <li>
-            <a href="/bento" className="link">
+            <a href="/about" className="link">
               <span className="mask">
                 <div className="link-container">
                   <span className="link-title1 title nav-anim">About</span>

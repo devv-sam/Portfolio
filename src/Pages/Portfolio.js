@@ -54,16 +54,21 @@ const Portfolio = () => {
 
   return (
     <>
-      <Preloader loadertext={"My digital playground."} />
+      <Preloader loadertext={"• Playground"} />
       <Nav />
       <section className="mx-4 md:mx-8 lg:mx-16 xl:mx-24">
         <div className="mt-8 flex flex-col gap-10">
-          <h3 className="text-[clamp(2rem,4vw,3rem)] font-semibold  w-full text-black [clip-path:polygon(0_0,100%_0,100%_100%,0%_100%)]">
-            What I've been building
-          </h3>
-          <div className="mt-2 flex justify-between">
+          <div>
+            <h3 className="text-[clamp(2rem,4vw,3rem)] font-medium  w-full text-black [clip-path:polygon(0_0,100%_0,100%_100%,0%_100%)]">
+              A hub for all projects built with passion,
+            </h3>
             <p className="text-[clamp(1rem,2vw,1.1rem)] w-full cursor-default text-gray-500 [clip-path:polygon(0_0,100%_0,100%_100%,0%_100%)] transform transition-transform duration-500">
-              SELECTED WORK
+              Powered by coffee and iteration
+            </p>
+          </div>
+          <div className="mt-2 flex justify-between align-center">
+            <p className="text-[clamp(1rem,2vw,1.1rem)] w-full cursor-default text-gray-500 [clip-path:polygon(0_0,100%_0,100%_100%,0%_100%)] transform transition-transform duration-500">
+              FEATURED WORK (0{projectsData.length})
             </p>
             {!isMobile ? (
               <div className="flex gap-4">

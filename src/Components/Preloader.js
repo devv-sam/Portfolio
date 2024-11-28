@@ -34,17 +34,15 @@ const Preloader = ({ loadertext }) => {
 
       tl.to(preloaderText, {
         yPercent: 0,
-        delay: 0.5,
         duration: 1,
         ease: "power2.inOut",
       })
         .to(preloaderText, {
           yPercent: -100,
-          delay: 1,
         })
         .to(preloaderBackground, {
           yPercent: -100,
-          duration: 1.5,
+          duration: 1,
           ease: "power4.inOut",
         });
 
@@ -57,7 +55,6 @@ const Preloader = ({ loadertext }) => {
         position: "",
         width: "",
         height: "",
-        delay: 3.5,
       });
     };
 
