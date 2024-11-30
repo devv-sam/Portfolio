@@ -88,7 +88,10 @@ function Nav() {
           </li>
 
           <li className="nav-anim">
-            <a href="#" className="btn">
+            <a
+              href="#"
+              className="btn hover:shadow-lg transition-shadow duration-300"
+            >
               Connect
             </a>
           </li>

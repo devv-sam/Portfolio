@@ -97,11 +97,13 @@ const About = ({ loadertext }) => {
 
   return (
     <>
-      <Preloader loadertext={"• About"} />
-      <Nav />
-      <Bento />
+      <Preloader loadertext={"⨯ About"} />
 
-      {/* <Footer /> */}
+      <section className="flex flex-col gap-12">
+        <Nav />
+        <Bento />
+        <Footer />
+      </section>
     </>
   );
 };

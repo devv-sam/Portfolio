@@ -54,7 +54,7 @@ const Portfolio = () => {
 
   return (
     <>
-      <Preloader loadertext={"• Playground"} />
+      <Preloader loadertext={"⨯ Playground"} />
       <Nav />
       <section className="mx-4 md:mx-8 lg:mx-16 xl:mx-24">
         <div className="mt-8 flex flex-col gap-10">

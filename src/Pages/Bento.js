@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Bento = () => {
   return (
     <>
-      <section className="min-h-screen bg-white mx-4 md:mx-8 lg:mx-16 xl:mx-24">
+      <section className=" bg-white mx-4 md:mx-8 lg:mx-16 xl:mx-24">
         <div className="mx-auto max-w-[2000px] h-full">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 md:gap-6 lg:gap-8 h-full">
             {/* About Section */}
@@ -48,7 +48,7 @@ const Bento = () => {
                       className="flex flex-col items-center w-[70px]"
                     >
                       <Icon size={40} className="text-black mb-1" />
-                      <p className="text-xs font-bold text-black text-center">
+                      <p className="text-sm font-medium text-black text-center">
                         {name}
                       </p>
                     </div>
@@ -132,7 +132,7 @@ const Bento = () => {
                       <p className="font-poppins text-xs text-gray-500 mb-2">
                         {job.duration}
                       </p>
-                      <p className="font-poppins text-sm text-gray-700">
+                      <p className="font-poppins text-sm text-gray-700 lg:block hidden">
                         {job.description}
                       </p>
                     </div>
