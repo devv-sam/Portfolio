@@ -854,6 +854,7 @@ figure.image {
   gap: 1.3rem;
 }
 .project-stats h2 {
+  font-weight: 600;
   font-family: "Poppins", sans-serif;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   font-size: 3rem;
@@ -862,11 +863,12 @@ figure.image {
   font-family: "Poppins", sans-serif;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   font-size: 1.5em;
+  font-weight: 600;
 }
 .project-info {
   display: flex;
   gap: 2rem;
-  width: fit-content;
+  width: 100%;
   flex-direction: column;
 }
 .project-duration {
@@ -882,14 +884,14 @@ figure.image {
 }
 .duration-design h3 {
   font-family: "Poppins", sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   font-size: 1.5rem;
 }
 .duration-development h3 {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   font-family: "Poppins", sans-serif;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1.5rem;
 }
 .duration-development p {

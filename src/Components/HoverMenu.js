@@ -29,7 +29,7 @@ const HoverMenu = ({ projects }) => {
 
   return (
     <section
-      className="relative mx-4 md:mx-8 lg:mx-16 xl:mx-24"
+      className="relative mx-4 md:mx-8 lg:mx-16 xl:mx-24 z-0"
       onMouseMove={handleMouseMove}
     >
       <div>
@@ -66,7 +66,7 @@ const HoverMenu = ({ projects }) => {
                     {project.tags.map((tag, i) => (
                       <span
                         key={i}
-                        className="text-sm text-black bg-blue-50 px-2 py-1 rounded"
+                        className="font-poppins text-base font-medium text-black bg-[rgba(232,232,232,0.536)] w-fit px-4 py-1.5 backdrop-blur-md rounded-full mr-2 border border-[rgba(255,255,255,0.18)]"
                       >
                         {tag}
                       </span>
@@ -84,8 +84,8 @@ const HoverMenu = ({ projects }) => {
         <div
           className="fixed pointer-events-none"
           style={{
-            left: `${mousePosition.x + 20}px`,
-            top: `${mousePosition.y - 20}px`,
+            left: `${mousePosition.x - 250}px`,
+            top: `${mousePosition.y - 150}px`,
             zIndex: 50,
           }}
         >

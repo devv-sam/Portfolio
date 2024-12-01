@@ -5,11 +5,11 @@ const LAST_PLAYED_ENDPOINT = `https://api.spotify.com/v1/me/player/recently-play
 const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
 
 const client_id = process.env.REACT_APP_SPOTIFY_CLIENT_ID;
-const client_secret = process.env.REACT_APP_SPOTIFY_CLIENT_SECRET;
+const client_s = process.env.REACT_APP_SPOTIFY_CLIENT_S;
 const refresh_token = process.env.REACT_APP_SPOTIFY_REFRESH_TOKEN;
 
 const getAccessToken = async () => {
-  const basic = Buffer.from(`${client_id}:${client_secret}`).toString("base64");
+  const basic = Buffer.from(`${client_id}:${client_s}`).toString("base64");
 
   const response = await fetch(TOKEN_ENDPOINT, {
     method: "POST",

@@ -66,6 +66,7 @@ const Reel = () => {
       >
         <video
           ref={videoRef}
+          a
           src="/assets/video.mp4"
           className="w-full h-auto rounded-3xl transform-gpu"
           loop

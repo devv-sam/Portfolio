@@ -16,10 +16,10 @@ const Bento = () => {
             <div className="lg:col-span-5 flex flex-col gap-4 md:gap-6">
               <div className="gsap-animate h-full rounded-3xl border border-gray-300 p-6 transition-all  flex-1">
                 <div className="flex h-full flex-col justify-between">
-                  <h3 className="text-2.5xl md:text-3xl lg:text-3.5xl font-medium  w-full text-black [clip-path:polygon(0_0,100%_0,100%_100%,0%_100%)]">
+                  <h3 className="text-xl font-medium text-black mb-3 w-full  [clip-path:polygon(0_0,100%_0,100%_100%,0%_100%)]">
                     About me
                   </h3>
-                  <p className="font-poppins text-sm md:text-base lg:text-lg">
+                  <p className="font-poppins text-md md:text-base lg:text-lg">
                     Ghanaian by blood, New Yorker by fate. When I'm not busy
                     coding out wild ideas, I'm hitting screamers on the field or
                     chilliing to a classical piece. It's all about finding
@@ -74,7 +74,7 @@ const Bento = () => {
             {/* Experience Section */}
             <div className="lg:col-span-4 gsap-animate rounded-3xl border border-gray-300 bg-gray-50/5 p-6 transition-all flex flex-col h-full">
               <div className="flex items-center justify-between mb-6">
-                <h3 className="font-poppins text-2.5xl md:text-3xl lg:text-3.5xl">
+                <h3 className="font-poppins text-xl font-medium text-black mb-3">
                   Experience
                 </h3>
                 <a

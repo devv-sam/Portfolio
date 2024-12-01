@@ -1,9 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import gsap from "gsap";
 import { Flip } from "gsap/Flip";
 import "../index.css";
 
 const Preloader = ({ loadertext }) => {
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
     gsap.registerPlugin(Flip);
 
@@ -11,58 +13,55 @@ const Preloader = ({ loadertext }) => {
       ".preloader__background"
     );
     const preloaderText = document.querySelector(".preloader__text span");
-    const body = document.querySelector("body");
+    const body = document.body;
 
-    const setInitialStates = () => {
-      gsap.set(preloaderText, {
-        yPercent: 100,
-      });
-      gsap.set(body, {
-        overflow: "hidden",
-        position: "fixed",
-        width: "100%",
-        height: "100%",
-      });
+    const preventScroll = () => {
+      body.style.overflow = "hidden";
+      body.style.position = "fixed";
+      body.style.width = "100%";
+      body.style.height = "100%";
     };
 
-    const preloaderAnimation = () => {
-      const tl = gsap.timeline({
-        defaults: {
-          ease: "power2.out",
-        },
-      });
+    const allowScroll = () => {
+      body.style.overflow = "";
+      body.style.position = "";
+      body.style.width = "";
+      body.style.height = "";
+      setIsLoading(false);
+    };
 
-      tl.to(preloaderText, {
-        yPercent: 0,
-        duration: 1,
-        ease: "power2.inOut",
+    // Initial text positioning
+    gsap.set(preloaderText, {
+      yPercent: 100,
+    });
+
+    preventScroll();
+
+    const tl = gsap.timeline({
+      defaults: {
+        ease: "power2.out",
+      },
+      onComplete: allowScroll,
+    });
+
+    tl.to(preloaderText, {
+      yPercent: 0,
+      duration: 1,
+      ease: "power2.inOut",
+    })
+      .to(preloaderText, {
+        yPercent: -100,
       })
-        .to(preloaderText, {
-          yPercent: -100,
-        })
-        .to(preloaderBackground, {
-          yPercent: -100,
-          duration: 1,
-          ease: "power4.inOut",
-        });
-
-      return tl;
-    };
-
-    const removePreloader = () => {
-      gsap.set(body, {
-        overflow: "",
-        position: "",
-        width: "",
-        height: "",
+      .to(preloaderBackground, {
+        yPercent: -100,
+        duration: 1,
+        ease: "power4.inOut",
       });
+
+    // Cleanup function to ensure scroll is allowed if component unmounts
+    return () => {
+      allowScroll();
     };
-
-    setInitialStates();
-
-    const master = gsap.timeline();
-    master.add(preloaderAnimation());
-    master.add(removePreloader());
   }, []);
 
   return (

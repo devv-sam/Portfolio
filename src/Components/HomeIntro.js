@@ -36,7 +36,7 @@ const HomeIntro = () => {
               }
             />
           </p>
-          <Link to="/bento">
+          <Link to="/about">
             <button className="btn hover:shadow-lg transition-shadow duration-300">
               About me
             </button>

@@ -113,6 +113,13 @@ function Nav() {
         <div>
           <ul>
             <li className="mobile-nav-item">
+              <Link to="/home" onClick={() => setIsOpen(false)}>
+                <h3 className="text-[clamp(3.25rem,7vw,5rem)] font-semibold">
+                  Home
+                </h3>
+              </Link>
+            </li>
+            <li className="mobile-nav-item">
               <Link to="/portfolio" onClick={() => setIsOpen(false)}>
                 <h3 className="text-[clamp(3.25rem,7vw,5rem)] font-semibold">
                   Work

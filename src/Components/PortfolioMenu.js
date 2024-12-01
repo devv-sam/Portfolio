@@ -89,15 +89,15 @@ const PortfolioMenu = ({ projects }) => {
             <div
               className="fixed pointer-events-none"
               style={{
-                left: `${mousePosition.x + 20}px`,
-                top: `${mousePosition.y - 20}px`,
+                left: `${mousePosition.x - 250}px`,
+                top: `${mousePosition.y - 150}px`,
                 zIndex: 50,
               }}
             >
               <img
                 src={projects[hoveredIndex].coverImage}
                 alt={projects[hoveredIndex].name}
-                className="w-[500px] h-[300px] object-cover  shadow-lg"
+                className="w-[500px] h-[300px] object-cover shadow-lg"
               />
             </div>
           )}
