@@ -1,17 +1,18 @@
 import React from "react";
 import HoverText from "./HoverText";
 import "../index.css";
-
+import RiveProfile from "./RiveProfile";
 const Hero = () => {
   return (
     <section className="flex flex-col justify-between h-90vh p-8 lg:px-24 gap-3">
       <div className="flex justify-between items-end md:flex-row flex-col gap-3">
         <div className="w-full">
-          <img
-            src="/assets/profile-icon.png"
-            alt="Sam's profile"
-            className="w-40 md:w-48 lg:w-52"
-          />
+          {/* <img
+            src="./assets/Designer.jpeg"
+            alt="handsome guy"
+            className="w-[100px]"
+          /> */}
+          <RiveProfile />{" "}
           <h3 className="text-[clamp(2rem,4vw,3rem)] font-semibold tracking-[0.5px] w-full text-black [clip-path:polygon(0_0,100%_0,100%_100%,0%_100%)]">
             <HoverText formal={"Hey, I'm Sam,"} />
           </h3>

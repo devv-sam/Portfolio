@@ -174,75 +174,20 @@ const ProjectPage = () => {
             <img src={project.bannerImage} alt="Banner"></img>
           </div>
 
-          <section className=" mx-4 md:mx-8 lg:mx-16 xl:mx-24 project-introduction">
-            <div className="content-wrap">
-              <div className="center-intro">
-                <div className="introduction">
-                  <h4 className="h4-lt scr-rvl">INTRODUCTION</h4>
-                  <p className="p-lt scr-rvl">{project.introduction}</p>
-                </div>
-              </div>
-              <div className="row gap-jc">
-                <div className="role-tools">
-                  <div className="role">
-                    <h4 className="h4-lt scr-rvl">MY ROLE</h4>
-                    <p className="p-lt scr-rvl">{project.role}</p>
-                  </div>
-                  <div className="tools">
-                    <h4 className="h4-lt scr-rvl">TOOLS</h4>
-                    <p className="p-lt scr-rvl">{project.tools}</p>
-                  </div>
-                </div>
-                <div className="client-duration">
-                  <div className="client">
-                    <h4 className="h4-lt scr-rvl">CLIENT</h4>
-                    <p className="p-lt scr-rvl">{project.client}</p>
-                  </div>
-                  <div className="duration">
-                    <h4 className="h4-lt scr-rvl">DURATION</h4>
-                    <p className="p-lt scr-rvl">{project.totalDuration}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
           <div className="duo-banner scr-rvl-banner">
             <img src={project.showcaseOne} alt="Showcase Banner"></img>
             <img src={project.showcaseTwo} alt="Showcase Banner"></img>
           </div>
-          <div className="main-wrap">
-            <section className="problem-section content-wrap mx-4 md:mx-8 lg:mx-16 xl:mx-24">
-              <div className="problem">
-                <h4 className="h4-lt prb-rvl">THE PROBLEM</h4>
-                <p className="p-lt prb-rvl">{project.problem}</p>
-              </div>
-            </section>
-          </div>
+
           <div className="banners">
             <div className="banner-image scr-rvl-banner">
               <img src={project.bannerShowcaseOne} alt="Showcase Banner"></img>
             </div>
           </div>
-          <div className="main-wrap">
-            <section className="solution-section content-wrap mx-4 md:mx-8 lg:mx-16 xl:mx-24">
-              <div className="solution">
-                <h4 className="h4-lt sol-rvl">THE SOLUTION</h4>
-                <p className="p-lt sol-rvl">{project.solution}</p>
-              </div>
-            </section>
-          </div>
 
           <div className="duo-banner scr-rvl-banner">
             <img src={project.showcaseThree} alt="Showcase Banner"></img>
             <img src={project.showcaseFour} alt="Showcase Banner"></img>
-          </div>
-          <div className="main-wrap">
-            <section className="outcome-section content-wrap mx-4 md:mx-8 lg:mx-16 xl:mx-24">
-              <div className="outcome">
-                <h4 className="h4-lt out-rvl">THE OUTCOME</h4>
-                <p className="p-lt out-rvl">{project.outcome}</p>
-              </div>
-            </section>
           </div>
         </section>
         <Footer />

@@ -9,11 +9,12 @@ import SplitType from "split-type";
 import Footer from "./Footer";
 import Hero from "./Hero";
 import Reel from "./Reel";
-// import ShowcaseMenu from "./ShowcaseMenu";
 import HomeIntro from "./HomeIntro";
 import Preloader from "./Preloader";
-import HoverMenu from "./HoverMenu";
+// import HoverMenu from "./HoverMenu";
 import projectsData from "../project-info.json";
+import PortfolioMenu from "./PortfolioMenu";
+import HoverMenu from "./HoverMenu";
 
 export const Home = ({ loadertext }) => {
   const containerRef = useRef(null);
@@ -104,7 +105,7 @@ export const Home = ({ loadertext }) => {
         <Hero />
         <Reel />
         <HomeIntro />
-        {/* <ShowcaseMenu id={1} /> */}
+
         <HoverMenu projects={projectsData} />
         <Footer />
       </section>
