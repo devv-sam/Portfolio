@@ -172,20 +172,38 @@ const ProjectPage = () => {
             <img src={project.bannerImage} alt="Banner"></img>
           </div>
 
-          <div className="duo-banner scr-rvl-banner">
-            <img src={project.showcaseOne} alt="Showcase Banner"></img>
-            <img src={project.showcaseTwo} alt="Showcase Banner"></img>
+          <div className="grid grid-cols-2 md:grid-cols-2 grid-flow-row gap-4 md:gap-6 lg:gap-8 w-full">
+            <img
+              src={project.showcaseOne}
+              alt="Showcase Banner"
+              className="w-full h-auto object-cover  col-span-2 md:col-span-1"
+            />
+            <img
+              src={project.showcaseTwo}
+              alt="Showcase Banner"
+              className="w-full h-auto object-cover  col-span-2 md:col-span-1"
+            />
           </div>
 
-          <div className="banners">
-            <div className="banner-image scr-rvl-banner">
-              <img src={project.bannerShowcaseOne} alt="Showcase Banner"></img>
-            </div>
+          <div className="my-4 md:my-6 lg:my-8">
+            <img
+              src={project.bannerShowcaseOne}
+              alt="Showcase Banner"
+              className="w-full h-auto object-cover "
+            />
           </div>
 
-          <div className="duo-banner scr-rvl-banner">
-            <img src={project.showcaseThree} alt="Showcase Banner"></img>
-            <img src={project.showcaseFour} alt="Showcase Banner"></img>
+          <div className="grid grid-cols-2 md:grid-cols-2 grid-flow-row gap-4 md:gap-6 lg:gap-8 w-full">
+            <img
+              src={project.showcaseThree}
+              alt="Showcase Banner"
+              className="w-full h-auto object-cover  col-span-2 md:col-span-1"
+            />
+            <img
+              src={project.showcaseFour}
+              alt="Showcase Banner"
+              className="w-full h-auto object-cover  col-span-2 md:col-span-1"
+            />
           </div>
         </section>
         <NextProject id={project.id} />
