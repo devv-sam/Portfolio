@@ -4,7 +4,7 @@ import "../index.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import SplitType from "split-type";
-import PrxCheckout from "../Bridges/PrxCheckout";
+import PrxCheckout from "../Components/Bridges/PrxCheckout";
 import Preloader from "../Components/Preloader";
 import Bento from "../Components/Bento";
 const About = ({ loadertext }) => {
