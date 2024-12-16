@@ -2,13 +2,12 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import projects from "../project-info.json";
 import "../index.css";
-import Nav from "../Components/Nav";
 // import SplitType from "split-type";
 // import { ScrollTrigger } from "gsap/ScrollTrigger";
 // import gsap from "gsap";
 import Lenis from "lenis";
-import Footer from "../Components/Footer";
 import Preloader from "../Components/Preloader";
+import NextProject from "../Components/Bridges/NextProject";
 const ProjectPage = () => {
   const { id } = useParams();
   // Find the project by ID
@@ -135,8 +134,7 @@ const ProjectPage = () => {
   return (
     <>
       <Preloader loadertext={project.name} />
-      <section className="flex flex-col gap-12">
-        <Nav />
+      <section className="flex flex-col gap-12  my-12">
         <section className="mx-4 md:mx-8 lg:mx-16 xl:mx-24  project-page">
           <div className="row gapped">
             <div className="project-info">
@@ -190,7 +188,7 @@ const ProjectPage = () => {
             <img src={project.showcaseFour} alt="Showcase Banner"></img>
           </div>
         </section>
-        <Footer />
+        <NextProject id={project.id} />
       </section>
     </>
   );

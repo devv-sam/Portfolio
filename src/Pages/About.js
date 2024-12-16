@@ -1,13 +1,12 @@
 import React from "react";
 import { useRef, useEffect } from "react";
 import "../index.css";
-import Nav from "../Components/Nav";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Footer from "../Components/Footer";
 import SplitType from "split-type";
+import PrxCheckout from "../Bridges/PrxCheckout";
 import Preloader from "../Components/Preloader";
-import Bento from "./Bento";
+import Bento from "../Components/Bento";
 const About = ({ loadertext }) => {
   gsap.registerPlugin(ScrollTrigger);
   const containerRef = useRef(null);
@@ -98,11 +97,9 @@ const About = ({ loadertext }) => {
   return (
     <>
       <Preloader loadertext={"⨯ About"} />
-
-      <section className="flex flex-col gap-12">
-        <Nav />
+      <section className="flex flex-col gap-14">
         <Bento />
-        <Footer />
+        <PrxCheckout />
       </section>
     </>
   );

@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Bento = () => {
   return (
     <>
-      <section className=" bg-white mx-4 md:mx-8 lg:mx-16 xl:mx-24">
+      <section className=" bg-white mx-4 md:mx-8 lg:mx-16 xl:mx-24 my-12">
         <div className="mx-auto max-w-[2000px] h-full">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 md:gap-6 lg:gap-8 h-full">
             {/* About Section */}

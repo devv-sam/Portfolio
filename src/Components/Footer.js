@@ -56,7 +56,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <section className="mx-4 md:mx-8 lg:mx-16 xl:mx-24">
+    <section className="mx-4 md:mx-8 lg:mx-16 xl:mx-24 mb-4">
       <div
         ref={footerRef}
         className="rounded-3xl border border-gray-300 flex flex-col gap-12 justify-between p-6 md:p-12 lg:p-20"
@@ -74,7 +74,9 @@ const Footer = () => {
             into reality.
           </p>
           <a
-            href="#"
+            href="mailto:samuelydev@gmail.com?subject=Inquiry from Your Portfolio"
+            target="_blank"
+            rel="noreferrer"
             className="btn hover:shadow-lg transition-shadow duration-300"
           >
             Let's get started

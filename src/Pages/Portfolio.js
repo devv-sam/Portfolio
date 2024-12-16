@@ -1,7 +1,6 @@
 import React from "react";
 import "../index.css";
 import { useState, useEffect } from "react";
-import Nav from "../Components/Nav";
 import { CiGrid41 } from "react-icons/ci";
 import { CiMenuBurger } from "react-icons/ci";
 
@@ -10,7 +9,6 @@ import "lenis/dist/lenis.css";
 import projectsData from "../project-info.json";
 import Preloader from "../Components/Preloader";
 import Project from "../Components/Project";
-import Footer from "../Components/Footer";
 
 const Portfolio = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -57,8 +55,7 @@ const Portfolio = () => {
     <>
       <Preloader loadertext={"⨯ Playground"} />
 
-      <section className="flex flex-col gap-12">
-        <Nav />
+      <section className="flex flex-col gap-12 my-12">
         <section className="mx-4 md:mx-8 lg:mx-16 xl:mx-24">
           <div className="mt-8 flex flex-col gap-10">
             <div>
@@ -102,7 +99,6 @@ const Portfolio = () => {
         </section>
         {!isGrid && isList ? <PortfolioMenu projects={projectsData} /> : null}
         {isGrid ? gridView() : null}
-        <Footer />
       </section>
     </>
   );

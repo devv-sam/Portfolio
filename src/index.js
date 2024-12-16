@@ -5,6 +5,8 @@ import { BrowserRouter } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 import "lenis/dist/lenis.css";
 import AnimatedCursor from "react-animated-cursor";
+import Nav from "./Components/Nav";
+import Footer from "./Components/Footer";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <>
@@ -39,7 +41,9 @@ root.render(
       />{" "}
     </div>
     <BrowserRouter>
+      <Nav />
       <AppRoutes />
+      <Footer />
     </BrowserRouter>
   </>
 );
