@@ -1027,11 +1027,11 @@ figure.image {
   line-height: 32px;
 }
 
-.duo-banner {
+/* .duo-banner {
   display: flex;
   justify-content: space-evenly;
   width: 100%;
-}
+} */
 
 .main-wrap {
   display: flex;
