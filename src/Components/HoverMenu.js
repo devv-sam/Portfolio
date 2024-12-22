@@ -1,112 +1,192 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
 import { Link } from "react-router-dom";
-import Project from "./Project";
 
-const PortfolioMenu = ({ projects }) => {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isMobile, setIsMobile] = useState(false);
-  const [isTablet, setIsTablet] = useState(false);
+const PortfolioGallery = ({ projects }) => {
+  const galleryRef = useRef(null);
+  const itemsRef = useRef([]);
+  const textRefs = useRef([]);
+  const imageRefs = useRef([]);
+  const currentHoveredIndex = useRef(null);
+  const isAnimating = useRef(false);
 
   useEffect(() => {
-    const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 768);
-      setIsTablet(window.innerWidth < 1024);
-    };
+    // Initial setup remains the same
+    gsap.set(itemsRef.current, {
+      width: "20%",
+      maxWidth: "400px",
+    });
 
-    checkScreenSize();
-    window.addEventListener("resize", checkScreenSize);
-    return () => window.removeEventListener("resize", checkScreenSize);
+    gsap.set(textRefs.current, {
+      opacity: 0,
+      visibility: "hidden",
+    });
+
+    gsap.set(imageRefs.current, {
+      scale: 1,
+    });
+
+    const middleIndex = Math.floor(projects.length / 2);
+    gsap.set(itemsRef.current[middleIndex], {
+      width: "70%",
+      maxWidth: "700px",
+    });
+    gsap.set(textRefs.current[middleIndex], {
+      opacity: 1,
+      visibility: "visible",
+      y: 0,
+    });
   }, []);
 
-  const handleMouseMove = (e) => {
-    if (!isTablet) {
-      setMousePosition({
-        x: e.clientX,
-        y: e.clientY,
-      });
+  const animateItem = (index, isExpanding) => {
+    if (isAnimating.current) return;
+    isAnimating.current = true;
+
+    const tl = gsap.timeline({
+      onComplete: () => {
+        isAnimating.current = false;
+      },
+    });
+
+    itemsRef.current.forEach((item, i) => {
+      const isTarget = i === index;
+
+      tl.to(
+        item,
+        {
+          width: isExpanding && isTarget ? "70%" : "20%",
+          maxWidth: isExpanding && isTarget ? "700px" : "300px",
+          ease: "power2.out",
+          duration: 0.5,
+        },
+        0
+      );
+
+      tl.to(
+        imageRefs.current[i],
+        {
+          scale: isExpanding && isTarget ? 1.07 : 1,
+          duration: 0.5,
+          ease: "power2.out",
+        },
+        0
+      );
+
+      tl.to(
+        textRefs.current[i],
+        {
+          opacity: isExpanding && isTarget ? 1 : 0,
+          visibility: isExpanding && isTarget ? "visible" : "hidden",
+          duration: 0.3,
+          ease: "power2.out",
+        },
+        isExpanding ? 0.2 : 0
+      );
+    });
+  };
+
+  const handleHover = (index) => {
+    // If hovering the same item, don't do anything
+    if (currentHoveredIndex.current === index) return;
+
+    // If we're moving from one item to another
+    if (currentHoveredIndex.current !== null && index !== null) {
+      currentHoveredIndex.current = index;
+      animateItem(index, true);
+      return;
+    }
+
+    // If we're entering a new item from no hover
+    if (index !== null) {
+      currentHoveredIndex.current = index;
+      animateItem(index, true);
     }
   };
+
+  const handleMouseLeave = (index) => {
+    // Only handle leave for currently hovered item
+    if (currentHoveredIndex.current === index) {
+      currentHoveredIndex.current = null;
+      animateItem(null, false);
+    }
+  };
+
   return (
-    <>
-      {isMobile ? (
-        <div className="flex flex-col mx-4 gap-4">
-          <div>
-            <p className="text-sm mt-1 md:mt-0 text-gray-500">RECENT WORK</p>
-          </div>
+    <section className="mx-4 pt-6 md:mx-8 lg:mx-16 xl:mx-24">
+      <div className="hidden lg:block">
+        <div
+          ref={galleryRef}
+          className="w-full flex items-start justify-center gap-4"
+        >
           {projects.map((project, index) => (
-            <Project key={project.id} id={project.id} />
+            <Link
+              to={`/projects/${project.id}`}
+              key={project.id}
+              ref={(el) => (itemsRef.current[index] = el)}
+              className="flex flex-col gap-6"
+              onMouseLeave={handleMouseLeave}
+            >
+              <div className="h-[450px] overflow-hidden rounded-lg">
+                <div
+                  ref={(el) => (imageRefs.current[index] = el)}
+                  className="w-full h-full"
+                  onMouseEnter={() => handleHover(index)}
+                >
+                  <img
+                    src={project.coverImage}
+                    alt={project.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              <div
+                ref={(el) => (textRefs.current[index] = el)}
+                className="flex flex-col gap-2"
+              >
+                <div className="flex justify-between items-start">
+                  <h2 className="text-2xl font-bold">{project.name}</h2>
+                  <p className="text-sm text-gray-600">{project.tags[0]}</p>
+                </div>
+              </div>
+            </Link>
           ))}
         </div>
-      ) : (
-        <section
-          className="relative mx-4 md:mx-8 lg:mx-16 xl:mx-24 z-0"
-          onMouseMove={handleMouseMove}
-        >
-          <div>
-            <p className="text-sm mt-1 md:mt-0 text-gray-500">RECENT WORK</p>
-          </div>
+      </div>
 
-          <div className="relative z-10">
-            {projects.map((project, index) => (
-              <div
-                key={project.id}
-                className="relative"
-                onMouseEnter={() => !isTablet && setHoveredIndex(index)}
-                onMouseLeave={() => !isTablet && setHoveredIndex(null)}
-              >
-                <Link
-                  to={`/projects/${project.id}`}
-                  className="group block py-10 border-b border-gray-200"
-                  onMouseEnter={() => !isTablet && setHoveredIndex(index)}
-                  onMouseLeave={() => !isTablet && setHoveredIndex(null)}
-                >
-                  <div className="grid grid-cols-12 items-start font-['Poppins']">
-                    <div className="col-span-6">
-                      <h2 className="text-xl sm:text-lg md:text-xl font-medium">
-                        {project.name}
-                      </h2>
-                    </div>
-                    <div className="col-span-4">
-                      <div className="space-y-2">
-                        <div className="flex flex-wrap gap-3">
-                          <span className="text-md text-gray-600">
-                            {project.tags[0]}
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="col-span-2 text-right">
-                      <span className="text-md text-gray-600">
-                        {project.date}
-                      </span>
-                    </div>
-                  </div>
-                </Link>
+      {/* Tablet/Mobile View remains unchanged */}
+      <div className="lg:hidden">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {projects.map((project) => (
+            <div key={project.id} className="flex flex-col gap-4">
+              <div className="w-full aspect-[4/3] overflow-hidden">
+                <img
+                  src={project.coverImage}
+                  alt={project.name}
+                  className="w-full h-full object-cover"
+                />
               </div>
-            ))}
-          </div>
-
-          {hoveredIndex !== null && !isTablet && (
-            <div
-              className="fixed pointer-events-none"
-              style={{
-                left: `${mousePosition.x - 250}px`,
-                top: `${mousePosition.y - 150}px`,
-                zIndex: 50,
-              }}
-            >
-              <img
-                src={projects[hoveredIndex].coverImage}
-                alt={projects[hoveredIndex].name}
-                className="w-[500px] h-[300px] object-cover shadow-lg"
-              />
+              <div className="flex flex-col gap-2">
+                <div className="md:flex justify-between items-start">
+                  <h2 className="text-2xl md:text-xl sm:text-lg font-bold">
+                    {project.name}
+                  </h2>
+                  <p className="text-sm text-gray-600">{project.tags[0]}</p>
+                </div>
+              </div>
             </div>
-          )}
-        </section>
-      )}
-    </>
+          ))}
+        </div>
+      </div>
+      <div className="flex justify-center mt-4 mb-8 md:mt-16 md:mb-12">
+        <Link
+          to="/projects"
+          className="btn inline-block px-8 py-3 text-lg font-medium transition-all duration-300"
+        >
+          View All
+        </Link>
+      </div>
+    </section>
   );
 };
 
-export default PortfolioMenu;
+export default PortfolioGallery;

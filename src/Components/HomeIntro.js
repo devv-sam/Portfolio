@@ -11,15 +11,16 @@ const HomeIntro = () => {
             <strong>Figma</strong> and develop with <strong>JavaScript</strong>.
           </h3>
         </div>
-        <div className="lg:w-1/4 flex flex-col gap-4 ">
+        <div className="lg:w-1/4 flex flex-col gap-4 align-start">
           <p className="font-['Poppins'] text-sm md:text-base text-gray-600 leading-[1.45]">
             Proud Ghanaian, Real Madrid superfan, passionate Classical music
             enthusiast.
           </p>
-          <Link to="/about">
-            <button className="btn hover:shadow-lg transition-shadow duration-300">
-              About me
-            </button>
+          <Link
+            to="/about"
+            className="btn hover:shadow-lg transition-shadow duration-300"
+          >
+            About me
           </Link>
         </div>
       </div>

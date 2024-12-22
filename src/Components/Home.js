@@ -24,8 +24,8 @@ export const Home = ({ loadertext }) => {
       <section className="flex flex-col my-12 gap-14">
         <Hero />
         <Reel />
-        <HomeIntro />
         <HoverMenu projects={projectsData} />
+        <HomeIntro />
       </section>
     </>
   );

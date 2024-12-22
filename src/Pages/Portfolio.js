@@ -23,7 +23,9 @@ const Portfolio = () => {
           <Project
             key={project.id}
             id={project.id}
-            className="p-4 bg-white/5 rounded-lg"
+            className="h-full p-4 bg-white/5 rounded-lg transition-all duration-300 
+                     hover:bg-white/10 hover:shadow-lg 
+                     flex flex-col justify-between"
           />
         ))}
       </div>
