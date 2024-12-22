@@ -42,5 +42,27 @@
     "bannerShowcaseOne": "/assets/banner1.png",
     "showcaseThree": "/assets/showcase2.png",
     "showcaseFour": "/assets/showcase1.png"
+  },
+  {
+    "id": 3,
+    "name": "Mobile App Redesign",
+    "link": "mobile-app",
+    "date": "Mar 2024",
+    "coverImage": "/assets/template2.png",
+    "tags": ["App Design", "UI/UX Design"],
+    "externalLink": "https://example.com/project2",
+    "videoShowcase": "/assets/video.mp4",
+    "totalDuration": "8 weeks",
+    "description": "This project began as a response to the need for a more user-friendly platform for managing complex tasks. I led the initiative from initial concept to final deployment, focusing on both user experience and performance.",
+    "duration": {
+      "design": "3 weeks",
+      "development": "5 weeks"
+    },
+    "bannerImage": "/assets/banner-image.png",
+    "showcaseOne": "/assets/showcase1.png",
+    "showcaseTwo": "/assets/showcase2.png",
+    "bannerShowcaseOne": "/assets/banner1.png",
+    "showcaseThree": "/assets/showcase2.png",
+    "showcaseFour": "/assets/showcase1.png"
   }
 ]
