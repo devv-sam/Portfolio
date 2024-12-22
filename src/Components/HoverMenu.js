@@ -177,7 +177,7 @@ const PortfolioGallery = ({ projects }) => {
           ))}
         </div>
       </div>
-      <div className="flex justify-center mt-8 mb-8 md:mt-16 md:mb-12">
+      <div className="flex justify-center mt-4 mb-8 md:mt-16 md:mb-12">
         <Link
           to="/projects"
           className="btn inline-block px-8 py-3 text-lg font-medium transition-all duration-300"
