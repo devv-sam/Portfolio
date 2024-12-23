@@ -2,7 +2,13 @@ import React from "react";
 import SpotifyNowPlaying from "../Components/spotify/SpotifyNowPlaying.js";
 import { gsap } from "gsap";
 import { FaReact, FaHtml5, FaGit, FaJsSquare } from "react-icons/fa";
-import { SiCss3, SiFigma, SiAdobeillustrator, SiFramer } from "react-icons/si";
+import {
+  SiCss3,
+  SiFigma,
+  SiAdobeillustrator,
+  SiFramer,
+  SiGreensock,
+} from "react-icons/si";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -42,6 +48,7 @@ const Bento = () => {
                     { Icon: SiFigma, name: "Figma" },
                     { Icon: SiAdobeillustrator, name: "Illustrator" },
                     { Icon: SiFramer, name: "Framer" },
+                    { Icon: SiGreensock, name: "GSAP" },
                   ].map(({ Icon, name }, index) => (
                     <div
                       key={index}
