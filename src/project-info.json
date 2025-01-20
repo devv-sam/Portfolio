@@ -7,7 +7,7 @@
     "tags": ["MERN Stack", "UI/UX Design"],
     "externalLink": "https://haum.vercel.app",
     "videoShowcase": "/assets/haumshowcase.mp4",
-    "description": "Heavily inspired by @lamadev's youtube tutorial. I chose to work on this project as a way to learn more about React and Node.js specifically the MERN stack. In the design phase, I decided to add my own twist to the original project, a new layout, a brand new set of colors and a new logo designed in Illustrator.",
+    "description": "Inspired by @lamadev's YouTube tutorial, I created this project to deepen my knowledge of the MERN stack (React, Node.js, MongoDB, and Express). To make it my own, I redesigned the layout, introduced a fresh color palette, and crafted a custom logo in Illustrator.",
     "totalDuration": "4 weeks",
     "duration": {
       "design": "1 week",

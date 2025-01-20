@@ -66,11 +66,7 @@ const Preloader = ({ loadertext }) => {
   return (
     <div className="preloader">
       <p className="preloader__text">
-        <span>
-          {" "}
-          <span className="hidden lg:block">x</span>
-          {loadertext}
-        </span>
+        <span> {loadertext}</span>
       </p>
       <div className="preloader__background"></div>
     </div>

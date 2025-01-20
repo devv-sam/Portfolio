@@ -1,110 +1,119 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import Lenis from "lenis";
+import projects from "../project-info.json";
 import { Link } from "react-router-dom";
-import Project from "./Project";
+import { ArrowRight } from "lucide-react";
 
-const PortfolioMenu = ({ projects }) => {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-  const [isMobile, setIsMobile] = useState(false);
-  const [isTablet, setIsTablet] = useState(false);
+gsap.registerPlugin(ScrollTrigger);
+
+const ProjectPage = () => {
+  const scrollSectionRef = useRef(null);
+  const wrapperRef = useRef(null);
 
   useEffect(() => {
-    const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 768);
-      setIsTablet(window.innerWidth < 1024);
-    };
+    const lenis = new Lenis();
 
-    checkScreenSize();
-    window.addEventListener("resize", checkScreenSize);
-    return () => window.removeEventListener("resize", checkScreenSize);
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    const items = document.querySelectorAll(".item");
+
+    items.forEach((item, index) => {
+      if (index !== 0) {
+        gsap.set(item, { yPercent: 100 });
+      }
+    });
+
+    const timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: scrollSectionRef.current,
+        pin: true,
+        start: "top top",
+        end: () => `+=${items.length * 100}%`,
+        scrub: 1,
+        invalidateOnRefresh: true,
+      },
+      defaults: { ease: "none" },
+    });
+
+    items.forEach((item, index) => {
+      timeline
+        .to(item, {
+          scale: 0.9,
+          borderRadius: "10px",
+        })
+        .to(
+          items[index + 1],
+          {
+            yPercent: 0,
+          },
+          "<"
+        );
+    });
+
+    return () => {
+      lenis.destroy();
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
   }, []);
 
-  const handleMouseMove = (e) => {
-    if (!isTablet) {
-      setMousePosition({
-        x: e.clientX,
-        y: e.clientY,
-      });
-    }
-  };
   return (
-    <>
-      {isMobile ? (
-        <div className="flex flex-col mx-4 gap-4">
-          {projects.map((project, index) => (
-            <Project key={project.id} id={project.id} />
-          ))}
-        </div>
-      ) : (
-        <section
-          className="relative mx-4 md:mx-8 lg:mx-16 xl:mx-24 z-0"
-          onMouseMove={handleMouseMove}
-        >
-          <div className="grid grid-cols-12 py-8  text-gray-500 text-sm font-['Poppins'] border-b border-gray-200">
-            <div className="col-span-6">CLIENT</div>
-            <div className="col-span-4">CATEGORY</div>
-            <div className="col-span-2 text-right">DATE</div>
-          </div>
-          <div className="relative z-10">
+    <main className=" bg-white">
+      <div ref={scrollSectionRef} className="scroll-section section h-screen">
+        <div ref={wrapperRef} className="wrapper h-full">
+          <div className="list relative h-full">
             {projects.map((project, index) => (
-              <div
-                key={project.id}
-                className="relative"
-                onMouseEnter={() => !isTablet && setHoveredIndex(index)}
-                onMouseLeave={() => !isTablet && setHoveredIndex(null)}
-              >
-                <Link
-                  to={`/projects/${project.id}`}
-                  className="group block py-10 border-b border-gray-200"
-                  onMouseEnter={() => !isTablet && setHoveredIndex(index)}
-                  onMouseLeave={() => !isTablet && setHoveredIndex(null)}
+              <Link to={`/projects/${project.id}`} key={project.id}>
+                <div
+                  className="mx-6 md:mx-12 lg:mx-24 item absolute inset-0 bg-white group"
+                  role="listitem"
                 >
-                  <div className="grid grid-cols-12 items-start font-['Poppins']">
-                    <div className="col-span-6">
-                      <h2 className="text-xl sm:text-lg md:text-xl font-medium">
-                        {project.name}
-                      </h2>
-                    </div>
-                    <div className="col-span-4">
-                      <div className="space-y-2">
-                        <div className="flex flex-wrap gap-3">
-                          <span className="text-md text-gray-600">
-                            {project.tags[0]}
-                          </span>
+                  <div className="flex flex-col h-full space-y-8 md:space-y-12">
+                    <div className="pt-8 md:pt-12">
+                      <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
+                        <div className="flex items-center space-x-4">
+                          <h2 className="text-[clamp(2rem,4vw,3rem)] font-medium ">
+                            {project.name}
+                          </h2>
+                          <ArrowRight className="hidden md:block w-8 h-8 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         </div>
+                        <p className="hidden md:block text-lg text-gray-600 w-full max-w-xl">
+                          {project.description}
+                        </p>
                       </div>
                     </div>
-                    <div className="col-span-2 text-right">
-                      <span className="text-md text-gray-600">
-                        {project.date}
-                      </span>
+                    <div className="relative w-full h-[50vh] md:h-[60vh] overflow-hidden rounded-lg">
+                      {project.videoShowcase ? (
+                        <video
+                          src={project.videoShowcase}
+                          autoPlay
+                          muted
+                          loop
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <img
+                          src={project.bannerImage}
+                          alt={project.name}
+                          className="w-full h-full object-cover"
+                        />
+                      )}
                     </div>
                   </div>
-                </Link>
-              </div>
+                </div>
+              </Link>
             ))}
           </div>
-
-          {hoveredIndex !== null && !isTablet && (
-            <div
-              className="fixed pointer-events-none"
-              style={{
-                left: `${mousePosition.x - 250}px`,
-                top: `${mousePosition.y - 150}px`,
-                zIndex: 50,
-              }}
-            >
-              <img
-                src={projects[hoveredIndex].coverImage}
-                alt={projects[hoveredIndex].name}
-                className="w-[500px] h-[300px] object-cover shadow-lg"
-              />
-            </div>
-          )}
-        </section>
-      )}
-    </>
+        </div>
+      </div>
+    </main>
   );
 };
 
-export default PortfolioMenu;
+export default ProjectPage;

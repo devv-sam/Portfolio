@@ -96,7 +96,7 @@ const About = ({ loadertext }) => {
 
   return (
     <>
-      <Preloader loadertext={"⨯ About"} />
+      {/* <Preloader loadertext={"⨯ About"} /> */}
       <section className="flex flex-col gap-14">
         <Bento />
         <PrxCheckout />
