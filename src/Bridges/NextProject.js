@@ -9,7 +9,7 @@ const NextProject = ({ id }) => {
   return (
     <>
       <section className="mx-4 md:mx-8 lg:mx-16 xl:mx-24">
-        <div className="rounded-3xl border border-gray-300 flex flex-col gap-12 justify-between p-6 md:p-12 lg:p-20">
+        <div className="rounded-lg border border-gray-300 flex flex-col gap-12 justify-between p-6 md:p-12 lg:p-20">
           <div className="flex flex-col gap-6 text-center">
             <h4 className="font-poppins text-[clamp(1rem,2.5vw,1.4rem)] leading-[1.8] font-medium text-black/80 [clip-path:polygon(0_0,100%_0,100%_100%,0%_100%)] transform transition-transform duration-500">
               Next Project

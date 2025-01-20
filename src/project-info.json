@@ -1,23 +1,22 @@
 [
   {
     "id": 1,
-    "name": "Innovative Web Platform",
-    "link": "innovative-web",
-    "coverImage": "/assets/template.png",
-    "date": "Apr 2024",
-    "tags": ["Web Development", "UI/UX Design"],
-    "externalLink": "https://example.com/project1",
-    "videoShowcase": "/assets/video.mp4",
-    "description": "This project began as a response to the need for a more user-friendly platform for managing complex tasks. I led the initiative from initial concept to final deployment, focusing on both user experience and performance.",
-    "totalDuration": "6 weeks",
+    "name": "Haum",
+    "coverImage": "/assets/bannerhaum.png",
+    "date": "Jan 2025",
+    "tags": ["MERN Stack", "UI/UX Design"],
+    "externalLink": "https://haum.vercel.app",
+    "videoShowcase": "/assets/haumshowcase.mp4",
+    "description": "Heavily inspired by @lamadev's youtube tutorial. I chose to work on this project as a way to learn more about React and Node.js specifically the MERN stack. In the design phase, I decided to add my own twist to the original project, a new layout, a brand new set of colors and a new logo designed in Illustrator.",
+    "totalDuration": "4 weeks",
     "duration": {
-      "design": "2 weeks",
-      "development": "4 weeks"
+      "design": "1 week",
+      "development": "3 weeks"
     },
-    "bannerImage": "/assets/banner-image.png",
-    "showcaseOne": "/assets/showcase1.png",
-    "showcaseTwo": "/assets/showcase2.png",
-    "bannerShowcaseOne": "/assets/banner1.png",
+    "bannerImage": "/assets/bannerhaum.png",
+    "showcaseOne": "/assets/",
+    "showcaseTwo": "/assets/mobile-login.png",
+    "bannerShowcaseOne": "/assets/marketplace.png",
     "showcaseThree": "/assets/showcase1.png",
     "showcaseFour": "/assets/showcase1.png"
   },

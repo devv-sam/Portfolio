@@ -2,9 +2,6 @@ import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import projects from "../project-info.json";
 import "../index.css";
-// import SplitType from "split-type";
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
-// import gsap from "gsap";
 import Lenis from "lenis";
 import Preloader from "../Components/Preloader";
 import NextProject from "../Components/Bridges/NextProject";
@@ -18,9 +15,6 @@ const ProjectPage = () => {
       console.log("Project not found");
     }
   });
-
-  // useEffect(() => {
-  //   gsap.registerPlugin(ScrollTrigger);
 
   //   const hdReveal = new SplitType(".rvl-hd", { types: "words" });
   //   const pgReveal = new SplitType(".rvl-pg", { types: "lines" });
@@ -133,7 +127,7 @@ const ProjectPage = () => {
   requestAnimationFrame(raf);
   return (
     <>
-      <Preloader loadertext={project.name} />
+      {/* <Preloader loadertext={project.name} /> */}
       <section className="flex flex-col gap-12  my-12">
         <section className="mx-4 md:mx-8 lg:mx-16 xl:mx-24  project-page">
           <div className="row gapped">
@@ -154,6 +148,8 @@ const ProjectPage = () => {
               </div>
               <a
                 href={project.externalLink}
+                target="_blank"
+                rel="noreferrer"
                 className="btn obj-rvl hover:shadow-lg transition-shadow duration-300"
               >
                 Live Site{" "}
@@ -168,7 +164,7 @@ const ProjectPage = () => {
               </div>
             </div>
           </div>
-          <div className="banner-image obj-rvl">
+          <div className="banner-image obj-rvl shadow-md hover:shadow-lg transition-shadow duration-300">
             <img src={project.bannerImage} alt="Banner"></img>
           </div>
 
@@ -176,33 +172,36 @@ const ProjectPage = () => {
             <img
               src={project.showcaseOne}
               alt="Showcase Banner"
-              className="w-full h-auto object-cover  col-span-2 md:col-span-1"
+              className="w-full h-auto object-cover  col-span-2 md:col-span-1 rounded-lg "
             />
             <img
               src={project.showcaseTwo}
               alt="Showcase Banner"
-              className="w-full h-auto object-cover  col-span-2 md:col-span-1"
+              className="w-full h-auto object-cover  col-span-2 md:col-span-1 shadow-md hover:shadow-lg transition-shadow duration-300 rounded-lg"
             />
           </div>
 
-          <div className="my-4 md:my-6 lg:my-8">
-            <img
-              src={project.bannerShowcaseOne}
-              alt="Showcase Banner"
-              className="w-full h-auto object-cover "
+          <div className="my-4 md:my-6 lg:my-8  ">
+            <video
+              src={project.videoShowcase}
+              autoPlay
+              muted
+              loop
+              alt="Feature Video"
+              className="w-full h-auto object-cover shadow-md hover:shadow-lg transition-shadow duration-300 rounded-lg"
             />
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-2 grid-flow-row gap-4 md:gap-6 lg:gap-8 w-full">
+          <div className="grid grid-cols-2 md:grid-cols-2 grid-flow-row gap-4 md:gap-6 lg:gap-8 w-full ">
             <img
               src={project.showcaseThree}
               alt="Showcase Banner"
-              className="w-full h-auto object-cover  col-span-2 md:col-span-1"
+              className="w-full h-auto object-cover  col-span-2 md:col-span-1  shadow-md hover:shadow-lg transition-shadow duration-300 rounded-lg"
             />
             <img
               src={project.showcaseFour}
               alt="Showcase Banner"
-              className="w-full h-auto object-cover  col-span-2 md:col-span-1"
+              className="w-full h-auto object-cover  col-span-2 md:col-span-1  shadow-md hover:shadow-lg transition-shadow duration-300 rounded-lg"
             />
           </div>
         </section>

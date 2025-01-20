@@ -20,7 +20,7 @@ export const Home = ({ loadertext }) => {
 
   return (
     <>
-      <Preloader loadertext={"⨯ Home"} />
+      <Preloader loadertext={"Home"} />
       <section className="flex flex-col my-12 gap-14">
         <Hero />
         <Reel />

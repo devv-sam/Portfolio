@@ -58,7 +58,6 @@ const Preloader = ({ loadertext }) => {
         ease: "power4.inOut",
       });
 
-    // Cleanup function to ensure scroll is allowed if component unmounts
     return () => {
       allowScroll();
     };
@@ -67,7 +66,11 @@ const Preloader = ({ loadertext }) => {
   return (
     <div className="preloader">
       <p className="preloader__text">
-        <span>{loadertext}</span>
+        <span>
+          {" "}
+          <span className="hidden lg:block">x</span>
+          {loadertext}
+        </span>
       </p>
       <div className="preloader__background"></div>
     </div>
