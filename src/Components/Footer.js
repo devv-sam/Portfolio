@@ -67,54 +67,67 @@ const Footer = () => {
           className="flex flex-col items-center gap-6 text-center"
         >
           <h3 className="text-[clamp(2rem,4vw,3rem)] font-medium tracking-[0.5px] w-full text-black [clip-path:polygon(0_0,100%_0,100%_100%,0%_100%)]">
-            Ready to spark your next big idea?
+            Let's get in touch
           </h3>
           <p className="font-['Poppins'] text-base md:text-lg text-gray-600 max-w-2xl">
-            Let's dive in and make it happen! Together, we can turn your vision
-            into reality.
+            Reach out to me to create something amazing or to just say hello!
           </p>
           <a
             href="mailto:samuelydev@gmail.com?subject=Inquiry from Your Portfolio"
             target="_blank"
             rel="noreferrer"
-            className="btn hover:shadow-lg transition-shadow duration-300"
+            className="btn hover:shadow-lg transition-shadow duration-300 "
           >
-            Let's get started
+            samuelydev@gmail.com
           </a>
         </div>
 
         {/* Navigation Links */}
-        <div ref={linksRef} className="flex flex-col gap-6">
-          <ul className="flex flex-wrap justify-center gap-8 md:gap-12">
+        <div ref={linksRef} className="flex flex-col gap-2">
+          <ul className="flex flex-wrap justify-center gap-4 md:gap-6 ">
             <li>
-              <a href="/home" className="link">
+              <a
+                className="link"
+                href="../assets/SY_Resume.pdf"
+                target="_blank"
+              >
                 <span className="mask">
                   <div className="link-container">
-                    <span className="link-title1 title">Home</span>
-                    <span className="link-title2 title">Home</span>
+                    <span className="link-title1 title">Resume</span>
+                    <span className="link-title2 title">Resume</span>
                   </div>
                 </span>
               </a>
             </li>
             <li>
-              <a href="/about" className="link">
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://www.linkedin.com/in/samuel-yeboah-asi-82b28a2b9/"
+                className="link"
+              >
                 <span className="mask">
                   <div className="link-container">
-                    <span className="link-title1 title">About</span>
-                    <span className="link-title2 title">About</span>
+                    <span className="link-title1 title">LinkedIn</span>
+                    <span className="link-title2 title">LinkedIn</span>
                   </div>
                 </span>
               </a>
             </li>
             <li>
-              <Link to="/portfolio" className="link">
+              <a
+                rel="noopener noreferrer"
+                target="_blank"
+                href="https://github.com/devv-sam?tab=overview&from=2024-08-01&to=2024-08-12"
+                className="link"
+              >
                 <span className="mask">
                   <div className="link-container">
-                    <span className="link-title1 title">Work</span>
-                    <span className="link-title2 title">Work</span>
+                    <span className="link-title1 title">Github</span>
+                    <span className="link-title2 title">Github</span>
                   </div>
                 </span>
-              </Link>
+              </a>
             </li>
           </ul>
         </div>
@@ -125,7 +138,7 @@ const Footer = () => {
           className="flex flex-col md:flex-row justify-center items-center gap-4 text-center"
         >
           <p className="font-['Poppins'] text-sm md:text-base text-gray-600">
-            © {new Date().getFullYear()} Samuel Yeboah-Asi. All rights reserved.
+            {new Date().getFullYear()} · Samuel Yeboah-Asi.
           </p>
         </div>
       </div>
