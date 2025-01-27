@@ -2,11 +2,13 @@ import React from "react";
 import SpotifyNowPlaying from "../Components/spotify/SpotifyNowPlaying.js";
 import { gsap } from "gsap";
 import { FaReact, FaHtml5, FaGit, FaJsSquare } from "react-icons/fa";
+import { IoLogoNodejs } from "react-icons/io5";
 import {
-  SiCss3,
+  SiMongodb,
+  SiTailwindcss,
   SiFigma,
   SiAdobeillustrator,
-  SiFramer,
+  SiPrisma,
   SiGreensock,
 } from "react-icons/si";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -43,12 +45,14 @@ const Bento = () => {
                     { Icon: FaReact, name: "React" },
                     { Icon: FaJsSquare, name: "JavaScript" },
                     { Icon: FaHtml5, name: "HTML" },
-                    { Icon: SiCss3, name: "CSS" },
+                    { Icon: SiTailwindcss, name: "Tailwind" },
+                    { Icon: SiMongodb, name: "MongoDB" },
                     { Icon: FaGit, name: "Git" },
                     { Icon: SiFigma, name: "Figma" },
                     { Icon: SiAdobeillustrator, name: "Illustrator" },
-                    { Icon: SiFramer, name: "Framer" },
+                    { Icon: SiPrisma, name: "Prisma" },
                     { Icon: SiGreensock, name: "GSAP" },
+                    { Icon: IoLogoNodejs, name: "Node.js" },
                   ].map(({ Icon, name }, index) => (
                     <div
                       key={index}
@@ -102,9 +106,9 @@ const Bento = () => {
                   {
                     title: "Project: Empower",
                     role: "Frontend Developer",
-                    duration: "AUG 2024 - PRESENT",
+                    duration: "AUG 2024 - JAN 2025",
                     description:
-                      "Building web applications with a team to support low-income, first-generation students.",
+                      "Created scalable UI components for a nonprofit platform using Next.js, TypeScript, and Tailwind.",
                   },
                   {
                     title: "Bloomberg",
