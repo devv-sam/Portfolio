@@ -28,10 +28,9 @@ const HoverMenu = ({ projects }) => {
               works
             </h1>
             <p className="text-base md:text-lg text-gray-600 lg:max-w-xl">
-              This portfolio showcases a selection of my work, representing the
-              range and diversity of projects I've undertaken. While some pieces
-              are not displayed due to client confidentiality, I believe these
-              examples capture the breadth of what I can bring to each project.
+              Here are some of the projects I've worked on. I personally learn
+              best through experience so a good bunch of these were 'code it to
+              learn it' style projects. Hope you enjoy!
             </p>
           </div>
         </div>

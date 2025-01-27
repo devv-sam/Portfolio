@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Haum",
-    "coverImage": "/assets/bannerhaum.png",
+    "coverImage": "/assets/haummain.png",
     "date": "Jan 2025",
     "tags": ["MERN Stack", "UI/UX Design"],
     "externalLink": "https://haum.vercel.app",
@@ -14,8 +14,8 @@
       "development": "3 weeks"
     },
     "bannerImage": "/assets/bannerhaum.png",
-    "showcaseOne": "/assets/register.png",
-    "showcaseTwo": "/assets/mobile-login.png",
+    "showcaseOne": "/assets/loginmockup.png",
+    "showcaseTwo": "/assets/mobilemockup.png",
     "bannerShowcaseOne": "/assets/marketplace.png",
     "showcaseThree": "/assets/showcase1.png",
     "showcaseFour": "/assets/showcase1.png"
