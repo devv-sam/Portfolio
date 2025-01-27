@@ -25,7 +25,6 @@ const Reel = () => {
           },
           duration: 2,
           scale: 0.9,
-          opacity: 0.5,
           y: -100,
           borderRadius: "2rem",
           ease: "power2.out",
@@ -66,8 +65,7 @@ const Reel = () => {
       >
         <video
           ref={videoRef}
-          a
-          src="/assets/video.mp4"
+          src="/assets/haumshowcasevid.mp4"
           className="w-full h-auto rounded-3xl transform-gpu"
           loop
           playsInline

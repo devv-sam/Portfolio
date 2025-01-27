@@ -89,9 +89,9 @@ const ProjectPage = () => {
                       </div>
                     </div>
                     <div className="relative w-full h-[50vh] md:h-[60vh] overflow-hidden rounded-lg">
-                      {project.videoShowcase ? (
+                      {project.bannerImage ? (
                         <video
-                          src={project.videoShowcase}
+                          src={project.bannerImage}
                           autoPlay
                           muted
                           loop

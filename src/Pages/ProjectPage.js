@@ -16,108 +16,11 @@ const ProjectPage = () => {
     }
   });
 
-  //   const hdReveal = new SplitType(".rvl-hd", { types: "words" });
-  //   const pgReveal = new SplitType(".rvl-pg", { types: "lines" });
-  //   const objReveal = document.querySelectorAll(".obj-rvl");
-  //   const scrReveal = new SplitType(".scr-rvl", { types: "lines" });
-  //   const scrTrigger = document.querySelectorAll(".project-introduction");
-  //   const problemReveal = new SplitType(".prb-rvl", { types: "lines" });
-  //   const outcomeReveal = new SplitType(".out-rvl", { types: "lines" });
-  //   const solutionReveal = new SplitType(".sol-rvl", { types: "lines" });
-  //   const scrBannerReveal = document.querySelectorAll(".scr-rvl-banner");
-  //   const scrBannerTrigger = document.querySelectorAll(".duo-banner");
-  //   const problemTrigger = document.querySelector(".problem-section");
-  //   const solutionTrigger = document.querySelector(".solution-section");
-  //   const outcomeTrigger = document.querySelector(".outcome-section");
-
-  //   gsap.to(hdReveal.words, {
-  //     y: 0,
-  //     stagger: 0.05,
-  //     delay: 1,
-  //     duration: 0.1,
-  //   });
-  //   gsap.from(pgReveal.lines, {
-  //     y: 110,
-  //     stagger: 0.05,
-  //     delay: 1,
-  //     duration: 1,
-  //   });
-  //   gsap.from(objReveal, {
-  //     y: 50,
-  //     delay: 1,
-  //     duration: 1,
-  //     opacity: 0,
-  //   });
-  //   gsap.from(scrReveal.lines, {
-  //     scrollTrigger: {
-  //       trigger: scrTrigger,
-  //       start: "top +=500",
-  //       end: "bottom +=50",
-  //       scrub: false,
-  //       markers: false,
-  //     },
-  //     y: 110,
-  //     stagger: 0.05,
-  //     duration: 1,
-  //   });
-  //   gsap.from(scrBannerReveal, {
-  //     scrollTrigger: {
-  //       trigger: scrBannerTrigger,
-  //       start: "top +=700",
-  //       end: " +=550",
-  //       scrub: false,
-  //       markers: false,
-  //     },
-  //     y: 100,
-  //     stagger: 1,
-  //     duration: 1,
-  //     opacity: 0,
-  //   });
-
-  //   gsap.from(problemReveal.lines, {
-  //     scrollTrigger: {
-  //       trigger: problemTrigger,
-  //       start: "top +=600",
-  //       end: "bottom center",
-  //       scrub: false,
-  //       markers: false,
-  //     },
-  //     y: 110,
-  //     stagger: 0.05,
-  //     duration: 1,
-  //   });
-
-  //   gsap.from(solutionReveal.lines, {
-  //     scrollTrigger: {
-  //       trigger: solutionTrigger,
-  //       start: "top +=600",
-  //       end: "bottom center",
-  //       scrub: false,
-  //       markers: false,
-  //     },
-  //     y: 110,
-  //     stagger: 0.05,
-  //     duration: 1,
-  //   });
-
-  //   gsap.from(outcomeReveal.lines, {
-  //     scrollTrigger: {
-  //       trigger: outcomeTrigger,
-  //       start: "top +=600",
-  //       end: "bottom center",
-  //       scrub: false,
-  //       markers: false,
-  //     },
-  //     y: 110,
-  //     stagger: 0.05,
-  //     duration: 1,
-  //   });
-  // }, []);
   const lenis = new Lenis();
 
-  lenis.on("scroll", (e) => {
-    console.log(e);
-  });
+  // lenis.on("scroll", (e) => {
+  //   console.log(e);
+  // });
 
   function raf(time) {
     lenis.raf(time);
@@ -127,7 +30,7 @@ const ProjectPage = () => {
   requestAnimationFrame(raf);
   return (
     <>
-      {/* <Preloader loadertext={project.name} /> */}
+      <Preloader loadertext={project.name} />
       <section className="flex flex-col gap-12  my-12">
         <section className="mx-4 md:mx-8 lg:mx-16 xl:mx-24  project-page">
           <div className="row gapped">
@@ -165,7 +68,13 @@ const ProjectPage = () => {
             </div>
           </div>
           <div className="banner-image obj-rvl shadow-md hover:shadow-lg transition-shadow duration-300">
-            <img src={project.bannerImage} alt="Banner"></img>
+            <video
+              src={project.bannerImage}
+              alt="Banner"
+              autoPlay
+              loop
+              muted
+            ></video>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-2 grid-flow-row gap-4 md:gap-6 lg:gap-8 w-full">

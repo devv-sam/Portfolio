@@ -13,12 +13,12 @@
       "design": "1 week",
       "development": "3 weeks"
     },
-    "bannerImage": "/assets/bannerhaum.png",
+    "bannerImage": "/assets/haumshowcasevid.mp4",
     "showcaseOne": "/assets/loginmockup.png",
     "showcaseTwo": "/assets/mobilemockup.png",
     "bannerShowcaseOne": "/assets/marketplace.png",
-    "showcaseThree": "/assets/showcase1.png",
-    "showcaseFour": "/assets/showcase1.png"
+    "showcaseThree": "/assets/doublemobile.png",
+    "showcaseFour": "/assets/haumdesktop.png"
   },
   {
     "id": 2,
