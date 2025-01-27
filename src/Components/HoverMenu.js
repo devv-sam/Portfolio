@@ -20,7 +20,6 @@ const HoverMenu = ({ projects }) => {
 
   return (
     <section className="w-full bg-white" onMouseMove={handleMouseMove}>
-      {/* Header */}
       <div className="px-4 md:px-8 pt-16 pb-24">
         <div className="max-w-[90%] mx-auto">
           <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-8">
@@ -40,8 +39,8 @@ const HoverMenu = ({ projects }) => {
         <div className="max-w-[90%] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-24">
             {projects.map((project) => (
-              <Link
-                key={project.id}
+              <a
+                href={`/projects/${project.id}`}
                 to={`/projects/${project.id}`}
                 className="block"
                 onMouseEnter={() => setIsHovered(true)}
@@ -66,7 +65,7 @@ const HoverMenu = ({ projects }) => {
                     </p>
                   </div>
                 </div>
-              </Link>
+              </a>
             ))}
           </div>
         </div>
