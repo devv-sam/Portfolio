@@ -1,192 +1,103 @@
-import React, { useEffect, useRef } from "react";
-import gsap from "gsap";
+import React, { useState } from "react";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 import { Link } from "react-router-dom";
 
-const PortfolioGallery = ({ projects }) => {
-  const galleryRef = useRef(null);
-  const itemsRef = useRef([]);
-  const textRefs = useRef([]);
-  const imageRefs = useRef([]);
-  const currentHoveredIndex = useRef(null);
-  const isAnimating = useRef(false);
+const HoverMenu = ({ projects }) => {
+  const cursorX = useMotionValue(-100);
+  const cursorY = useMotionValue(-100);
 
-  useEffect(() => {
-    // Initial setup remains the same
-    gsap.set(itemsRef.current, {
-      width: "20%",
-      maxWidth: "400px",
-    });
+  const springConfig = { damping: 50, stiffness: 300, mass: 0.5 };
+  const cursorXSpring = useSpring(cursorX, springConfig);
+  const cursorYSpring = useSpring(cursorY, springConfig);
 
-    gsap.set(textRefs.current, {
-      opacity: 0,
-      visibility: "hidden",
-    });
+  const [isHovered, setIsHovered] = useState(false);
 
-    gsap.set(imageRefs.current, {
-      scale: 1,
-    });
-
-    const middleIndex = Math.floor(projects.length / 2);
-    gsap.set(itemsRef.current[middleIndex], {
-      width: "70%",
-      maxWidth: "700px",
-    });
-    gsap.set(textRefs.current[middleIndex], {
-      opacity: 1,
-      visibility: "visible",
-      y: 0,
-    });
-  }, []);
-
-  const animateItem = (index, isExpanding) => {
-    if (isAnimating.current) return;
-    isAnimating.current = true;
-
-    const tl = gsap.timeline({
-      onComplete: () => {
-        isAnimating.current = false;
-      },
-    });
-
-    itemsRef.current.forEach((item, i) => {
-      const isTarget = i === index;
-
-      tl.to(
-        item,
-        {
-          width: isExpanding && isTarget ? "70%" : "20%",
-          maxWidth: isExpanding && isTarget ? "700px" : "300px",
-          ease: "power2.out",
-          duration: 0.5,
-        },
-        0
-      );
-
-      tl.to(
-        imageRefs.current[i],
-        {
-          scale: isExpanding && isTarget ? 1.07 : 1,
-          duration: 0.5,
-          ease: "power2.out",
-        },
-        0
-      );
-
-      tl.to(
-        textRefs.current[i],
-        {
-          opacity: isExpanding && isTarget ? 1 : 0,
-          visibility: isExpanding && isTarget ? "visible" : "hidden",
-          duration: 0.3,
-          ease: "power2.out",
-        },
-        isExpanding ? 0.2 : 0
-      );
-    });
-  };
-
-  const handleHover = (index) => {
-    // If hovering the same item, don't do anything
-    if (currentHoveredIndex.current === index) return;
-
-    // If we're moving from one item to another
-    if (currentHoveredIndex.current !== null && index !== null) {
-      currentHoveredIndex.current = index;
-      animateItem(index, true);
-      return;
-    }
-
-    // If we're entering a new item from no hover
-    if (index !== null) {
-      currentHoveredIndex.current = index;
-      animateItem(index, true);
-    }
-  };
-
-  const handleMouseLeave = (index) => {
-    // Only handle leave for currently hovered item
-    if (currentHoveredIndex.current === index) {
-      currentHoveredIndex.current = null;
-      animateItem(null, false);
-    }
+  const handleMouseMove = (e) => {
+    const { clientX, clientY } = e;
+    cursorX.set(clientX);
+    cursorY.set(clientY);
   };
 
   return (
-    <section className="mx-4 pt-6 md:mx-8 lg:mx-16 xl:mx-24">
-      <div className="hidden lg:block">
-        <div
-          ref={galleryRef}
-          className="w-full flex items-start justify-center gap-4"
-        >
-          {projects.map((project, index) => (
-            <Link
-              to={`/projects/${project.id}`}
-              key={project.id}
-              ref={(el) => (itemsRef.current[index] = el)}
-              className="flex flex-col gap-6"
-              onMouseLeave={handleMouseLeave}
-            >
-              <div className="h-[450px] overflow-hidden rounded-lg">
-                <div
-                  ref={(el) => (imageRefs.current[index] = el)}
-                  className="w-full h-full"
-                  onMouseEnter={() => handleHover(index)}
-                >
-                  <img
-                    src={project.coverImage}
-                    alt={project.name}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-              <div
-                ref={(el) => (textRefs.current[index] = el)}
-                className="flex flex-col gap-2"
-              >
-                <div className="flex justify-between items-start">
-                  <h2 className="text-2xl font-bold">{project.name}</h2>
-                  <p className="text-sm text-gray-600">{project.tags[0]}</p>
-                </div>
-              </div>
-            </Link>
-          ))}
+    <section className="w-full bg-white" onMouseMove={handleMouseMove}>
+      {/* Header */}
+      <div className="px-4 md:px-8 pt-16 pb-24">
+        <div className="max-w-[90%] mx-auto">
+          <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-8">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-normal">
+              works
+            </h1>
+            <p className="text-base md:text-lg text-gray-600 lg:max-w-xl">
+              This portfolio showcases a selection of my work, representing the
+              range and diversity of projects I've undertaken. While some pieces
+              are not displayed due to client confidentiality, I believe these
+              examples capture the breadth of what I can bring to each project.
+            </p>
+          </div>
         </div>
       </div>
 
-      {/* Tablet/Mobile View remains unchanged */}
-      <div className="lg:hidden">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {projects.map((project) => (
-            <div key={project.id} className="flex flex-col gap-4">
-              <div className="w-full aspect-[4/3] overflow-hidden">
-                <img
-                  src={project.coverImage}
-                  alt={project.name}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="flex flex-col gap-2">
-                <div className="md:flex justify-between items-start">
-                  <h2 className="text-2xl md:text-xl sm:text-lg font-bold">
-                    {project.name}
-                  </h2>
-                  <p className="text-sm text-gray-600">{project.tags[0]}</p>
+      <div className="px-4 md:px-8">
+        <div className="max-w-[90%] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-y-24">
+            {projects.map((project) => (
+              <Link
+                key={project.id}
+                to={`/projects/${project.id}`}
+                className="block"
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+              >
+                <div className="group relative">
+                  <div className="relative aspect-[16/9] overflow-hidden">
+                    <img
+                      src={project.coverImage}
+                      alt={project.name}
+                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+
+                  <div className="mt-6">
+                    <h2 className="text-xl md:text-2xl font-normal mb-2">
+                      {project.name}
+                    </h2>
+                    <p className="text-sm md:text-base text-gray-600">
+                      {project.tags.join(" · ")}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </div>
-          ))}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
-      <div className="flex justify-center mt-4 mb-8 md:mt-16 md:mb-12">
-        <Link
-          to="/portfolio"
-          className="btn inline-block px-8 py-3 text-lg font-medium transition-all duration-300"
+
+      <motion.div
+        className="fixed top-0 left-0 pointer-events-none z-50"
+        style={{
+          x: cursorXSpring,
+          y: cursorYSpring,
+        }}
+      >
+        <motion.div
+          className="relative -translate-x-1/2 -translate-y-1/2"
+          animate={{
+            opacity: isHovered ? 1 : 0,
+            scale: isHovered ? 1 : 0.8,
+          }}
+          transition={{
+            duration: 0.2,
+            ease: "easeOut",
+          }}
         >
-          View All
-        </Link>
-      </div>
+          <div className="px-6 py-3 rounded-full backdrop-blur-md bg-white/10 border border-white/20 shadow-lg text-white text-sm whitespace-nowrap bg-gradient-to-r from-black/60 to-black/50">
+            View Work
+          </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
 
-export default PortfolioGallery;
+export default HoverMenu;
