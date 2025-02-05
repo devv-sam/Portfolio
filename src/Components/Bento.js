@@ -1,15 +1,18 @@
 import React from "react";
 import SpotifyNowPlaying from "../Components/spotify/SpotifyNowPlaying.js";
 import { gsap } from "gsap";
-import { FaReact, FaHtml5, FaGit, FaJsSquare } from "react-icons/fa";
+import { FaReact, FaJsSquare } from "react-icons/fa";
 import { IoLogoNodejs } from "react-icons/io5";
 import {
   SiMongodb,
   SiTailwindcss,
   SiFigma,
+  SiNextdotjs,
+  SiPython,
   SiAdobeillustrator,
   SiPrisma,
-  SiGreensock,
+  SiShadcnui,
+  SiTypescript,
 } from "react-icons/si";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
@@ -30,7 +33,7 @@ const Bento = () => {
                   <p className="font-poppins text-md md:text-base lg:text-lg">
                     Ghanaian by blood, New Yorker by fate. When I'm not busy
                     coding out wild ideas, I'm hitting screamers on the field or
-                    chilliing to a classical piece. It's all about finding
+                    chilling to a classical piece. It's all about finding
                     balance right?
                   </p>
                 </div>
@@ -38,20 +41,21 @@ const Bento = () => {
 
               <div className="bg-white/10 border border-gray-200 rounded-xl p-4 flex flex-col justify-center shadow-sm">
                 <h5 className="text-xl font-medium text-black mb-3">
-                  Tech Stack
+                  Tech stack
                 </h5>
                 <div className="flex flex-wrap items-center gap-3 justify-start">
                   {[
                     { Icon: FaReact, name: "React" },
+                    { Icon: SiNextdotjs, name: "Next.js" },
                     { Icon: FaJsSquare, name: "JavaScript" },
-                    { Icon: FaHtml5, name: "HTML" },
+                    { Icon: SiTypescript, name: "TypeScript" },
                     { Icon: SiTailwindcss, name: "Tailwind" },
                     { Icon: SiMongodb, name: "MongoDB" },
-                    { Icon: FaGit, name: "Git" },
+                    { Icon: SiPython, name: "Python" },
                     { Icon: SiFigma, name: "Figma" },
                     { Icon: SiAdobeillustrator, name: "Illustrator" },
                     { Icon: SiPrisma, name: "Prisma" },
-                    { Icon: SiGreensock, name: "GSAP" },
+                    { Icon: SiShadcnui, name: "Shadcn" },
                     { Icon: IoLogoNodejs, name: "Node.js" },
                   ].map(({ Icon, name }, index) => (
                     <div
