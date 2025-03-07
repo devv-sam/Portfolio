@@ -3,6 +3,7 @@ import SpotifyNowPlaying from "../Components/spotify/SpotifyNowPlaying.js";
 import { gsap } from "gsap";
 import { FaReact, FaJsSquare } from "react-icons/fa";
 import { IoLogoNodejs } from "react-icons/io5";
+import { RiSupabaseFill } from "react-icons/ri";
 import {
   SiMongodb,
   SiTailwindcss,
@@ -47,14 +48,14 @@ const Bento = () => {
                   {[
                     { Icon: FaReact, name: "React" },
                     { Icon: SiNextdotjs, name: "Next.js" },
-                    { Icon: FaJsSquare, name: "JavaScript" },
                     { Icon: SiTypescript, name: "TypeScript" },
                     { Icon: SiTailwindcss, name: "Tailwind" },
                     { Icon: SiMongodb, name: "MongoDB" },
                     { Icon: SiPython, name: "Python" },
                     { Icon: SiFigma, name: "Figma" },
-                    { Icon: SiAdobeillustrator, name: "Illustrator" },
+                    { Icon: RiSupabaseFill, name: "Supabase" },
                     { Icon: SiPrisma, name: "Prisma" },
+                    { Icon: FaJsSquare, name: "JavaScript" },
                     { Icon: SiShadcnui, name: "Shadcn" },
                     { Icon: IoLogoNodejs, name: "Node.js" },
                   ].map(({ Icon, name }, index) => (
@@ -108,25 +109,25 @@ const Bento = () => {
               <div className="flex-1 flex flex-col justify-between">
                 {[
                   {
+                    title: "America on Tech",
+                    role: "Tech Flex Leader",
+                    duration: "AUG 2024 - PRESENT",
+                    description:
+                      "Building a custom prediction AI models using Python.",
+                  },
+                  {
+                    title: "Codology",
+                    role: "Frontend Developer",
+                    duration: "AUG 2024 - FEB 2024",
+                    description:
+                      "Developed curricula for underrepresented communities and students in the STEM field.",
+                  },
+                  {
                     title: "Project: Empower",
                     role: "Frontend Developer",
                     duration: "AUG 2024 - JAN 2025",
                     description:
                       "Created scalable UI components for a nonprofit platform using Next.js, TypeScript, and Tailwind.",
-                  },
-                  {
-                    title: "Bloomberg",
-                    role: "CN Fellowship 1 Intern",
-                    duration: "NOV 2023 - MAY 2024",
-                    description:
-                      "Completed coursework focused on career readiness and professional skills.",
-                  },
-                  {
-                    title: "DWC HS",
-                    role: "Frontend Developer",
-                    duration: "DEC 2023 - MAY 2024",
-                    description:
-                      "Enhanced school websites with web development skills to improve user experience.",
                   },
                 ].map((job, index, array) => (
                   <div
