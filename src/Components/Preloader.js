@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import gsap from "gsap";
 import { Flip } from "gsap/Flip";
 import "../index.css";
 
 const Preloader = ({ loadertext }) => {
-  const [isLoading, setIsLoading] = useState(true);
-
   useEffect(() => {
     gsap.registerPlugin(Flip);
 
@@ -27,7 +25,7 @@ const Preloader = ({ loadertext }) => {
       body.style.position = "";
       body.style.width = "";
       body.style.height = "";
-      setIsLoading(false);
+      // setIsLoading(false);
     };
 
     // Initial text positioning

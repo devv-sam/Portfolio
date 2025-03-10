@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
-import { Link } from "react-router-dom";
 
 const HoverMenu = ({ projects }) => {
   const cursorX = useMotionValue(-100);

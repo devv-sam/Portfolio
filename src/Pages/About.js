@@ -8,18 +8,10 @@ import Preloader from "../Components/Preloader";
 import Bento from "../Components/Bento";
 const About = ({ loadertext }) => {
   gsap.registerPlugin(ScrollTrigger);
-  const containerRef = useRef(null);
   const titleRef = useRef(null);
   const cardsRef = useRef([]);
-  const aboutWrapperRef = useRef(null);
-  const aboutImageRef = useRef(null);
-  const aboutContentRef = useRef(null);
 
   useEffect(() => {
-    const aboutWrapper = aboutWrapperRef.current;
-    const aboutImage = aboutImageRef.current;
-    const aboutContent = aboutContentRef.current;
-    const container = containerRef.current;
     const title = titleRef.current;
     const cards = cardsRef.current;
     const scrReveal = new SplitType(".scr-rvl", { types: "lines" });

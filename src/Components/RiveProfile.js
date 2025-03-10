@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { useRive, useStateMachineInput } from "@rive-app/react-canvas";
+import { useRive } from "@rive-app/react-canvas";
 
 const RiveProfile = () => {
   const containerRef = useRef() || null;

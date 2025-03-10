@@ -391,7 +391,7 @@ nav ul li a {
 .dot {
   overflow-x: visible;
   animation: pulseDot 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite;
-  background-color: var(--pulsating-dot, #10dc60);
+  background-color: var(--pulsating-dot, #f73b26);
   border-radius: 50%;
   box-sizing: border-box;
   height: 10px;
@@ -404,7 +404,7 @@ nav ul li a {
 }
 .dot:before {
   animation: pulseRing 1.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
-  background-color: var(--pulsating-dot, #10dc60);
+  background-color: var(--pulsating-dot, #f73b26);
   border-radius: 45px;
   content: "";
   display: block;

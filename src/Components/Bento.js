@@ -10,7 +10,6 @@ import {
   SiFigma,
   SiNextdotjs,
   SiPython,
-  SiAdobeillustrator,
   SiPrisma,
   SiShadcnui,
   SiTypescript,

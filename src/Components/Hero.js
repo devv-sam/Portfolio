@@ -28,7 +28,7 @@ const Hero = () => {
         <div className="avail">
           <div className="wrap">
             <span className="dot"></span>
-            <p className="text-sm md:text-base">Ready to collaborate</p>
+            <p className="text-sm md:text-base">Busy—check back soon!</p>
           </div>
         </div>
 
