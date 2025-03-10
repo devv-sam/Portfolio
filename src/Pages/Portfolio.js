@@ -16,7 +16,7 @@ const Portfolio = () => {
           <div className="mt-8 flex flex-col gap-10">
             <div>
               <h3 className="text-[clamp(2rem,4vw,3rem)] font-medium  w-full text-black [clip-path:polygon(0_0,100%_0,100%_100%,0%_100%)]">
-                A hub for all my projects
+                A hub for all my personal projects
               </h3>
               <p className="text-[clamp(1rem,2vw,1.1rem)] w-full cursor-default text-gray-500 [clip-path:polygon(0_0,100%_0,100%_100%,0%_100%)] transform transition-transform duration-500">
                 Built with passion, powered by coffee and iteration
