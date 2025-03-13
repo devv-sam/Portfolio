@@ -117,7 +117,7 @@ const Bento = () => {
                   {
                     title: "Codology",
                     role: "Frontend Developer",
-                    duration: "AUG 2024 - FEB 2024",
+                    duration: "DEC 2024 - FEB 2025",
                     description:
                       "Developed curricula for underrepresented communities and students in the STEM field.",
                   },
