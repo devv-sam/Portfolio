@@ -66,7 +66,7 @@ function Nav() {
         <ul className="desktop-nav">
           <li>
             <Link to="/portfolio">
-              <a href="#" className="link">
+              <a href="/portfolio" className="link">
                 <span className="mask">
                   <div className="link-container">
                     <span className="link-title1 title nav-anim">Work</span>
@@ -89,7 +89,7 @@ function Nav() {
 
           <li className="nav-anim">
             <a
-              href="#"
+              href="https://www.linkedin.com/in/devvsam/"
               className="btn hover:shadow-lg transition-shadow duration-300"
             >
               Connect

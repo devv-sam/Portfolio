@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -138,7 +137,7 @@ const Footer = () => {
           className="flex flex-col md:flex-row justify-center items-center gap-4 text-center"
         >
           <p className="font-['Poppins'] text-sm md:text-base text-gray-600">
-            {new Date().getFullYear()} · Samuel Yeboah-Asi.
+            {new Date().getFullYear()} · Samuel Yeboah-Asi
           </p>
         </div>
       </div>
