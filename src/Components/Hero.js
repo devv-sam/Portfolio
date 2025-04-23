@@ -1,24 +1,59 @@
-import React from "react";
-import "../index.css";
+import React, { useState, useEffect } from "react";
 import { FileText } from "lucide-react";
-
 import RiveProfile from "./RiveProfile";
+
+// Status options
+const STATUS_TYPES = {
+  AVAILABLE: {
+    text: "Available for work!",
+    dotColor: "#4ade80",
+    pulseColor: "rgba(74, 222, 128, 0.75)",
+  },
+  BUSY: {
+    text: "Busy—check back soon!",
+    dotColor: "#f73b26",
+    pulseColor: "rgba(247, 59, 38, 0.75)",
+  },
+  AWAY: {
+    text: "Away—will respond soon",
+    dotColor: "#fbbf24",
+    pulseColor: "rgba(251, 191, 36, 0.75)",
+  },
+};
+
 const Hero = () => {
+  const [currentStatus, setCurrentStatus] = useState("BUSY");
+
+  useEffect(() => {
+    fetch("/status.json")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.status && STATUS_TYPES[data.status]) {
+          setCurrentStatus(data.status);
+        }
+      })
+      .catch((err) => {
+        console.error("Failed to load status.json", err);
+      });
+  }, []);
+
+  const status = STATUS_TYPES[currentStatus];
+
   return (
-    <section className="flex flex-col justify-between  p-8 lg:px-24 gap-3">
+    <section className="flex flex-col justify-between p-8 lg:px-24 gap-3">
       <div className="flex justify-between items-end md:flex-row flex-col gap-3">
         <div className="w-full">
-          <RiveProfile />{" "}
-          <h3 className="text-[clamp(2rem,4vw,3rem)] font-semibold tracking-[0.5px] w-full text-black [clip-path:polygon(0_0,100%_0,100%_100%,0%_100%)]">
+          <RiveProfile />
+          <h3 className="text-[clamp(2rem,4vw,3rem)] font-semibold tracking-[0.5px] w-full text-black">
             Hey, I'm Sam
           </h3>
-          <p className="font-poppins text-[clamp(1rem,2.5vw,1.4rem)] leading-[1.8] font-medium text-black/80 [clip-path:polygon(0_0,100%_0,100%_100%,0%_100%)] transform transition-transform duration-500">
-            A Frontend Developer
+          <p className="font-poppins text-[clamp(1rem,2.5vw,1.4rem)] leading-[1.8] font-medium text-black/80">
+            A Fullstack Developer
           </p>
         </div>
 
-        <p className="font-poppins text-[clamp(0.875rem,2vw,1.1rem)] w-full cursor-default text-black/70 [clip-path:polygon(0_0,100%_0,100%_100%,0%_100%)]  leading-[1.8] transform transition-transform duration-500">
-          Working with frontend technologies to craft cutting-edge tools for
+        <p className="font-poppins text-[clamp(0.875rem,2vw,1.1rem)] w-full cursor-default text-black/70 leading-[1.8]">
+          Working with the latest technologies to craft cutting-edge tools for
           humans.
         </p>
       </div>
@@ -26,13 +61,19 @@ const Hero = () => {
       {/* Base Section */}
       <div className="base">
         <div className="avail">
-          <div className="wrap">
-            <span className="dot"></span>
-            <p className="text-sm md:text-base">Busy—check back soon!</p>
+          <div className="wrap" style={{ cursor: "default" }}>
+            <span
+              className="dot"
+              style={{
+                "--pulsating-dot": status.dotColor,
+                "--pulsating-ring": status.pulseColor,
+              }}
+            ></span>
+            <p className="text-sm md:text-base">{status.text}</p>
           </div>
         </div>
 
-        {/* Icons - Hidden on mobile */}
+        {/* Icons */}
         <div className="icons">
           <a
             rel="noopener noreferrer"
@@ -40,8 +81,7 @@ const Hero = () => {
             href="../assets/SY_Resume.pdf"
             className="btn mr-[10px]"
           >
-            <FileText className="w-5 h-5" />{" "}
-            {/* Correct resume/document icon */}
+            <FileText className="w-5 h-5" />
             <span>Resume</span>
           </a>
 

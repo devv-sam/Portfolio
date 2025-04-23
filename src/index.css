@@ -404,7 +404,7 @@ nav ul li a {
 }
 .dot:before {
   animation: pulseRing 1.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
-  background-color: var(--pulsating-dot, #f73b26);
+  background-color: var(--pulsating-ring, rgba(247, 59, 38, 0.75));
   border-radius: 45px;
   content: "";
   display: block;
@@ -414,7 +414,6 @@ nav ul li a {
   top: -100%;
   width: 300%;
 }
-
 .flex-main {
   display: flex;
   align-items: center;

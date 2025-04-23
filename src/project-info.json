@@ -19,5 +19,27 @@
     "bannerShowcaseOne": "/assets/marketplace.png",
     "showcaseThree": "/assets/doublemobile.png",
     "showcaseFour": "/assets/haumdesktop.png"
+  },
+  {
+    "id": 2,
+    "active": false,
+    "name": "Ream*",
+    "coverImage": "/assets/zipbg.png",
+    "date": "Feb 2025",
+    "tags": [],
+    "externalLink": "",
+    "videoShowcase": "",
+    "description": "Flowstate on demand. Coming soon.",
+    "totalDuration": "--",
+    "duration": {
+      "design": "",
+      "development": ""
+    },
+    "bannerImage": "",
+    "showcaseOne": "",
+    "showcaseTwo": "",
+    "bannerShowcaseOne": "",
+    "showcaseThree": "",
+    "showcaseFour": ""
   }
 ]

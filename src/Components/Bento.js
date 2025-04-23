@@ -112,7 +112,7 @@ const Bento = () => {
                     role: "Tech Flex Leader",
                     duration: "AUG 2024 - PRESENT",
                     description:
-                      "Building a custom prediction AI models using Python.",
+                      "Building custom prediction AI models using Python.",
                   },
                   {
                     title: "Codology",
