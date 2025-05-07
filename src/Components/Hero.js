@@ -48,7 +48,7 @@ const Hero = () => {
             Hey, I'm Sam
           </h3>
           <p className="font-poppins text-[clamp(1rem,2.5vw,1.4rem)] leading-[1.8] font-medium text-black/80">
-            A Fullstack Developer
+            Incoming student @ Boston University
           </p>
         </div>
 
