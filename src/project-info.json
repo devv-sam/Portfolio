@@ -41,5 +41,48 @@
     "bannerShowcaseOne": "",
     "showcaseThree": "",
     "showcaseFour": ""
+  },
+  {
+    "id": 3,
+    "name": "TFL Final Project",
+    "projectType": "data_science",
+    "coverImage": "/assets/workout-prediction/prediction-accuracy.png",
+    "date": "Mar 2025",
+    "tags": ["Data Science", "Python"],
+    "externalLink": "https://github.com/devv-sam/linear_regression_project",
+    "videoShowcase": "",
+    "description": "In the last month of America on Tech's Tech Flex Leaders program, I teamed up with friends to build my first data science project. We used Python to predict workout performance with Linear Regression and Random Forest models, and visualized the results. It was a bit rough, but it got me really interested in machine learning. Definitely something I want to explore more.",
+    "totalDuration": "2 weeks",
+    "duration": {
+      "data_analysis": "1 week",
+      "model_development": "2 weeks"
+    },
+    "visualizations": {
+      "volume_trends": {
+        "title": "Training Volume Over Time",
+        "explanation": "This chart tracks workout volume changes across different weeks. The patterns show natural training cycles — periods of increased intensity followed by recovery phases, demonstrating that progress isn't always linear."
+      },
+      "metric_distributions": {
+        "title": "Training Patterns Analysis",
+        "explanation": "The weight distribution shows common loading patterns, with frequent use of 25kg and 50kg weights. The rep ranges cluster around 8-12 reps, typical for hypertrophy-focused training programs."
+      },
+      "top_exercises": {
+        "title": "Most Popular Exercises",
+        "explanation": "Analysis of the most frequently performed exercises shows bicep curls leading the count, followed by a balanced mix of back and chest exercises. This indicates a well-rounded training approach in the dataset."
+      },
+      "linear_regression": {
+        "title": "Linear Regression Prediction Model",
+        "explanation": "The plot demonstrates how well a linear regression model predicts future workout weights. Blue dots near the red line indicate accurate predictions, showing the model's basic effectiveness at weight progression forecasting."
+      },
+      "random_forest": {
+        "title": "Random Forest Model Performance",
+        "explanation": "The Random Forest model adds complexity to the prediction task, resulting in tighter clustering around the ideal prediction line. This advanced model better captures the nuances in training progression patterns."
+      }
+    },
+    "bannerImage": "/assets/workout-prediction/volume_trends.png",
+    "showcaseOne": "/assets/workout-prediction/metric_distributions.png",
+    "showcaseTwo": "/assets/workout-prediction/top_exercises.png",
+    "bannerShowcaseOne": "/assets/workout-prediction/linear_regression_predictions.png",
+    "showcaseThree": "/assets/workout-prediction/random_forest_predictions.png"
   }
 ]
