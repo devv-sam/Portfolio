@@ -22,31 +22,9 @@
   },
   {
     "id": 2,
-    "active": false,
-    "name": "Ream*",
-    "coverImage": "/assets/zipbg.png",
-    "date": "Feb 2025",
-    "tags": [],
-    "externalLink": "",
-    "videoShowcase": "",
-    "description": "Flowstate on demand. Coming soon.",
-    "totalDuration": "--",
-    "duration": {
-      "design": "",
-      "development": ""
-    },
-    "bannerImage": "",
-    "showcaseOne": "",
-    "showcaseTwo": "",
-    "bannerShowcaseOne": "",
-    "showcaseThree": "",
-    "showcaseFour": ""
-  },
-  {
-    "id": 3,
     "name": "TFL Final Project",
     "projectType": "data_science",
-    "coverImage": "/assets/workout-prediction/prediction-accuracy.png",
+    "coverImage": "/assets/workout-prediction/workout_cover.png",
     "date": "Mar 2025",
     "tags": ["Data Science", "Python"],
     "externalLink": "https://github.com/devv-sam/linear_regression_project",
@@ -84,5 +62,27 @@
     "showcaseTwo": "/assets/workout-prediction/top_exercises.png",
     "bannerShowcaseOne": "/assets/workout-prediction/linear_regression_predictions.png",
     "showcaseThree": "/assets/workout-prediction/random_forest_predictions.png"
+  },
+  {
+    "id": 3,
+    "active": false,
+    "name": "Ream*",
+    "coverImage": "/assets/zipbg.png",
+    "date": "Feb 2025",
+    "tags": [],
+    "externalLink": "",
+    "videoShowcase": "",
+    "description": "Flowstate on demand. Coming soon.",
+    "totalDuration": "--",
+    "duration": {
+      "design": "",
+      "development": ""
+    },
+    "bannerImage": "",
+    "showcaseOne": "",
+    "showcaseTwo": "",
+    "bannerShowcaseOne": "",
+    "showcaseThree": "",
+    "showcaseFour": ""
   }
 ]
