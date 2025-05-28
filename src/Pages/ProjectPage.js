@@ -89,7 +89,7 @@ const ProjectPage = () => {
                     rel="noreferrer"
                     className="btn obj-rvl hover:shadow-lg transition-shadow duration-300"
                   >
-                    Live Site{" "}
+                    {isDataScience ? "View on GitHub" : "Live Site"}{" "}
                     <ion-icon
                       name="open-outline"
                       className="icon-ex"
@@ -195,7 +195,7 @@ const ProjectPage = () => {
                     rel="noreferrer"
                     className="btn obj-rvl hover:shadow-lg transition-shadow duration-300"
                   >
-                    Live Site{" "}
+                    {isDataScience ? "View on GitHub" : "Live Site"}{" "}
                     <ion-icon
                       name="open-outline"
                       className="icon-ex"
@@ -279,7 +279,18 @@ const ProjectPage = () => {
         ) : (
           <section className="mx-4 md:mx-8 lg:mx-16 xl:mx-24 project-page">
             <div className="flex flex-col items-center gap-8 project-stats">
-              <h2 className="rvl-hd text-center">{project.name}</h2>
+              {project.externalLink ? (
+                <a
+                  href={project.externalLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:opacity-80 transition-opacity"
+                >
+                  <h2 className="rvl-hd text-center">{project.name}</h2>
+                </a>
+              ) : (
+                <h2 className="rvl-hd text-center">{project.name}</h2>
+              )}
 
               {project?.bannerImage && (
                 <div className="w-full shadow-md hover:shadow-lg transition-shadow duration-300 rounded-lg overflow-hidden obj-rvl">

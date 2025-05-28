@@ -89,7 +89,8 @@ const ProjectPage = () => {
                       </div>
                     </div>
                     <div className="relative w-full h-[50vh] md:h-[60vh] overflow-hidden rounded-lg">
-                      {project.bannerImage ? (
+                      {project.bannerImage &&
+                      project.bannerImage.endsWith(".mp4") ? (
                         <video
                           src={project.bannerImage}
                           autoPlay
@@ -99,7 +100,11 @@ const ProjectPage = () => {
                         />
                       ) : (
                         <img
-                          src={project.bannerImage}
+                          src={
+                            project.projectType === "data_science"
+                              ? project.coverImage
+                              : project.bannerImage || project.coverImage
+                          }
                           alt={project.name}
                           className="w-full h-full object-cover"
                         />
