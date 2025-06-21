@@ -284,9 +284,11 @@ const ProjectPage = () => {
                   href={project.externalLink}
                   target="_blank"
                   rel="noreferrer"
-                  className="hover:opacity-80 transition-opacity"
+                  className="hover:opacity-80 transition-opacity "
                 >
-                  <h2 className="rvl-hd text-center">{project.name}</h2>
+                  <h2 className="rvl-hd text-center animate-pulse">
+                    {project.name}
+                  </h2>
                 </a>
               ) : (
                 <h2 className="rvl-hd text-center">{project.name}</h2>
