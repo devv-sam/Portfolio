@@ -30,7 +30,7 @@ const Bento = () => {
                   <h3 className="text-xl font-medium text-black mb-3 w-full  [clip-path:polygon(0_0,100%_0,100%_100%,0%_100%)]">
                     About me
                   </h3>
-                  <p className="font-poppins text-md md:text-base lg:text-lg">
+                  <p className="font-poppins text-md text-base">
                     Ghanaian by blood, New Yorker by fate. When I'm not busy
                     coding out wild ideas, I'm hitting screamers on the field or
                     chilling to a classical piece. It's all about finding
@@ -76,7 +76,7 @@ const Bento = () => {
             <div className="lg:col-span-3 flex flex-col gap-4 md:gap-6">
               <div className="flex-1 overflow-hidden rounded-3xl border border-gray-300 transition-all ">
                 <img
-                  src="./assets/profile-img-2.jpg"
+                  src="./assets/sam.png"
                   alt="Sam's Profile"
                   className="h-full w-full object-cover"
                 />
@@ -108,43 +108,54 @@ const Bento = () => {
               <div className="flex-1 flex flex-col justify-between">
                 {[
                   {
-                    title: "America on Tech",
+                    title: "ream",
+                    role: "Founder & Engineer",
+                    duration: "Feb 2025 – Present",
+                    location: "New York, NY",
+                    description:
+                      "Built and launched a fullstack MVP helping students manage notes, tasks, and research in one place.",
+                  },
+                  {
+                    title: "America On Tech",
+                    role: "Peer Mentor ",
+                    duration: "Jun 2025 – Present",
+                    location: "New York, NY",
+                    description:
+                      "Supported students in tech programs with mentorship, guidance, and technical feedback.",
+                  },
+                  {
+                    title: "EY",
+                    role: "Expedition EY (Advanced Level)",
+                    duration: "Feb 2025 – May 2025",
+                    location: "Remote",
+                    description:
+                      "Completed a case-based program focused on innovation, consulting, and problem-solving. ",
+                  },
+                  {
+                    title: "America On Tech",
                     role: "Tech Flex Leader",
-                    duration: "AUG 2024 - PRESENT",
+                    duration: "Aug 2024 – May 2025",
+                    location: "New York, NY",
                     description:
-                      "Building custom prediction AI models using Python.",
-                  },
-                  {
-                    title: "Codology",
-                    role: "Frontend Developer",
-                    duration: "DEC 2024 - FEB 2025",
-                    description:
-                      "Developed curricula for underrepresented communities and students in the STEM field.",
-                  },
-                  {
-                    title: "Project: Empower",
-                    role: "Frontend Developer",
-                    duration: "AUG 2024 - JAN 2025",
-                    description:
-                      "Created scalable UI components for a nonprofit platform using Next.js, TypeScript, and Tailwind.",
+                      "Selected for a competitive tech and career development program. ",
                   },
                 ].map((job, index, array) => (
                   <div
                     key={index}
                     className={`group rounded-lg transition-all hover:bg-gray-50 flex-1 ${
-                      index !== array.length - 1 ? "mb-4" : ""
+                      index !== array.length - 1 ? "mb-2" : ""
                     }`}
                   >
                     <div className="flex flex-col h-full">
-                      <div className="flex items-center justify-between flex-wrap gap-2 mb-2">
-                        <h4 className="font-poppins text-lg font-medium">
+                      <div className="flex items-center justify-between flex-wrap gap-2">
+                        <h4 className="font-poppins text-md font-medium">
                           {job.title}
                         </h4>
                         <p className="font-poppins text-sm text-gray-600">
                           {job.role}
                         </p>
                       </div>
-                      <p className="font-poppins text-xs text-gray-500 mb-2">
+                      <p className="font-poppins text-xs text-gray-500">
                         {job.duration}
                       </p>
                       <p className="font-poppins text-sm text-gray-700 lg:block hidden">
